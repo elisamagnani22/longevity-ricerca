@@ -118,8 +118,11 @@ section{scroll-margin-top:60px}
 .part h2{color:#F5F1EA;border:0;margin:8px 0 6px;padding:0}
 .part p{color:var(--linen);max-width:64ch;margin:0}
 .side{display:none}
-@media (min-width:1500px){
-  .side{display:block;position:fixed;left:max(16px,calc(50vw - 540px - 250px));top:70px;width:210px;max-height:calc(100vh - 90px);overflow:auto;font-size:13px;line-height:1.35}
+@media (min-width:1400px){
+  .page{max-width:min(1080px,calc(100vw - 640px))}
+  .topnav{padding-inline:max(24px,calc(50vw - min(540px,50vw - 320px)))}
+  .cover{padding-inline:max(24px,calc(50vw - min(540px,50vw - 320px)))}
+  .side{display:block;position:fixed;left:max(24px,calc(50vw - min(540px,50vw - 320px) - 300px));top:70px;width:214px;max-height:calc(100vh - 90px);overflow:auto;font-size:13px;line-height:1.35}
   .side b{display:block;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--bronze);margin:16px 0 6px}
   .side a{display:block;text-decoration:none;color:var(--muted);padding:4px 0 4px 10px;border-left:2px solid var(--linen)}
   .side a:hover,.side a.on{color:var(--ink);border-left-color:var(--moss)}
