@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="it"><head><meta name="robots" content="noindex,nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light only">
+<title>LONGEVITY · Mercato, format esteri, tecnologie</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F5F1EA; --paper:#FBF8F3; --linen:#D9D1C1; --sand:#C8BBA6; --stone:#B9B0A0;
+  --olive:#5A542D; --moss:#5E6B3A; --sage:#8A9472; --bronze:#8B6A43; --brown:#3E3226;
+  --ink:#2F2820; --text:#3B342C; --muted:#6E6558; --tint:#EFE9DF;
+  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --font:'Inter',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Helvetica,Arial,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--text);font-family:var(--font);font-weight:400;font-size:18px;line-height:1.7;-webkit-font-smoothing:antialiased;padding-inline:24px;overflow-x:hidden}
+b,strong{font-weight:600;color:var(--ink)}
+a{color:var(--moss);text-decoration:underline;text-decoration-color:var(--sand);text-underline-offset:3px}
+.page{max-width:1080px;margin:0 auto}
+.narrow{max-width:760px}
+
+.cover{min-height:92vh;display:flex;flex-direction:column;justify-content:space-between;padding-block:56px 48px;margin-inline:calc(50% - 50vw);padding-inline:max(24px,calc(50vw - 540px));background:var(--brown);color:var(--linen)}
+.label{font-size:12.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--bronze)}
+.cover .label{color:var(--sand)}
+.cover h1{font-family:var(--serif);font-weight:500;font-size:clamp(56px,10vw,112px);line-height:.98;letter-spacing:-.01em;color:#F5F1EA;margin:28px 0 24px}
+.cover .subtitle{font-size:clamp(20px,2.6vw,25px);color:var(--linen);max-width:34ch;line-height:1.45}
+.cover .meta{display:flex;flex-wrap:wrap;gap:10px 48px;font-size:15px;color:var(--linen);padding-top:22px;border-top:1px solid rgba(217,209,193,.35)}
+.cover .meta span b{display:block;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--sand);font-weight:600;margin-bottom:3px}
+.cover .back{font-size:15px;margin-top:20px}
+.cover .back a{color:var(--linen)}
+
+.toc{padding-block:56px;border-bottom:1px solid var(--linen)}
+.toc ol{list-style:none;margin-top:20px;columns:2 300px;column-gap:48px}
+.toc li{break-inside:avoid;padding:9px 0;border-bottom:1px solid var(--tint);font-size:17px}
+.toc a{text-decoration:none;color:var(--ink);display:flex;gap:16px}
+.toc a span{color:var(--bronze);font-weight:600;min-width:26px;font-size:15px;padding-top:2px}
+.toc a:hover{color:var(--moss)}
+
+section{padding-block:80px 16px;scroll-margin-top:16px}
+.num{font-size:13px;font-weight:600;letter-spacing:.2em;color:var(--bronze);text-transform:uppercase;margin-bottom:10px}
+h2{font-family:var(--serif);font-weight:500;font-size:clamp(38px,5.4vw,54px);line-height:1.05;color:var(--brown);margin-bottom:20px;padding-bottom:18px;border-bottom:2px solid var(--olive)}
+.lead{font-size:21px;line-height:1.6;color:var(--ink);margin-bottom:30px;max-width:62ch}
+h3{font-size:14px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--moss);margin:46px 0 16px}
+p{margin-bottom:16px;max-width:72ch}
+ul.list,ol.list{margin:6px 0 22px 0;padding-left:0;list-style:none;max-width:72ch}
+ul.list li{position:relative;padding-left:24px;margin-bottom:10px}
+ul.list li::before{content:'';position:absolute;left:2px;top:.8em;width:10px;height:2px;background:var(--olive)}
+ol.list{counter-reset:n}
+ol.list li{counter-increment:n;position:relative;padding-left:44px;margin-bottom:14px}
+ol.list li::before{content:counter(n,decimal-leading-zero);position:absolute;left:0;top:.1em;font-size:15px;font-weight:600;color:var(--bronze)}
+
+.figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));margin:10px 0 30px;border-top:2px solid var(--olive);border-bottom:1px solid var(--linen)}
+.fig{padding:22px 20px 22px 0}
+.fig .n{font-family:var(--serif);font-size:52px;font-weight:500;color:var(--olive);line-height:1}
+.fig .l{font-size:15.5px;color:var(--text);margin-top:8px;line-height:1.45}
+
+.tw{overflow-x:auto;margin:12px 0 26px;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:16px;line-height:1.5}
+th{text-align:left;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#F5F1EA;background:var(--olive);padding:12px 14px;vertical-align:bottom}
+td{padding:14px;border-bottom:1px solid var(--linen);vertical-align:top;color:var(--text)}
+tbody tr:nth-child(even) td{background:var(--cream)}
+td:first-child{font-weight:600;color:var(--ink)}
+td.r,th.r{text-align:right;white-space:nowrap}
+tr.hl td{background:#E8EBDD!important}
+tr.hl td:first-child{box-shadow:inset 4px 0 0 var(--moss)}
+
+dl{margin:8px 0 22px}
+dl .it{display:grid;grid-template-columns:230px 1fr;gap:4px 30px;padding:18px 0;border-bottom:1px solid var(--linen)}
+dl dt{font-weight:600;color:var(--ink);line-height:1.4}
+dl dt small{display:block;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze);margin-top:6px}
+dl dd p{margin-bottom:6px}
+
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin:10px 0 24px}
+.cols .col h4{font-size:14px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding-bottom:10px;margin-bottom:12px;border-bottom:2px solid var(--moss);color:var(--moss)}
+.cols .col.neg h4{border-color:var(--bronze);color:var(--bronze)}
+.cols .col.neg ul.list li::before{background:var(--bronze)}
+
+.key{background:var(--tint);border-left:4px solid var(--moss);padding:20px 26px;margin:30px 0;font-size:19px;color:var(--ink);line-height:1.6}
+.key .label{display:block;margin-bottom:8px;color:var(--moss)}
+.note{font-size:15px;color:var(--muted);margin-top:-8px}
+.est{font-size:.85em;font-style:italic;color:var(--muted);white-space:nowrap}
+sup{font-size:11px;line-height:0;margin-left:1px}
+sup a{text-decoration:none;color:var(--bronze);font-weight:600}
+
+.sources{padding-block:72px 40px;border-top:1px solid var(--linen);margin-top:56px}
+.sources ol{list-style:none;counter-reset:s;margin-top:16px;font-size:14px;color:var(--muted)}
+.sources li{counter-increment:s;padding:5px 0 5px 40px;position:relative;word-break:break-word;scroll-margin-top:20px}
+.sources li::before{content:counter(s);position:absolute;left:0;color:var(--bronze);font-weight:600}
+.sources li:target{background:var(--tint)}
+footer{padding-block:32px 60px;font-size:13px;color:var(--muted);border-top:1px solid var(--linen)}
+
+@media (max-width:700px){
+  body{font-size:17px}
+  dl .it{grid-template-columns:1fr}
+  .cols{grid-template-columns:1fr;gap:24px}
+  .cover{min-height:auto;padding-block:44px}
+  section{padding-block:56px 8px}
+  table{font-size:15px}
+}
+@media print{body{padding:0;font-size:11pt}.cover{min-height:auto;page-break-after:always}h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}
+
+/* ===== LONGEVITY: aggiunte per la leggibilità ===== */
+body{font-size:17px;line-height:1.65}
+.cover{min-height:62vh}
+.cover h1{font-size:clamp(46px,7.5vw,88px)}
+.topnav{position:sticky;top:0;z-index:20;margin-inline:calc(50% - 50vw);padding:10px max(24px,calc(50vw - 540px));background:rgba(251,248,243,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--linen);display:flex;gap:6px 22px;flex-wrap:wrap;font-size:13.5px}
+.topnav a{text-decoration:none;color:var(--muted);font-weight:500;white-space:nowrap}
+.topnav a:hover{color:var(--moss)}
+.topnav a.on{color:var(--ink);font-weight:600;box-shadow:inset 0 -2px 0 var(--moss)}
+.topnav .home{color:var(--bronze);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:12px;padding-top:1px}
+section{scroll-margin-top:60px}
+.sources li,.src li,.card{scroll-margin-top:70px}
+.toc .ptitle{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--bronze);margin:30px 0 4px}
+.toc ol{margin-top:6px}
+.part{margin:90px calc(50% - 50vw) 0;padding:44px max(24px,calc(50vw - 540px));background:var(--olive);color:#F5F1EA}
+.part .label{color:var(--linen)}
+.part h2{color:#F5F1EA;border:0;margin:8px 0 6px;padding:0}
+.part p{color:var(--linen);max-width:64ch;margin:0}
+.side{display:none}
+@media (min-width:1500px){
+  .side{display:block;position:fixed;left:max(16px,calc(50vw - 540px - 250px));top:70px;width:210px;max-height:calc(100vh - 90px);overflow:auto;font-size:13px;line-height:1.35}
+  .side b{display:block;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--bronze);margin:16px 0 6px}
+  .side a{display:block;text-decoration:none;color:var(--muted);padding:4px 0 4px 10px;border-left:2px solid var(--linen)}
+  .side a:hover,.side a.on{color:var(--ink);border-left-color:var(--moss)}
+}
+h4{font-size:16px;font-weight:600;color:var(--ink);margin:26px 0 8px}
+.key ul.list{margin:0;max-width:none}
+.key ul.list li{margin-bottom:6px}
+.key ul.list li:last-child{margin-bottom:0}
+.key p:last-child{margin-bottom:0}
+.alert{background:#F6E9DE;border-left:4px solid #A4532B;padding:16px 22px;margin:20px 0;font-size:16.5px;color:var(--ink);line-height:1.55}
+.alert .label{display:block;margin-bottom:6px;color:#A4532B}
+.tag{display:inline-block;font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:1px 7px;border-radius:99px;vertical-align:.12em;margin-left:3px;white-space:nowrap;border:1px solid}
+.tag.d{color:#7A5A22;border-color:#D9C08C;background:#FAF1DC}
+.tag.r{color:#55606B;border-color:#C5CCD3;background:#EEF1F3}
+.tag.s{color:#6B4E7A;border-color:#D3C2DC;background:#F4EEF7}
+.tag.n{color:#A4532B;border-color:#E3BFA9;background:#FBEFE7}
+.legend{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:14px;color:var(--muted);margin:14px 0 26px}
+.dot{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+.dot.g{background:#5E7B3A}.dot.y{background:#D0A23A}.dot.r{background:#B4502F}
+
+.card{background:#fff;border:1px solid var(--linen);border-top:4px solid var(--olive);border-radius:4px;padding:28px 30px 24px;margin:34px 0}
+.card header{margin-bottom:14px}
+h3.card-t{font-family:var(--serif);font-size:34px;font-weight:600;letter-spacing:0;text-transform:none;color:var(--brown);margin:0;line-height:1.1}
+.card-s{font-size:14.5px;color:var(--muted);margin:6px 0 10px;max-width:none}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:12px;font-weight:600;padding:3px 11px;border-radius:99px;background:var(--tint);color:var(--text);border:1px solid var(--linen)}
+.chip.ok{background:#E6EDD8;border-color:#BECBA2;color:#3F5320}
+.chip.warn{background:#FAF1DC;border-color:#E2CD98;color:#7A5A22}
+.chip.bad{background:#F6E3D8;border-color:#E3BFA9;color:#8E3F1D}
+.card-lead{font-size:18px;color:var(--ink);line-height:1.55;max-width:none;margin-bottom:14px}
+dl.facts{margin:0 0 6px}
+dl.facts>div{display:grid;grid-template-columns:150px 1fr;gap:4px 22px;padding:11px 0;border-top:1px solid var(--tint);font-size:16px}
+dl.facts dt{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--bronze);padding-top:3px}
+dl.facts dd{line-height:1.55}
+.swot{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.swot>div{padding:14px 18px 12px;border-radius:4px;font-size:15.5px;line-height:1.5}
+.swot h4{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 8px}
+.swot ul{list-style:none}
+.swot li{position:relative;padding-left:16px;margin-bottom:6px}
+.swot li::before{content:'';position:absolute;left:0;top:.7em;width:7px;height:2px;background:currentColor;opacity:.55}
+.swot .pro{background:#EEF2E4}.swot .pro h4{color:#4A5E24}
+.swot .con{background:#F5EEE6}.swot .con h4{color:#8B6A43}
+.swot .copy{background:#E3ECD9;box-shadow:inset 0 0 0 1.5px #9DB07A}.swot .copy h4{color:#3F5320}
+.swot .avoid{background:#F6E6DC;box-shadow:inset 0 0 0 1.5px #DDB199}.swot .avoid h4{color:#8E3F1D}
+.src{margin-top:44px;padding-top:18px;border-top:1px solid var(--linen)}
+.src h3{margin-top:0}
+.src ol{list-style:none;counter-reset:s;font-size:13.5px;color:var(--muted);columns:2 380px;column-gap:40px}
+.src li{counter-increment:s;padding:3px 0 3px 34px;position:relative;word-break:break-word;break-inside:avoid}
+.src li::before{content:counter(s);position:absolute;left:0;color:var(--bronze);font-weight:600}
+.src li:target{background:var(--tint)}
+.src a{color:var(--muted)}
+details.more{margin:14px 0 24px;border:1px solid var(--linen);border-radius:4px;background:#fff}
+details.more>summary{cursor:pointer;padding:12px 18px;font-weight:600;color:var(--moss)}
+details.more>div{padding:4px 18px 14px}
+.hub{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin:20px 0 30px}
+.hub a{display:block;text-decoration:none;background:#fff;border:1px solid var(--linen);border-top:4px solid var(--olive);border-radius:4px;padding:22px 24px;color:var(--text)}
+.hub a:hover{border-top-color:var(--moss);box-shadow:0 6px 20px rgba(62,50,38,.08)}
+.hub a.main{grid-column:1/-1;border-top-color:var(--bronze);background:var(--tint)}
+.hub b{display:block;font-family:var(--serif);font-size:28px;font-weight:600;color:var(--brown);line-height:1.15;margin:6px 0 8px}
+.hub small{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--bronze)}
+.hub span{font-size:15.5px;line-height:1.5;display:block}
+@media (max-width:700px){
+  dl.facts>div{grid-template-columns:1fr}
+  .swot{grid-template-columns:1fr}
+  .card{padding:20px 18px}
+  .src ol{columns:1}
+}
+@media print{.topnav,.side{display:none}.card{break-inside:avoid}.part{margin-top:30px}}
+</style></head><body>
+<div class="page">
+<header class="cover"><div><span class="label">Allegato 3 · Novembre 2026</span><h1>Mercato,<br>format esteri,<br>tecnologie</h1><p class="subtitle">Quanto vale il settore, i format stranieri da cui prendere spunto, quanto costano e quanto rendono le macchine.</p></div><div class="meta"><span><b>Tipo</b>Dati di mercato e conti indicativi</span><span><b>Nota</b>I prezzi delle macchine vanno confermati con preventivi</span></div></header>
+<nav class="topnav"><a class="home" href="LONGEVITY%20-%20Control%20Room.html">Longevity</a><a href="LONGEVITY%20-%20Ricerca%20competitor%20e%20Modena.html">Ricerca: competitor e Modena</a><a href="LONGEVITY%20-%20Allegato%201%20-%20Regole%20e%20autorizzazioni.html">Regole</a><a href="LONGEVITY%20-%20Allegato%202%20-%20Cosa%20dice%20la%20scienza.html">Scienza</a><a href="LONGEVITY%20-%20Allegato%203%20-%20Mercato,%20format%20esteri,%20tecnologie.html" class="on">Mercato e tecnologie</a></nav>
+<div class="toc"><span class="label">Indice</span><ol><li><a href="#ME-mercato"><span>01</span>Quanto vale il mercato</a></li><li><a href="#ME-format"><span>02</span>Format esteri da cui prendere spunto</a></li><li><a href="#ME-tecnologie"><span>03</span>Quanto costano e quanto rendono le macchine</a></li><li><a href="#ME-costi"><span>04</span>Costi di gestione di riferimento</a></li></ol></div>
+<aside class="side"><a href="#ME-mercato">01 · Quanto vale il mercato</a><a href="#ME-format">02 · Format esteri da cui prendere spunto</a><a href="#ME-tecnologie">03 · Quanto costano e quanto rendono le macchine</a><a href="#ME-costi">04 · Costi di gestione di riferimento</a></aside>
+<section id="ME-mercato">
+<div class="num">Capitolo 01</div>
+  <h2>Quanto vale il mercato</h2>
+  <p class="lead">Non esiste un dato affidabile sul "mercato della longevity" in Italia. Esistono però buoni segnali indiretti: gli italiani spendono molto di tasca propria per la salute e sono tra i primi al mondo per trattamenti estetici.</p>
+  <div class="key"><span class="label">In breve</span>
+    <ul class="list">
+      <li>I "500 miliardi di mercato mondiale della longevity" citati a RiminiWellness non hanno una fonte. Meglio non usarli.</li>
+      <li>Il dato solido viene dal Global Wellness Institute (GWI): in Italia il benessere vale 140,6 miliardi di dollari. È il 10° Paese al mondo.</li>
+      <li>Le famiglie italiane spendono 42,4 miliardi di euro l'anno di tasca propria per la salute. In 8 anni la spesa nelle strutture private non convenzionate è quasi triplicata.</li>
+      <li>L'Italia è 4ª al mondo per numero di procedure estetiche: 1,37 milioni nel 2024.</li>
+      <li>In Italia si investe poco nella longevity: le aziende italiane del settore hanno raccolto 68,2 milioni di dollari, contro oltre 2 miliardi nel Regno Unito.</li>
+    </ul>
+  </div>
+
+  <p class="note">Come leggere questa parte. Dati raccolti il 9 novembre 2026. Il pallino indica quanto il dato è affidabile: verde alta, giallo media, rosso bassa. A metà lavoro sono finite le ricerche web disponibili: alcune voci restano "non trovato".</p>
+
+  <div class="figs">
+    <div class="fig"><div class="n">140,6 mld $</div><div class="l">economia del benessere in Italia, 10ª al mondo (2024) <sup><a href="#ME-1">1</a></sup></div></div>
+    <div class="fig"><div class="n">42,4 mld €</div><div class="l">spesa sanitaria pagata di tasca propria dalle famiglie (2025) <sup><a href="#ME-2">2</a></sup></div></div>
+    <div class="fig"><div class="n">1,37 mln</div><div class="l">procedure estetiche in Italia, 4ª al mondo (2024) <sup><a href="#ME-3">3</a></sup></div></div>
+    <div class="fig"><div class="n">68,2 mln $</div><div class="l">capitali raccolti dalle aziende longevity italiane <sup><a href="#ME-4">4</a></sup></div></div>
+  </div>
+
+  <h3>Perché non usare i "500 miliardi"</h3>
+  <p>L'articolo su RiminiWellness 2026 scrive solo che la longevità è "un mercato che vale 500 miliardi a livello mondiale". Non dice chi ha fatto la stima, in quale valuta, per quale anno, né che cosa misura <sup><a href="#ME-5">5</a></sup>.</p>
+  <p>Lo stesso numero compare in due stime che parlano d'altro:</p>
+  <ul class="list">
+    <li>la spesa per il benessere dei soli Stati Uniti, oltre 500 miliardi di dollari l'anno secondo McKinsey <span class="tag r">riferito</span> <sup><a href="#ME-6">6</a></sup>;</li>
+    <li>il valore massimo del prodotto della "silver economy" italiana, cioè l'economia legata agli over 65: tra 325 e 500 miliardi di euro <span class="tag r">riferito</span> <sup><a href="#ME-7">7</a></sup>.</li>
+  </ul>
+  <p>Al suo posto si può usare il dato GWI sull'Italia.</p>
+
+  <h3>I numeri principali</h3>
+  <p>Mondo ed Europa: servono solo per dare il contesto.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Numero</th><th>Cosa misura</th><th>Anno</th><th>Affidabilità</th></tr></thead>
+    <tbody>
+      <tr><td class="r">6.800 mld $</td><td>Economia mondiale del benessere (GWI, 11 settori). Previsione: 9.800 mld $ nel 2029 <sup><a href="#ME-8">8</a></sup></td><td>2024</td><td><span class="dot g"></span> alta</td></tr>
+      <tr><td class="r">~2.000 mld $</td><td>Mercato mondiale del benessere secondo McKinsey, con un perimetro più stretto <span class="tag r">riferito</span> <sup><a href="#ME-6">6</a></sup></td><td>2025</td><td><span class="dot y"></span> media</td></tr>
+      <tr><td class="r">fino al 60%</td><td>Consumatori che mettono l'invecchiamento in salute tra le priorità. Sondaggio McKinsey in USA, UK, Germania e Cina: l'Italia non c'è <span class="tag r">riferito</span> <sup><a href="#ME-6">6</a></sup></td><td>2025</td><td><span class="dot y"></span> media</td></tr>
+      <tr><td class="r">8–30 mld $</td><td>"Longevity market" mondiale secondo vari report a pagamento. Ognuno lo definisce a modo suo <span class="tag r">riferito</span> <sup><a href="#ME-9">9</a></sup> <sup><a href="#ME-10">10</a></sup></td><td>2025</td><td><span class="dot r"></span> bassa</td></tr>
+      <tr><td class="r">5.700 mld €</td><td>Silver economy europea: 32% del PIL dell'Unione Europea (stima TEHA) <sup><a href="#ME-4">4</a></sup></td><td>2025</td><td><span class="dot y"></span> media</td></tr>
+      <tr><td class="r">18,4 mld $</td><td>Investimenti mondiali nella longevity, soprattutto biotecnologie (4,7 mld $ nel 2024) <span class="tag r">riferito</span> <sup><a href="#ME-11">11</a></sup></td><td>2025</td><td><span class="dot y"></span> media</td></tr>
+    </tbody>
+  </table></div>
+
+  <p>Italia: i numeri che contano per il centro.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Numero</th><th>Cosa misura</th><th>Anno</th><th>Affidabilità</th></tr></thead>
+    <tbody>
+      <tr class="hl"><td class="r">140,6 mld $</td><td>Economia del benessere in Italia: 10ª al mondo, 4ª in Europa <sup><a href="#ME-1">1</a></sup></td><td>2024</td><td><span class="dot g"></span> alta</td></tr>
+      <tr><td class="r">38,4 mld $</td><td>di cui cura personale e bellezza <sup><a href="#ME-1">1</a></sup></td><td>2024</td><td><span class="dot g"></span> alta</td></tr>
+      <tr><td class="r">21,3 mld $</td><td>di cui attività fisica <sup><a href="#ME-1">1</a></sup></td><td>2024</td><td><span class="dot g"></span> alta</td></tr>
+      <tr class="hl"><td class="r">12,4 mld $</td><td>di cui prevenzione e medicina personalizzata: è la voce più vicina alla longevity <sup><a href="#ME-1">1</a></sup></td><td>2024</td><td><span class="dot g"></span> alta</td></tr>
+      <tr><td class="r">12,8 mld €</td><td>Acquisti di cosmetici in Italia (+3,2%) <sup><a href="#ME-12">12</a></sup></td><td>2025</td><td><span class="dot g"></span> alta</td></tr>
+      <tr><td class="r">non trovato</td><td>Fatturato e numero dei centri estetici</td><td>—</td><td>—</td></tr>
+      <tr><td class="r">148</td><td>Strutture longevity in Italia, di cui 29 retreat e circa 120 cliniche e centri. Il metodo del censimento non è pubblico <sup><a href="#ME-13">13</a></sup></td><td>2026</td><td><span class="dot y"></span> media</td></tr>
+      <tr><td class="r">66 su 148</td><td>Strutture delle due catene principali: Cerba 36, The Longevity Suite 30 <sup><a href="#ME-13">13</a></sup></td><td>2026</td><td><span class="dot y"></span> media</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>I segnali di spesa in Italia</h3>
+  <p><strong>Salute pagata di tasca propria.</strong> Nel 2025 la spesa sanitaria totale è stata di 190,1 miliardi di euro. Le famiglie ne hanno pagati 42,4 direttamente, circa il 22% <span class="tag s">stima</span> (42,4 diviso 190,1) <sup><a href="#ME-2">2</a></sup>.</p>
+  <ul class="list">
+    <li>La spesa nelle strutture private non convenzionate con il servizio sanitario è passata da 3,05 a 8,2 miliardi di euro tra il 2016 e il 2024 (+169%) <sup><a href="#ME-2">2</a></sup>. Un centro longevity privato lavora in questo segmento.</li>
+    <li>Fondi sanitari e assicurazioni pagano circa 7 miliardi (+10,1% in un anno). Le assicurazioni volontarie crescono del 12,7% <sup><a href="#ME-2">2</a></sup>.</li>
+    <li>Nel 2025 circa 5,6 milioni di persone hanno rinunciato a visite o esami, soprattutto per le liste d'attesa <sup><a href="#ME-14">14</a></sup>.</li>
+  </ul>
+
+  <p><strong>Medicina estetica.</strong> I dati vengono dall'indagine della società internazionale dei chirurghi plastici (ISAPS). Contano solo chi risponde, quindi probabilmente sottostimano i trattamenti non chirurgici <sup><a href="#ME-3">3</a></sup>.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Trattamento (Italia, 2024)</th><th>Numero</th><th>Posizione nel mondo</th></tr></thead>
+    <tbody>
+      <tr><td>Tutte le procedure estetiche</td><td class="r">1.371.220</td><td>4ª</td></tr>
+      <tr><td>di cui non chirurgiche</td><td class="r">891.172</td><td>—</td></tr>
+      <tr><td>Filler all'acido ialuronico</td><td class="r">430.598</td><td>2ª</td></tr>
+      <tr><td>Tossina botulinica</td><td class="r">316.385</td><td>5ª</td></tr>
+      <tr class="hl"><td>Rassodamento della pelle senza chirurgia (la categoria di Ultherapy, Thermage, Sofwave, XERF)</td><td class="r">22.318</td><td>—</td></tr>
+    </tbody>
+  </table></div>
+  <p>Gli italiani usano molto gli iniettivi. Il rassodamento con macchine è ancora una nicchia.</p>
+
+  <p><strong>Investimenti.</strong> In Italia arrivano pochi capitali nella longevity.</p>
+  <ul class="list">
+    <li>Le 150 principali aziende europee del settore hanno raccolto 5,5 miliardi di dollari. Il Regno Unito ne attira oltre 2. L'Italia si ferma a 68,2 milioni ed è fuori dalle prime 10 <sup><a href="#ME-4">4</a></sup>.</li>
+    <li>The Longevity Suite dichiara 16 milioni di euro di ricavi nel 2025 (+30%) e prevede oltre 22 milioni nel 2026 <span class="tag d">dichiarato</span> <sup><a href="#ME-15">15</a></sup>. A settembre 2026 preparava un aumento di capitale da 15–20 milioni, rivolto ai soci attuali <span class="tag r">riferito</span> <sup><a href="#ME-16">16</a></sup>.</li>
+    <li>Nel 2022 il fondo Ophelia di Azimut è entrato in The Longevity Suite con il 30% <span class="tag r">riferito</span> <sup><a href="#ME-17">17</a></sup>.</li>
+    <li>Le startup italiane raccolgono poco: Qura 1,5 milioni di euro nel 2026 <sup><a href="#ME-18">18</a></sup>, Holifya 2 milioni <span class="tag r">riferito</span> <sup><a href="#ME-19">19</a></sup>.</li>
+    <li>Clinique La Prairie valuta un'apertura a Milano da 5–10 milioni di euro, non confermata <sup><a href="#ME-20">20</a></sup>.</li>
+  </ul>
+
+  <p><strong>Fitness.</strong> In Europa le palestre crescono: 75,5 milioni di iscritti e 39,1 miliardi di euro di ricavi nel 2025 (+9,1%) <sup><a href="#ME-21">21</a></sup>. I dati sull'Italia sono nel report completo, a pagamento: non trovati.</p>
+
+  <p><strong>Disponibilità a pagare.</strong> Non ho trovato sondaggi italiani su quanto le persone siano disposte a spendere per prevenzione e longevity. Le 15–20 interviste previste dal team restano lo strumento principale.</p>
+
+  <h3>Quanti soci rinnovano: tre scenari</h3>
+  <p>Il dato "66% di rinnovo medio annuo nel fitness" non ha una fonte rintracciabile. Per il piano conviene usare tre scenari <span class="tag s">stima</span>.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Scenario</th><th>Rinnovo annuo</th><th>Soci persi al mese</th><th>Durata media di un socio</th></tr></thead>
+    <tbody>
+      <tr><td>Prudente</td><td class="r">50%</td><td class="r">5,6%</td><td class="r">~18 mesi</td></tr>
+      <tr class="hl"><td>Intermedio</td><td class="r">65%</td><td class="r">3,5%</td><td class="r">~28 mesi</td></tr>
+      <tr><td>Ottimista</td><td class="r">75%</td><td class="r">2,4%</td><td class="r">~42 mesi</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Calcolo: soci persi al mese = 1 − (rinnovo annuo)^(1/12). Durata media ≈ 1 diviso i soci persi al mese.</p>
+</section>
+
+<section id="ME-format">
+<div class="num">Capitolo 02</div>
+  <h2>Format esteri da cui prendere spunto</h2>
+  <p class="lead">Fuori dalle grandi capitali funziona lo "studio recovery" con abbonamento da 120–200 $ al mese. I club di lusso e la diagnostica pesante funzionano solo nelle metropoli o nelle zone molto ricche.</p>
+  <div class="key"><span class="label">In breve</span>
+    <ul class="list">
+      <li>Perspire è l'unico format con un conto economico pubblico: uno studio su sei perde soldi, gli altri guadagnano il 10–27%.</li>
+      <li>Sotto circa 450k $ di ricavi l'anno (circa 400k €) lo studio non sta in piedi.</li>
+      <li>Restore Hyper Wellness è grande ma in difficoltà: tra il 2023 e il 2025 ha perso 49 franchising, tra chiusure e cessioni.</li>
+      <li>I problemi nascono quando si sommano investimento vicino a 1 M$, flebo vendute come al negozio ed espansione troppo rapida.</li>
+      <li>Il format più vicino all'idea di Modena è il Longevity Hub di Clinique La Prairie a Madrid: 600 m², longevity ed estetica.</li>
+    </ul>
+  </div>
+  <p class="note">I prezzi esteri sono nella valuta originale. Per farsi un'idea: 1 $ ≈ 0,88 € e 1 £ ≈ 1,15 € <span class="tag s">stima</span>. FDD è il documento informativo che i franchisor americani devono pubblicare: contiene investimenti, ricavi e chiusure.</p>
+
+  <h3>Confronto rapido</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Format</th><th>Città</th><th>Prezzo</th><th>Numeri noti</th><th>In città medie?</th></tr></thead>
+    <tbody>
+      <tr class="hl"><td>Perspire Sauna Studio</td><td>USA, 72 studi</td><td>119–199 $/mese <span class="tag r">riferito</span></td><td>Ricavo medio ~550k $ <span class="tag s">stima</span> <sup><a href="#ME-22">22</a></sup></td><td><span class="dot g"></span> sì</td></tr>
+      <tr><td>Restore Hyper Wellness</td><td>USA, 212 sedi</td><td>non trovato</td><td>Ricavo medio 1,03 M$ <span class="tag r">riferito</span> <sup><a href="#ME-23">23</a></sup></td><td><span class="dot y"></span> con cautela</td></tr>
+      <tr><td>Next Health</td><td>USA, 22 sedi</td><td>Medicina, tecnologie ed estetica</td><td>Esami del sangue, crio, VISIA e InBody inclusi nell'abbonamento <sup><a href="#ME-24">24</a></sup>; investimento 1,67–2,32 M$ per sede <span class="tag r">riferito</span> <sup><a href="#ME-25">25</a></sup></td></tr>
+      <tr><td>SWTHZ / Sweathouz</td><td>USA, 80+ sedi</td><td>non trovato</td><td>Ricavo medio 574k $ (13 sedi) <span class="tag r">riferito</span> <sup><a href="#ME-26">26</a></sup></td><td><span class="dot y"></span> con cautela</td></tr>
+      <tr><td>Next Health</td><td>22 sedi, anche in sobborghi</td><td>varia per sede <sup><a href="#ME-24">24</a></sup></td><td>Investimento 1,67–2,32 M$ <span class="tag r">riferito</span> <sup><a href="#ME-25">25</a></sup></td><td><span class="dot y"></span> con cautela</td></tr>
+      <tr><td>Remedy Place</td><td>Los Angeles, New York, Boston</td><td>249–3.500 $/mese <sup><a href="#ME-27">27</a></sup></td><td>Massimo 200 soci per club <sup><a href="#ME-27">27</a></sup></td><td><span class="dot r"></span> no</td></tr>
+      <tr><td>Pulse Club</td><td>Londra, 2 sedi</td><td>45–139 £/mese <sup><a href="#ME-28">28</a></sup></td><td>non trovati</td><td><span class="dot g"></span> sì</td></tr>
+      <tr><td>Clinique La Prairie Hub</td><td>Madrid, Dubai, Doha, Pechino</td><td>non trovato</td><td>600 m² a Madrid <sup><a href="#ME-29">29</a></sup></td><td><span class="dot y"></span> con cautela</td></tr>
+      <tr><td>Neko Health</td><td>8 cliniche in Europa + New York</td><td>299 £ / 499 $ <span class="tag r">riferito</span></td><td>Raccolti 960 M$ in due round <span class="tag r">riferito</span> <sup><a href="#ME-30">30</a></sup> <sup><a href="#ME-31">31</a></sup></td><td><span class="dot r"></span> no</td></tr>
+      <tr><td>HUM2N</td><td>Londra</td><td>495–695 £/mese + attivazione <sup><a href="#ME-32">32</a></sup></td><td>non trovati</td><td><span class="dot y"></span> con cautela</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Le schede dei format più utili</h3>
+
+  <article class="card" id="ME-perspire">
+    <header>
+      <h3 class="card-t">Perspire Sauna Studio</h3>
+      <p class="card-s">Stati Uniti · studio recovery in franchising · 72 studi a fine 2024</p>
+      <div class="chips">
+        <span class="chip">Franchising</span>
+        <span class="chip">Senza medico</span>
+        <span class="chip ok">Cresce</span>
+      </div>
+    </header>
+    <p class="card-lead">Suite private con sauna a infrarossi, luce rossa e doccia fredda, vendute ad abbonamento. È l'unico format con un conto economico per studio reso pubblico, quindi il riferimento più utile per i numeri.</p>
+    <dl class="facts">
+      <div><dt>Offerta</dt><dd>Sauna a infrarossi, luce rossa e acqua fredda in suite private.</dd></div>
+      <div><dt>Prezzi</dt><dd>4 sessioni 119 $, 8 sessioni 169 $, illimitato 199 $ al mese <span class="tag r">riferito</span> (pagine locali, 2026)</dd></div>
+      <div><dt>Numeri reali</dt><dd>
+        <ul>
+          <li>Ricavi 2024 per quartile: 734k $, 615k $, 497k $, 352k $; minimo 255k $ <sup><a href="#ME-22">22</a></sup>.</li>
+          <li>Soci di uno studio nuovo: 211 al primo mese, 257 al sesto <sup><a href="#ME-22">22</a></sup>.</li>
+          <li>Investimento iniziale 523k–1,15 M$ <span class="tag d">dichiarato</span> <sup><a href="#ME-33">33</a></sup>.</li>
+        </ul>
+      </dd></div>
+      <div><dt>Reputazione</dt><dd>Non rilevata in questa ricerca.</dd></div>
+      <div><dt>Come sta andando</dt><dd>Da 30 a 72 studi tra il 2022 e il 2024, senza chiusure dichiarate <sup><a href="#ME-22">22</a></sup>.</dd></div>
+    </dl>
+    <div class="tw"><table>
+      <thead><tr><th>Studio della casa madre (2024)</th><th>Ricavi</th><th>Utile</th><th>Margine</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td class="r">742.031 $</td><td class="r">190.685 $</td><td class="r">25,7%</td></tr>
+        <tr><td>2</td><td class="r">661.264 $</td><td class="r">178.514 $</td><td class="r">27,0%</td></tr>
+        <tr class="hl"><td>3</td><td class="r">475.992 $</td><td class="r">−73.731 $</td><td class="r">−15,5%</td></tr>
+        <tr><td>4</td><td class="r">719.907 $</td><td class="r">180.876 $</td><td class="r">25,1%</td></tr>
+        <tr><td>5</td><td class="r">374.324 $</td><td class="r">37.846 $</td><td class="r">10,1%</td></tr>
+        <tr><td>6</td><td class="r">718.627 $</td><td class="r">163.453 $</td><td class="r">22,8%</td></tr>
+      </tbody>
+    </table></div>
+    <p class="note">Il costo del manager è escluso. Le lenzuola e gli asciugamani da lavare costano 36–71k $ l'anno, circa il 10% dei ricavi <sup><a href="#ME-22">22</a></sup>. Tempo per recuperare l'investimento: circa 7,4 anni <span class="tag s">stima</span> (utile medio ~113k $ su un investimento di 835k $).</p>
+    <div class="swot">
+      <div class="pro"><h4>Punti di forza</h4><ul><li>Format semplice, personale ridotto.</li><li>Tre abbonamenti chiari, in base al numero di sessioni.</li></ul></div>
+      <div class="con"><h4>Punti deboli</h4><ul><li>Uno studio su sei è in perdita.</li><li>Recupera l'investimento lentamente.</li></ul></div>
+      <div class="copy"><h4>Da copiare</h4><ul><li>Suite private con più tecnologie nello stesso box.</li><li>Abbonamenti a 4, 8 o illimitate sessioni.</li><li>Obiettivo di 250–380 soci.</li></ul></div>
+      <div class="avoid"><h4>Da evitare</h4><ul><li>Un piano con ricavi sotto i 450k $ l'anno.</li><li>Sottostimare i costi di lavanderia.</li></ul></div>
+    </div>
+  </article>
+
+  <article class="card" id="ME-restore">
+    <header>
+      <h3 class="card-t">Restore Hyper Wellness</h3>
+      <p class="card-s">Stati Uniti · catena di recovery e flebo in franchising · 212 sedi</p>
+      <div class="chips">
+        <span class="chip">Franchising</span>
+        <span class="chip">Con medico</span>
+        <span class="chip bad">In difficoltà</span>
+      </div>
+    </header>
+    <p class="card-lead">La catena più grande del settore: criosauna, flebo, luce rossa, sauna a infrarossi e camera iperbarica. Mostra i ricavi che si possono raggiungere, e anche i rischi di una crescita troppo veloce.</p>
+    <dl class="facts">
+      <div><dt>Offerta</dt><dd>Crio, flebo e NAD+, luce rossa, infrarossi, compressione, camera iperbarica.</dd></div>
+      <div><dt>Prezzi</dt><dd>Non trovati.</dd></div>
+      <div><dt>Numeri reali</dt><dd>
+        <ul>
+          <li>Ricavo medio per sede 1.031.755 $ (2025), mediana 955.863 $ <span class="tag r">riferito</span> <sup><a href="#ME-23">23</a></sup>.</li>
+          <li>Il quarto delle sedi più deboli fattura in media 647.742 $; la sede più debole 272.421 $ <span class="tag r">riferito</span> <sup><a href="#ME-23">23</a></sup>.</li>
+          <li>Investimento iniziale 762k–1,24 M$; royalty del 7% <span class="tag r">riferito</span> <sup><a href="#ME-23">23</a></sup> <sup><a href="#ME-34">34</a></sup>.</li>
+        </ul>
+      </dd></div>
+      <div><dt>Reputazione</dt><dd>Non rilevata in questa ricerca.</dd></div>
+      <div><dt>Come sta andando</dt><dd>I franchising sono passati da 214 a 209 nel 2024 <span class="tag r">riferito</span> <sup><a href="#ME-34">34</a></sup>. Tra il 2023 e il 2025, 49 franchising sono stati chiusi o ceduti <span class="tag r">riferito</span> <sup><a href="#ME-35">35</a></sup>.</dd></div>
+    </dl>
+    <div class="alert"><span class="label">Attenzione</span>I ricavi medi pubblicati non contano le sedi chiuse. Un quarto delle sedi fattura circa 650k $ a fronte di un investimento vicino a 1 M$.</div>
+    <div class="swot">
+      <div class="pro"><h4>Punti di forza</h4><ul><li>Marchio noto, menu ampio.</li><li>Abbonamenti a crediti mensili.</li></ul></div>
+      <div class="con"><h4>Punti deboli</h4><ul><li>Investimento alto per sede.</li><li>Rete in calo dal 2023.</li></ul></div>
+      <div class="copy"><h4>Da copiare</h4><ul><li>Abbonamento a crediti da spendere su più tecnologie.</li><li>Poche macchine molto usate al centro dell'offerta.</li></ul></div>
+      <div class="avoid"><h4>Da evitare</h4><ul><li>Flebo vendute senza un percorso medico.</li><li>Investire circa 1 M$ in una sola sede.</li></ul></div>
+    </div>
+  </article>
+
+  <article class="card" id="ME-remedy">
+    <header>
+      <h3 class="card-t">Remedy Place</h3>
+      <p class="card-s">Los Angeles, New York, Boston · club di benessere</p>
+      <div class="chips">
+        <span class="chip">Abbonamento</span>
+        <span class="chip">Con medico</span>
+        <span class="chip warn">Si riposiziona</span>
+      </div>
+    </header>
+    <p class="card-lead">Un club esclusivo che offre recupero e socialità senza alcol. Ci interessa per come costruisce l'abbonamento: livelli molto distanziati e numero di soci limitato.</p>
+    <dl class="facts">
+      <div><dt>Offerta</dt><dd>Bagno freddo, crio e compressione illimitati, più un credito mensile per le altre tecnologie <sup><a href="#ME-27">27</a></sup>.</dd></div>
+      <div><dt>Prezzi</dt><dd>Da 249 $ a 2.500 $ al mese a Los Angeles; da 299 $ a 3.500 $ a New York; da 250 $ a Boston (novembre 2026) <sup><a href="#ME-27">27</a></sup></dd></div>
+      <div><dt>Numeri reali</dt><dd>Al massimo 200 soci per club <sup><a href="#ME-27">27</a></sup>. Nel 2022 un prestito ponte da 5 M$ e una sede a New York di circa 670 m² <span class="tag r">riferito</span> <sup><a href="#ME-36">36</a></sup>.</dd></div>
+      <div><dt>Reputazione</dt><dd>Non rilevata in questa ricerca.</dd></div>
+      <div><dt>Come sta andando</dt><dd>Nel 2022 l'ingresso a New York costava 600 $ con un tetto di 300 soci <span class="tag r">riferito</span> <sup><a href="#ME-36">36</a></sup>. Oggi parte da 299 $ con un tetto di 200: un riposizionamento.</dd></div>
+    </dl>
+    <div class="swot">
+      <div class="pro"><h4>Punti di forza</h4><ul><li>Esperienza curata e forte senso di comunità.</li></ul></div>
+      <div class="con"><h4>Punti deboli</h4><ul><li>Metrature e costi da grande capitale.</li></ul></div>
+      <div class="copy"><h4>Da copiare</h4><ul><li>Un tetto di soci dichiarato, che rende l'accesso desiderabile.</li><li>Un prezzo riservato ai soci sui trattamenti extra.</li></ul></div>
+      <div class="avoid"><h4>Da evitare</h4><ul><li>Prezzi da 2.000–3.500 $ al mese: a Modena non hanno un pubblico.</li></ul></div>
+    </div>
+  </article>
+
+  <article class="card" id="ME-pulse">
+    <header>
+      <h3 class="card-t">Pulse Club</h3>
+      <p class="card-s">Londra, Fulham e Putney · club di sauna e bagno freddo</p>
+      <div class="chips">
+        <span class="chip">Abbonamento</span>
+        <span class="chip">Senza medico</span>
+        <span class="chip">Non noto</span>
+      </div>
+    </header>
+    <p class="card-lead">Sauna finlandese e vasche fredde in sessioni a orario. È il formato caldo-freddo più semplice ed economico da replicare.</p>
+    <dl class="facts">
+      <div><dt>Offerta</dt><dd>Sauna finlandese e bagno freddo, a sessioni.</dd></div>
+      <div><dt>Prezzi</dt><dd>4 sessioni 45–59 £, 8 sessioni 79–99 £, illimitato 139 £ al mese; una sessione singola 17–22 £ (novembre 2026) <sup><a href="#ME-28">28</a></sup></dd></div>
+      <div><dt>Numeri reali</dt><dd>Non trovati.</dd></div>
+      <div><dt>Reputazione</dt><dd>Non rilevata in questa ricerca.</dd></div>
+      <div><dt>Come sta andando</dt><dd>Due sedi. Club simili: Community Sauna Baths, 5 sedi, da 37–45 £ al mese <sup><a href="#ME-37">37</a></sup>.</dd></div>
+    </dl>
+    <div class="swot">
+      <div class="pro"><h4>Punti di forza</h4><ul><li>Investimento contenuto e prezzi chiari.</li></ul></div>
+      <div class="con"><h4>Punti deboli</h4><ul><li>Ricavo per cliente basso.</li></ul></div>
+      <div class="copy"><h4>Da copiare</h4><ul><li>Prezzi diversi negli orari di punta e fuori punta, per riempire le fasce morte.</li><li>Sessioni guidate in piccoli gruppi.</li></ul></div>
+      <div class="avoid"><h4>Da evitare</h4><ul><li>Saune giganti (Arc ne ha una da 65 posti): servono i volumi di una metropoli.</li></ul></div>
+    </div>
+  </article>
+
+  <article class="card" id="ME-clp">
+    <header>
+      <h3 class="card-t">Clinique La Prairie Longevity Hub</h3>
+      <p class="card-s">Madrid, Calle Fortuny 6 · centro di longevity in città · altri a Dubai, Doha, Pechino</p>
+      <div class="chips">
+        <span class="chip">Programma medico</span>
+        <span class="chip">Con medico</span>
+        <span class="chip ok">Cresce</span>
+      </div>
+    </header>
+    <p class="card-lead">È il format europeo più vicino all'idea di Modena. In 600 m² mette insieme longevity, benessere ed estetica con macchine, sotto un marchio di lusso.</p>
+    <dl class="facts">
+      <div><dt>Offerta</dt><dd>Crio, HydraFacial, laser CO₂, Exilis, Ultraformer, fili; un'"esperienza firma" di 3 ore <sup><a href="#ME-29">29</a></sup>.</dd></div>
+      <div><dt>Prezzi</dt><dd>Non trovati.</dd></div>
+      <div><dt>Numeri reali</dt><dd>600 m² a Madrid <sup><a href="#ME-29">29</a></sup>. Ha lanciato un fondo di investimento sulla longevity; un hub a Milano da 5–10 M€ è in valutazione <sup><a href="#ME-20">20</a></sup>.</dd></div>
+      <div><dt>Reputazione</dt><dd>Non rilevata in questa ricerca.</dd></div>
+      <div><dt>Come sta andando</dt><dd>Apre nuovi hub: Pechino nel 2026, New York in arrivo <sup><a href="#ME-29">29</a></sup>.</dd></div>
+    </dl>
+    <div class="swot">
+      <div class="pro"><h4>Punti di forza</h4><ul><li>Marchio storico, mix di medicina ed estetica.</li></ul></div>
+      <div class="con"><h4>Punti deboli</h4><ul><li>Prezzi non pubblici.</li></ul></div>
+      <div class="copy"><h4>Da copiare</h4><ul><li>Tre aree chiare in una sola sede: longevity, benessere, estetica.</li><li>Un percorso d'ingresso lungo e curato.</li></ul></div>
+      <div class="avoid"><h4>Da evitare</h4><ul><li>Un menu di macchine estetiche troppo lungo per un centro piccolo.</li></ul></div>
+    </div>
+  </article>
+
+  <article class="card" id="ME-neko">
+    <header>
+      <h3 class="card-t">Neko Health</h3>
+      <p class="card-s">Stoccolma, Londra, Manchester, Birmingham, New York · check-up con scanner corporeo</p>
+      <div class="chips">
+        <span class="chip">A seduta</span>
+        <span class="chip">Con medico</span>
+        <span class="chip ok">Cresce</span>
+      </div>
+    </header>
+    <p class="card-lead">Un check-up completo in circa un'ora con uno scanner proprietario. Non si può copiare, ma fissa quanto il cliente si aspetta di pagare.</p>
+    <dl class="facts">
+      <div><dt>Offerta</dt><dd>Scansione del corpo, esami e colloquio con un medico.</dd></div>
+      <div><dt>Prezzi</dt><dd>299 £ nel Regno Unito <span class="tag r">riferito</span> <sup><a href="#ME-31">31</a></sup>; 499 $ a New York (2026) <span class="tag r">riferito</span> <sup><a href="#ME-38">38</a></sup></dd></div>
+      <div><dt>Numeri reali</dt><dd>Raccolti 260 M$ nel 2025 <sup><a href="#ME-30">30</a></sup> e 700 M$ nel 2026, con una valutazione di circa 7 mld $. Circa 100.000 scansioni e 350.000 persone in lista d'attesa <span class="tag r">riferito</span> <sup><a href="#ME-31">31</a></sup>.</dd></div>
+      <div><dt>Reputazione</dt><dd>Non rilevata in questa ricerca.</dd></div>
+      <div><dt>Come sta andando</dt><dd>8 cliniche in Europa; New York aperta nel 2026 <span class="tag r">riferito</span> <sup><a href="#ME-38">38</a></sup>.</dd></div>
+    </dl>
+    <div class="swot">
+      <div class="pro"><h4>Punti di forza</h4><ul><li>Esperienza rapida, prezzo chiaro.</li></ul></div>
+      <div class="con"><h4>Punti deboli</h4><ul><li>Ha bisogno di tecnologia propria e di molti capitali.</li></ul></div>
+      <div class="copy"><h4>Da copiare</h4><ul><li>Un check-up d'ingresso a prezzo unico e pubblico.</li><li>Un risultato chiaro, da portare a casa.</li></ul></div>
+      <div class="avoid"><h4>Da evitare</h4><ul><li>Inseguire la diagnostica per immagini in sede.</li></ul></div>
+    </div>
+  </article>
+
+  <article class="card" id="ME-hum2n">
+    <header>
+      <h3 class="card-t">HUM2N</h3>
+      <p class="card-s">Londra, Chelsea e Six Senses · clinica di longevity a programma</p>
+      <div class="chips">
+        <span class="chip">Programma medico</span>
+        <span class="chip">Con medico</span>
+        <span class="chip">Non noto</span>
+      </div>
+    </header>
+    <p class="card-lead">Programmi medici di longevity con una quota di attivazione e un canone mensile. È uno schema di prezzo che fa entrare cassa subito.</p>
+    <dl class="facts">
+      <div><dt>Offerta</dt><dd>Camera iperbarica, crio, NAD+, ozono, estetica rigenerativa.</dd></div>
+      <div><dt>Prezzi</dt><dd>Foundations 495 £ al mese + 995 £ di attivazione, oppure 6.241 £ anticipati. Longevity Optimisation 695 £ al mese + 1.495 £, oppure 8.852 £ (novembre 2026) <sup><a href="#ME-32">32</a></sup></dd></div>
+      <div><dt>Numeri reali</dt><dd>Non trovati.</dd></div>
+      <div><dt>Reputazione</dt><dd>Non rilevata in questa ricerca.</dd></div>
+      <div><dt>Come sta andando</dt><dd>Due sedi a Londra.</dd></div>
+    </dl>
+    <div class="swot">
+      <div class="pro"><h4>Punti di forza</h4><ul><li>Prezzi pubblici e chiari.</li></ul></div>
+      <div class="con"><h4>Punti deboli</h4><ul><li>Menu medico ampio, con trattamenti delicati in Italia (ozono, flebo).</li></ul></div>
+      <div class="copy"><h4>Da copiare</h4><ul><li>Quota di attivazione + canone mensile.</li><li>Uno sconto per chi paga l'anno in anticipo.</li></ul></div>
+      <div class="avoid"><h4>Da evitare</h4><ul><li>Promozioni sulla parte medica: in Italia la pubblicità sanitaria ha dei limiti.</li></ul></div>
+    </div>
+  </article>
+
+
+  <h3>Gli altri format, in breve</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Nome</th><th>Città</th><th>Tipo</th><th>Nota</th></tr></thead>
+    <tbody>
+      <tr><td>SWTHZ / Sweathouz</td><td>USA, 80+ sedi</td><td>Caldo-freddo in franchising</td><td>Ricavi simili a Perspire, ma l'investimento è più alto: 632k–1,31 M$ <span class="tag r">riferito</span> <sup><a href="#ME-26">26</a></sup></td></tr>
+      <tr><td>Othership</td><td>Toronto, New York</td><td>Sauna con classi guidate</td><td>4 sedi; prezzi non trovati <sup><a href="#ME-39">39</a></sup></td></tr>
+      <tr><td>Arc</td><td>Londra</td><td>Club caldo-freddo</td><td>Sauna da 65 posti; prova 49 £ per 3 classi <sup><a href="#ME-40">40</a></sup></td></tr>
+      <tr><td>Rebase</td><td>Londra</td><td>Recovery premium</td><td>475 £ al mese per 8 sessioni caldo-freddo + 4 crio <span class="tag r">riferito</span></td></tr>
+      <tr><td>Third Space</td><td>Londra, 16 palestre</td><td>Recovery come extra della palestra</td><td>Recovery 165 £ al mese, solo per i soci (palestra da 257 £) <sup><a href="#ME-41">41</a></sup></td></tr>
+      <tr><td>Lanserhof at The Arts Club</td><td>Londra</td><td>Medicina dentro un club privato</td><td>Da circa 334 £ al mese secondo la stampa <span class="tag r">riferito</span> <sup><a href="#ME-42">42</a></sup>; il gestore non pubblica prezzi <sup><a href="#ME-43">43</a></sup></td></tr>
+      <tr><td>Hooke</td><td>Londra</td><td>Check-up medico di un giorno</td><td>Primo consulto 300 £ <sup><a href="#ME-44">44</a></sup></td></tr>
+      <tr><td>Function Health</td><td>USA, online</td><td>Esami del sangue in abbonamento</td><td>365 $ l'anno per oltre 160 esami <sup><a href="#ME-45">45</a></sup></td></tr>
+      <tr><td>Biograph, Fountain Life</td><td>USA</td><td>Diagnostica pesante (risonanza, TC)</td><td>Prezzi non trovati; fuori scala per noi <sup><a href="#ME-46">46</a></sup> <sup><a href="#ME-47">47</a></sup></td></tr>
+      <tr><td>Ayun</td><td>Zurigo</td><td>Istituto medico di longevity</td><td>Check-up a tre livelli, IHHT, camera iperbarica; prezzi non trovati <sup><a href="#ME-48">48</a></sup></td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Non trovati: Elevate, ZEM, il format Aware di Lanserhof e altri casi in Germania, Spagna e Francia.</p>
+
+  <h3>Fallimenti e difficoltà documentati</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Caso</th><th>Cosa è successo</th></tr></thead>
+    <tbody>
+      <tr><td>Restore Hyper Wellness</td><td>18 sedi chiuse nel 2024; 49 franchising chiusi o ceduti tra il 2023 e il 2025 <span class="tag r">riferito</span> <sup><a href="#ME-34">34</a></sup> <sup><a href="#ME-35">35</a></sup></td></tr>
+      <tr><td>Centri di crioterapia in Colorado</td><td>Tre centri falliti a Cherry Creek e Boulder County. Il co-proprietario li definisce "an absolute dumpster fire", cioè un disastro <sup><a href="#ME-49">49</a></sup></td></tr>
+      <tr><td>The DRIPBaR (catena di flebo, 100+ sedi)</td><td>La sede di Charlottesville è stata chiusa dopo un'ispezione dell'agenzia del farmaco americana (FDA) e della polizia statale <sup><a href="#ME-50">50</a></sup></td></tr>
+      <tr><td>Perspire, studio n. 3</td><td>Perdita di 73.731 $ con 476k $ di ricavi <sup><a href="#ME-22">22</a></sup></td></tr>
+    </tbody>
+  </table></div>
+  <p>I problemi nascono quando si sommano tre fattori:</p>
+  <ol class="list">
+    <li>investimento vicino a 1 M$ con ricavi sotto i 650k $;</li>
+    <li>flebo o servizi "medici leggeri" venduti come in un negozio;</li>
+    <li>espansione troppo veloce in franchising.</li>
+  </ol>
+
+  <div class="key"><span class="label">In sintesi</span>
+    <p>Con ricavi annui sotto circa 450k $ (circa 400k €) lo studio Perspire non regge <span class="tag s">stima</span>. Il numero viene dal conto economico pubblico: lo studio a 476k $ perde il 15%, quello a 374k $ guadagna appena il 10%. Il centro di Modena avrà costi diversi, quindi la soglia vale come ordine di grandezza.</p>
+  </div>
+
+  <h3>Cosa funziona in una città come Modena</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Tipo di format</th><th>Esempi</th><th>Dove funziona</th></tr></thead>
+    <tbody>
+      <tr><td>Studio recovery, 120–200 $ al mese</td><td>Perspire, SWTHZ, Restore, Pulse</td><td><span class="dot g"></span> sì: anche città medie e sobborghi (Perspire è a West Des Moines, Kyle, Draper) <span class="tag r">riferito</span></td></tr>
+      <tr><td>Medicina ed estetica premium</td><td>Next Health, Clinique La Prairie, HUM2N</td><td><span class="dot y"></span> con cautela: sobborghi ricchi di grandi città</td></tr>
+      <tr><td>Club esclusivo, 250–3.500 $ al mese</td><td>Remedy Place, Lanserhof</td><td><span class="dot r"></span> no: solo capitali o zone molto ricche</td></tr>
+      <tr><td>Diagnostica pesante</td><td>Neko, Biograph, Fountain Life</td><td><span class="dot r"></span> no: capitali</td></tr>
+    </tbody>
+  </table></div>
+  <p>Uno spunto per la discussione <span class="tag s">stima</span>: abbonamenti recovery come base; sopra, un programma medico-estetico con attivazione e canone; all'ingresso, un check-up incluso nella quota.</p>
+</section>
+
+<section id="ME-tecnologie">
+<div class="num">Capitolo 03</div>
+  <h2>Quanto costano e quanto rendono le macchine</h2>
+  <p class="lead">Le macchine estetiche per il viso rendono molto per ogni ora di stanza, ma richiedono il medico e clienti che spendono 700–2.000 € a seduta. Le tecnologie di recupero costano poco e creano frequenza: tengono i soci, non fanno il margine.</p>
+  <div class="key"><span class="label">In breve</span>
+    <ul class="list">
+      <li>Ultherapy e Morpheus8 hanno i conti migliori: bastano circa 2–3 sedute al mese per coprire la macchina. Servono il medico e clienti disposti a spendere.</li>
+      <li>XERF: il distributore italiano è Bioskin, a Bologna. Il prezzo della macchina è solo su preventivo, con leasing o noleggio disponibili.</li>
+      <li>Per quasi tutte le macchine il prezzo è "solo su preventivo". I conti qui sotto sono stime da sostituire con le offerte reali.</li>
+      <li>Luce rossa, compressione e IHHT si ripagano con poche sedute, ma rendono 50–170 € per ora di stanza.</li>
+      <li>La crio è la scelta più rischiosa: c'è già a Modena e richiede 70–120 sedute al mese per stare in pari.</li>
+    </ul>
+  </div>
+
+  <h3>Le ipotesi dei conti</h3>
+  <ul class="list">
+    <li><strong>Leasing:</strong> 60 mesi al 7%, senza anticipo. La rata è circa 19,8 € al mese per ogni 1.000 € finanziati <span class="tag s">stima</span>. Il 7% è il tasso della Banca centrale europea (BCE) più un margine per una piccola impresa nuova.</li>
+    <li><strong>Prezzi:</strong> i prezzi al pubblico includono l'IVA al 22%. Nei conti uso il prezzo diviso 1,22.</li>
+    <li><strong>Personale:</strong> 25 € l'ora a carico dell'azienda.</li>
+    <li><strong>Pareggio</strong> = (rata + costi fissi della macchina) diviso (prezzo netto − consumabile − personale). Non include affitto, marketing e struttura.</li>
+    <li><strong>Ricavo per ora di stanza</strong> = prezzo netto × sedute in un'ora.</li>
+  </ul>
+
+  <h3>La classifica</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Tecnologia</th><th>Investimento</th><th>Ricavo per ora di stanza</th><th>Sedute/mese per il pareggio</th><th>Serve il medico?</th><th>Giudizio</th></tr></thead>
+    <tbody>
+      <tr class="hl"><td>Ultherapy Prime</td><td>Su preventivo; 70–120k $ <span class="tag r">riferito</span></td><td class="r">~1.300 €</td><td class="r">~2–3</td><td>Sì</td><td><span class="dot g"></span> forte, con clienti da 2.000 €</td></tr>
+      <tr class="hl"><td>Morpheus8 usato</td><td>40–50k € in Italia</td><td class="r">~570 €</td><td class="r">~3</td><td>Sì</td><td><span class="dot g"></span> miglior rapporto valore/investimento</td></tr>
+      <tr><td>XERF</td><td>Su preventivo (Bioskin)</td><td class="r">non noto</td><td class="r">~2 (ipotesi)</td><td>Probabile</td><td><span class="dot y"></span> da approfondire subito</td></tr>
+      <tr><td>Thermage FLX</td><td>60–110k $ <span class="tag r">riferito</span></td><td class="r">~1.000 € lordi</td><td class="r">da 5 a mai</td><td>Probabile</td><td><span class="dot y"></span> con cautela: decide il puntale</td></tr>
+      <tr><td>Sofwave</td><td>Su preventivo</td><td class="r">non noto</td><td class="r">non noto</td><td>Probabile</td><td><span class="dot y"></span> dati insufficienti</td></tr>
+      <tr><td>Emsculpt NEO usato</td><td>68–70k € in Italia</td><td class="r">~330 €</td><td class="r">~8</td><td>Valuta il medico</td><td><span class="dot y"></span> medio: c'è già a Modena</td></tr>
+      <tr><td>HydraFacial</td><td>25–120k $ <span class="tag r">riferito</span></td><td class="r">~160 €</td><td class="r">~7</td><td>No (da verificare)</td><td><span class="dot g"></span> buona porta d'ingresso per il viso</td></tr>
+      <tr><td>Stanza caldo-freddo</td><td>Su preventivo</td><td class="r">~172 € a stanza piena</td><td class="r">~99 ingressi</td><td>No</td><td><span class="dot g"></span> interessante per l'abbonamento</td></tr>
+      <tr><td>Luce rossa, pannello</td><td>3,7k €</td><td class="r">~74 €</td><td class="r">~3</td><td>No</td><td><span class="dot g"></span> rischio minimo</td></tr>
+      <tr><td>IHHT a noleggio</td><td>non trovato</td><td class="r">~49–64 € a postazione</td><td class="r">~10–15</td><td>Consigliato</td><td><span class="dot y"></span> da validare</td></tr>
+      <tr><td>Compressione</td><td>da 0,5k €</td><td class="r">~57 € a postazione</td><td class="r">~4</td><td>No</td><td><span class="dot g"></span> sì, in una stanza relax</td></tr>
+      <tr><td>Criocamera elettrica</td><td>70–250k € <span class="tag r">riferito</span></td><td class="r">~148–213 €</td><td class="r">~78–117</td><td>No</td><td><span class="dot r"></span> rischio di capitale più alto</td></tr>
+      <tr><td>Criosauna ad azoto</td><td>35–64k €</td><td class="r">~148 € lordi</td><td class="r">~70</td><td>No</td><td><span class="dot r"></span> no, salvo azoto a basso costo</td></tr>
+      <tr><td>Camera iperbarica morbida</td><td>Su preventivo</td><td class="r">~52–66 €</td><td class="r">~8</td><td>Sì / zona grigia</td><td><span class="dot r"></span> rimandare</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Ricavi per ora e sedute per il pareggio sono stime nostre.</p>
+
+  <div class="alert"><span class="label">Attenzione</span>La crio a Modena c'è già (The Longevity Suite, Body Twenty) e richiede molti ingressi. Una criocamera elettrica da circa 135k € installata ha bisogno di circa 78–117 sedute al mese. La criosauna ad azoto va in perdita se l'azoto costa più di circa 1,5 € al litro.</div>
+
+  <div class="key"><span class="label">In sintesi</span>
+    <p>Le macchine medico-estetiche rendono per ora di stanza da 5 a 20 volte più del recovery. Il recovery costa poco e porta le persone a tornare: tiene i soci, non fa il margine.</p>
+  </div>
+
+  <h3>Macchine per viso e corpo</h3>
+
+  <h4>Ultherapy Prime (Merz): ultrasuoni per il lifting del viso</h4>
+  <ul class="list">
+    <li><strong>Distributore:</strong> Merz, direttamente <span class="tag n">da verificare</span>.</li>
+    <li><strong>Costi:</strong> macchina solo su preventivo; stime 70–120k $ <span class="tag r">riferito</span> <sup><a href="#ME-51">51</a></sup>. In Italia un "Ultherapy" usato a 5.000 € a Bologna, modello non indicato <sup><a href="#ME-52">52</a></sup>. Il consumabile (trasduttore) costa circa 600–800 $ a trattamento <span class="tag r">riferito</span> <sup><a href="#ME-53">53</a></sup>.</li>
+    <li><strong>Prezzo a seduta:</strong> CMO Milano circa 2.000 € il viso e 2.500 € viso, collo e décolleté <sup><a href="#ME-54">54</a></sup>. Altri medici 2.000–4.000 € <sup><a href="#ME-55">55</a></sup>. Una seduta all'anno.</li>
+    <li><strong>Pareggio</strong> <span class="tag s">stima</span>: macchina 90k € → fissi ~2.280 € al mese; margine a seduta ~960 € → circa 2,4 sedute al mese.</li>
+  </ul>
+
+  <h4>Morpheus8 (InMode): radiofrequenza con micro-aghi</h4>
+  <ul class="list">
+    <li><strong>Distributore:</strong> <span class="tag n">da verificare</span>.</li>
+    <li><strong>Costi:</strong> usato in Italia 40.000 € (del 2023) e piattaforma Optimas completa 49–50k € <sup><a href="#ME-52">52</a></sup>. Nuovo 40–60k $ <span class="tag r">riferito</span> <sup><a href="#ME-51">51</a></sup>. Costo dei puntali: non trovato.</li>
+    <li><strong>Prezzo a seduta:</strong> listini italiani non trovati. In Germania 800 € il viso e 1.200 € viso e collo <sup><a href="#ME-56">56</a></sup>. Circa 3 sedute all'anno. Lo esegue il medico.</li>
+    <li><strong>Pareggio</strong> <span class="tag s">stima</span>: usato 45k € → ~1.140 € al mese; 700 € a seduta, puntale ipotetico 150 € → circa 2,7 sedute al mese.</li>
+  </ul>
+
+  <h4>XERF (Cynosure Lutronic): radiofrequenza a due frequenze</h4>
+  <ul class="list">
+    <li><strong>Distributore:</strong> Bioskin Italia, Bologna. Confermato sul suo sito <sup><a href="#ME-57">57</a></sup>.</li>
+    <li><strong>Costi:</strong> solo su preventivo, con leasing o noleggio <sup><a href="#ME-58">58</a></sup>. Consumabili non trovati.</li>
+    <li><strong>Prezzo a seduta:</strong> KinAura a Milano non lo pubblica: dipende da zona, età e numero di sedute <sup><a href="#ME-59">59</a></sup>. Negli USA 1.500–2.500 $ per viso e collo <span class="tag r">riferito</span>.</li>
+    <li><strong>Pareggio</strong> <span class="tag s">stima</span>: solo un esempio. Con una macchina da 60k € e 1.200 € a seduta, bastano circa 2 sedute al mese.</li>
+  </ul>
+
+  <h4>Thermage FLX (Solta): radiofrequenza per il viso</h4>
+  <ul class="list">
+    <li><strong>Distributore:</strong> non trovato.</li>
+    <li><strong>Costi:</strong> nuova 60–110k $, puntale monouso fino a circa 1.800 $ <span class="tag r">riferito</span> <sup><a href="#ME-51">51</a></sup>.</li>
+    <li><strong>Prezzo a seduta:</strong> Centro Medico Ambrosiano (Milano) da 1.500 € <sup><a href="#ME-60">60</a></sup>; un'altra clinica 1.200–1.250 € in promozione <sup><a href="#ME-61">61</a></sup>; media italiana 1.017 € <sup><a href="#ME-62">62</a></sup>.</li>
+    <li><strong>Pareggio</strong> <span class="tag s">stima</span>: con il puntale a 800 € servono circa 5 sedute al mese. A 1.200 € il conto non torna.</li>
+  </ul>
+
+  <h4>Sofwave e Volnewmer</h4>
+  <ul class="list">
+    <li><strong>Sofwave</strong> (ultrasuoni): la distribuisce Enermedica <sup><a href="#ME-63">63</a></sup>. Macchina e consumabili solo su preventivo. Prezzi italiani non trovati; negli USA 2.500–4.500 $ <span class="tag r">riferito</span>.</li>
+    <li><strong>Volnewmer</strong> (radiofrequenza, Classys): la distribuisce Bioskin, esclusivista Classys <span class="tag d">dichiarato</span> <sup><a href="#ME-57">57</a></sup>. Prezzi non trovati.</li>
+  </ul>
+
+  <h4>BTL: Emsculpt NEO, EMFACE, EXION</h4>
+  <ul class="list">
+    <li><strong>Costi:</strong> Emsculpt NEO usato 68.000 € + IVA (del 2024) <sup><a href="#ME-58">58</a></sup> e 70.000 € (del 2022) <sup><a href="#ME-64">64</a></sup>. EMFACE nuova 90–125k $ <span class="tag r">riferito</span> <sup><a href="#ME-51">51</a></sup>.</li>
+    <li><strong>Prezzo a seduta:</strong> a Milano Emsculpt 300 €, 4 sedute 1.200 € <sup><a href="#ME-65">65</a></sup>; un altro studio 300 € di listino <sup><a href="#ME-66">66</a></sup>. Un ciclo costa in media 2.400 € <sup><a href="#ME-67">67</a></sup>. Per EMFACE ed EXION non ho trovato prezzi italiani.</li>
+    <li><strong>Chi esegue:</strong> in alcune cliniche un infermiere sotto la direzione del medico <sup><a href="#ME-68">68</a></sup>.</li>
+    <li><strong>Pareggio</strong> <span class="tag s">stima</span>: usato 68k € → ~1.950 € al mese; 246 € netti a seduta → circa 8 sedute al mese.</li>
+  </ul>
+
+  <h4>HydraFacial, Endospheres, Icoone, LPG</h4>
+  <ul class="list">
+    <li><strong>HydraFacial:</strong> distributore non trovato. Prezzo della macchina incerto: 25–120k $ secondo blog commerciali <span class="tag r">riferito</span> <sup><a href="#ME-69">69</a></sup>. Una seduta in Italia costa circa 200–220 € <span class="tag r">riferito</span> <sup><a href="#ME-70">70</a></sup> <sup><a href="#ME-71">71</a></sup>.</li>
+    <li><strong>Pareggio HydraFacial</strong> <span class="tag s">stima</span>: macchina 35k € → ~700 € al mese; margine ~99 € a seduta → circa 7 sedute al mese.</li>
+    <li><strong>Endospheres</strong> è prodotta in Italia da Fenix Group (Pescara) <sup><a href="#ME-72">72</a></sup>. Prezzi non trovati.</li>
+    <li><strong>Icoone e LPG:</strong> non trovati.</li>
+  </ul>
+
+  <h3>Macchine per il recupero</h3>
+
+  <h4>Criocamera elettrica</h4>
+  <ul class="list">
+    <li><strong>Fornitori:</strong> Mecotec, senza un distributore italiano trovato. The Longevity Suite usa le sue cabine <sup><a href="#ME-73">73</a></sup>.</li>
+    <li><strong>Costi:</strong> Mecotec 70–250k €, Art of Cryo 98–295k £ <span class="tag r">riferito</span> <sup><a href="#ME-74">74</a></sup>. Consuma solo elettricità, niente azoto <span class="tag d">dichiarato</span> <sup><a href="#ME-75">75</a></sup>.</li>
+    <li><strong>Prezzo a seduta:</strong> The Longevity Suite Bologna 65 €; 10 sedute 500 €; illimitato 3.300 € l'anno, cioè 275 € al mese (listino scaduto a ottobre 2024) <sup><a href="#ME-76">76</a></sup>. Oggi online 3 sedute a 100 € <sup><a href="#ME-77">77</a></sup>. Take Care Milano "da 29 €" di lancio <sup><a href="#ME-78">78</a></sup>.</li>
+    <li><strong>Pareggio</strong> <span class="tag s">stima</span>: 135k € installata → ~3.800 € al mese di costi fissi → circa 117 sedute al mese a 45 €, oppure 78 a 65 €.</li>
+  </ul>
+
+  <h4>Criosauna ad azoto</h4>
+  <ul class="list">
+    <li><strong>Distributore:</strong> Crioterapia.com Italia, Milano, anche a noleggio; prezzi non pubblici <span class="tag r">riferito</span> <sup><a href="#ME-79">79</a></sup>.</li>
+    <li><strong>Costi:</strong> CryoSense 54.250 £ + IVA <sup><a href="#ME-80">80</a></sup>. L'azoto costa circa 3,67 € al litro in un ordine pubblico del 2024 <span class="tag r">riferito</span> <sup><a href="#ME-81">81</a></sup>. Ogni seduta consuma da 2,4 a oltre 10 litri.</li>
+    <li><strong>Prezzo a seduta:</strong> 50–70 €, fino a 100 € <sup><a href="#ME-82">82</a></sup>. A Modena Body Twenty non pubblica i prezzi <sup><a href="#ME-83">83</a></sup>.</li>
+    <li><strong>Pareggio</strong> <span class="tag s">stima</span>: 50k € e azoto a 1,5 € al litro → circa 70 sedute al mese. Con l'azoto a 3,67 € il margine diventa negativo.</li>
+  </ul>
+
+  <h4>Stanza caldo-freddo (sauna e bagno freddo)</h4>
+  <ul class="list">
+    <li><strong>Fornitori:</strong> Starpool, KLAFS, Effegibi, solo su preventivo <sup><a href="#ME-84">84</a></sup>. Vasche fredde: Ice Barrel 1.750 $ più refrigeratore 4.000 $, prezzi da consumatore <sup><a href="#ME-85">85</a></sup>; Plunge non pubblica il prezzo della linea professionale <sup><a href="#ME-86">86</a></sup>.</li>
+    <li><strong>Investimento:</strong> la cifra di 60–100k € circolata nel team non è verificata.</li>
+    <li><strong>Pareggio</strong> <span class="tag s">stima</span>: con 80k € e sessioni guidate da 6 persone a 35 € servono circa 99 ingressi al mese (17 sessioni piene).</li>
+  </ul>
+
+  <h4>Luce rossa</h4>
+  <ul class="list">
+    <li><strong>Costi:</strong> i lettini professionali (NovoTHOR, TheraLight, Prism) sono solo su preventivo <sup><a href="#ME-87">87</a></sup>. Take Care a Milano usa un pannello MITO LIGHT da 3.699 € <sup><a href="#ME-88">88</a></sup>.</li>
+    <li><strong>Prezzo a seduta:</strong> Take Care 45 € di listino, 25 € al lancio, 15–20 minuti di esposizione <sup><a href="#ME-89">89</a></sup>.</li>
+    <li><strong>Pareggio</strong> <span class="tag s">stima</span>: con il pannello bastano circa 3 sedute al mese; con un lettino ipotetico da 50k € ne servono circa 32.</li>
+  </ul>
+
+  <h4>IHHT (respirazione ad aria con meno e più ossigeno)</h4>
+  <ul class="list">
+    <li><strong>Fornitori:</strong> Cellgym, ReOxy di Aimediq, Mitovit. Nessun prezzo, noleggio o distributore italiano trovato <sup><a href="#ME-90">90</a></sup> <sup><a href="#ME-91">91</a></sup>.</li>
+    <li><strong>Diffusione:</strong> si trova nel 36% delle strutture longevity tedesche e in pochissime italiane <sup><a href="#ME-13">13</a></sup>.</li>
+    <li><strong>Pareggio</strong> <span class="tag s">stima</span>: con un noleggio di 411–650 € al mese e 60 € a seduta servono circa 10–15 sedute al mese. Sono ipotesi non verificate.</li>
+  </ul>
+
+  <h4>Camera iperbarica, galleggiamento a secco, compressione</h4>
+  <ul class="list">
+    <li><strong>Camera iperbarica:</strong> prezzi solo su preventivo <sup><a href="#ME-92">92</a></sup>. KinAura Milano 200 € a seduta <span class="tag r">riferito</span> <sup><a href="#ME-93">93</a></sup>. In Italia l'ossigenoterapia è un atto medico: prima di inserirla serve un parere legale.</li>
+    <li><strong>Galleggiamento a secco (Starpool Zerobody):</strong> macchina solo su preventivo; il materassino di ricambio costa da 1.170 € IVA esclusa <sup><a href="#ME-84">84</a></sup>. Prezzi italiani non trovati.</li>
+    <li><strong>Compressione:</strong> I-Tech I-Press, prodotta in Italia, da 499 €; circa 50 € a seduta <span class="tag d">dichiarato</span> <sup><a href="#ME-94">94</a></sup>. The Longevity Suite: 30 minuti 75 € <sup><a href="#ME-76">76</a></sup>. Pareggio <span class="tag s">stima</span>: circa 4 sedute al mese.</li>
+  </ul>
+
+  <h3>Macchine per le misure (diagnostica)</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Macchina</th><th>A cosa serve</th><th>Costo</th></tr></thead>
+    <tbody>
+      <tr><td>VISIA (Canfield)</td><td>Analisi della pelle</td><td>Solo su preventivo. Usata da KinAura e Next Health <sup><a href="#ME-59">59</a></sup> <sup><a href="#ME-24">24</a></sup></td></tr>
+      <tr><td>InBody o altra bioimpedenza</td><td>Composizione corporea</td><td>InBody non trovato. Un bioimpedenziometro usato costa 3.700 € <sup><a href="#ME-52">52</a></sup></td></tr>
+      <tr><td>DEXA</td><td>Grasso, muscolo e ossa con raggi X</td><td>Non trovato. Usa radiazioni: regole specifiche</td></tr>
+      <tr><td>Cosmed (azienda italiana)</td><td>Massimo consumo di ossigeno (VO₂max)</td><td>Solo su richiesta <sup><a href="#ME-95">95</a></sup></td></tr>
+      <tr><td>Strumenti HRV</td><td>Variabilità del battito, stress</td><td>Usato da 1.600 € <sup><a href="#ME-52">52</a></sup></td></tr>
+      <tr><td>Styku, Fit3D, Observ</td><td>Scansione 3D e analisi pelle</td><td>Non trovati</td></tr>
+    </tbody>
+  </table></div>
+  <p>La diagnostica è il cuore dell'abbonamento più che una fonte di margine. I clienti hanno già dei prezzi di riferimento: circa 300 £ per un check-up completo (Neko) e 365 $ l'anno per gli esami del sangue (Function) <sup><a href="#ME-45">45</a></sup>.</p>
+</section>
+
+<section id="ME-costi">
+<div class="num">Capitolo 04</div>
+  <h2>Costi di gestione di riferimento</h2>
+  <p class="lead">Stipendi e tassi del leasing sono verificabili. Mancano invece due dati chiave: il costo dell'allestimento al metro quadro e il compenso del medico.</p>
+  <div class="key"><span class="label">In breve</span>
+    <ul class="list">
+      <li>Un'estetista di 3° livello costa all'azienda circa 29.000 € l'anno <span class="tag s">stima</span>.</li>
+      <li>A Modena un'estetista guadagna circa 1.403 € al mese, secondo le segnalazioni raccolte da Indeed.</li>
+      <li>Da settembre 2026 il tasso principale della BCE è al 2,65%, in risalita. Nei conti usiamo un leasing al 7%, da confermare con le offerte.</li>
+      <li>Il costo dell'allestimento al m² e il compenso del medico estetico non sono stati trovati: servono preventivi.</li>
+    </ul>
+  </div>
+
+  <h3>Stipendi</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Ruolo</th><th>Dato</th><th>Nota</th></tr></thead>
+    <tbody>
+      <tr><td>Estetista, minimo del contratto nazionale (CCNL acconciatura ed estetica) dal 1/10/2026</td><td>1° livello 1.722,76 €; 2° 1.573,78 €; 3° 1.492,00 €; 4° 1.406,73 € lordi al mese <sup><a href="#ME-96">96</a></sup></td><td>La pagina non dice quante mensilità né il livello di un'estetista qualificata</td></tr>
+      <tr><td>Estetista, stipendio rilevato</td><td>Modena 1.403 €, Bologna 1.389 €, Italia 1.224 € al mese <sup><a href="#ME-97">97</a></sup></td><td>Non è chiaro se netto o lordo</td></tr>
+      <tr><td>Estetista, annuo</td><td>22.500 € (21.000–26.880 €) <sup><a href="#ME-98">98</a></sup></td><td>—</td></tr>
+      <tr class="hl"><td>Costo per l'azienda di un'estetista di 3° livello</td><td>circa 29.200 € l'anno <span class="tag s">stima</span></td><td>1.492 € × 14 mensilità × 1,40 di contributi e TFR. Da confermare con il consulente del lavoro</td></tr>
+      <tr><td>Receptionist</td><td>23.400 € l'anno <sup><a href="#ME-99">99</a></sup></td><td>—</td></tr>
+      <tr><td>Responsabile del centro</td><td>28.358 € l'anno (25.800–40.000 €) <sup><a href="#ME-100">100</a></sup></td><td>Dato riferito ai manager di spa</td></tr>
+      <tr><td>Infermiere libero professionista</td><td>13,85 € l'ora <sup><a href="#ME-101">101</a></sup></td><td>Poco affidabile: mescola dipendenti e liberi professionisti</td></tr>
+      <tr><td>Medico estetico, a giornata o in percentuale sui ricavi</td><td>non trovato</td><td>Il dato del portale Talent è incoerente</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Leasing e tassi</h3>
+  <ul class="list">
+    <li><strong>BCE:</strong> dal 16 settembre 2026 il tasso principale è al 2,65%. A giugno 2025 era al 2,15% <sup><a href="#ME-102">102</a></sup>. I tassi sono tornati a salire.</li>
+    <li><strong>Leasing per le attrezzature:</strong> UniCredit Leasing chiede un anticipo del 10–30% e prevede il riscatto finale. Il tasso non è pubblicato <sup><a href="#ME-103">103</a></sup>.</li>
+    <li><strong>Soglia d'usura</strong> (il tasso massimo di legge) per il leasing: non trovata, perché il sito della Banca d'Italia non era raggiungibile.</li>
+    <li><strong>Noleggio operativo:</strong> lo offrono Bioskin <sup><a href="#ME-104">104</a></sup> e Crioterapia.com <span class="tag r">riferito</span> <sup><a href="#ME-79">79</a></sup>, senza tariffe pubbliche.</li>
+  </ul>
+
+  <h3>Cosa non abbiamo trovato</h3>
+  <ul class="list">
+    <li><strong>Allestimento al m² in Nord Italia:</strong> non trovato. La guida dei costi di Cushman &amp; Wakefield non copre l'Italia <sup><a href="#ME-105">105</a></sup>. La cifra di 1.000–1.800 € al m² circolata nel team resta una stima da verificare.</li>
+    <li><strong>Riferimenti indiretti:</strong> nei franchising americani i lavori sui locali costano 325–600k $ per Restore e 366–719k $ per SWTHZ <span class="tag r">riferito</span> <sup><a href="#ME-34">34</a></sup> <sup><a href="#ME-26">26</a></sup>. The Longevity Suite chiede almeno 500k € per un franchising, con una royalty del 7% <span class="tag d">dichiarato</span> <sup><a href="#ME-106">106</a></sup>.</li>
+    <li><strong>Compenso del medico estetico:</strong> non trovato.</li>
+  </ul>
+
+  <h3>Preventivi e verifiche da fare</h3>
+  <ol class="list">
+    <li>Bioskin (Bologna): prezzo, consumabili, noleggio e prova di XERF e Volnewmer.</li>
+    <li>Merz (Ultherapy Prime), InMode Italia (Morpheus8 nuovo e usato certificato), Solta (costo dei puntali Thermage), BTL Italia (consumabili EMFACE), Enermedica (Sofwave).</li>
+    <li>Starpool, KLAFS, Effegibi: una stanza caldo-freddo per 6–8 persone.</li>
+    <li>Cellgym e Aimediq: noleggio di una o due postazioni IHHT.</li>
+    <li>Air Liquide, SIAD, Linde: prezzo dell'azoto, solo se si valuta la criosauna.</li>
+    <li>Canfield (VISIA), InBody, Cosmed: le macchine per le misure del check-up d'ingresso.</li>
+    <li>Due o tre preventivi di allestimento al m² e due o tre offerte di leasing (tasso, anticipo, riscatto).</li>
+    <li>Consulente del lavoro: livelli e mensilità del contratto delle estetiste.</li>
+    <li>Report europeo sul fitness EuropeActive/Deloitte (399 €), se servono i dati italiani.</li>
+  </ol>
+</section>
+
+<div class="src"><h3>Fonti di questa parte</h3><ol>
+  <li id="ME-1"><a href="https://globalwellnessinstitute.org/press-room/press-releases/new-research-from-the-global-wellness-institute-ranks-italy-among-the-worlds-top-10-wellness-economies-valued-at-140-6-billion/">Italia tra le prime 10 economie del benessere — Global Wellness Institute, 3/2/2026</a></li>
+  <li id="ME-2"><a href="https://press.gimbe.org/press/comunicato.it-IT.html?id=501">9° Rapporto GIMBE sul Servizio sanitario nazionale — GIMBE, 7/10/2026</a></li>
+  <li id="ME-3"><a href="https://www.isaps.org/media/30xldsyf/isaps-global-survey-2024.pdf">ISAPS Global Survey 2024, pp. 18 e 55 — ISAPS, 19/6/2025</a></li>
+  <li id="ME-4"><a href="https://corporate.axa.it/documents/715596/711795/CS_Community%20Longevity_270226_def/eb509451-bace-8fe4-15c0-54391460fd0b">Community Longevity+, comunicato — TEHA Group e AXA Italia, 27/2/2026</a></li>
+  <li id="ME-5"><a href="https://www.teleborsa.it/News/2026/05/07/riminiwellness_il_mercato_della_longevita_vale_500_miliardi-279.html">RiminiWellness: il mercato della longevità vale 500 miliardi — Teleborsa, 7/5/2026</a></li>
+  <li id="ME-6"><a href="https://www.healthclubmanagement.co.uk/health-club-management-news/McKinsey-Report-Younger-demographics-are-changing-the-US2-trillion-global-wellness-industry/355965">McKinsey Future of Wellness 2025 — Health Club Management, 2/6/2025</a></li>
+  <li id="ME-7"><a href="https://www.fortuneita.com/?p=357705">Silver economy, un settore da 500 mld di euro — Fortune Italia, 5/5/2025</a></li>
+  <li id="ME-8"><a href="https://globalwellnessinstitute.org/industry-research/2025-global-wellness-economy-monitor/">2025 Global Wellness Economy Monitor — Global Wellness Institute, 2025</a></li>
+  <li id="ME-9"><a href="https://www.snsinsider.com/reports/longevity-market-10022">Longevity Market Report — SNS Insider, 2025 (report commerciale)</a></li>
+  <li id="ME-10"><a href="https://www.researchandmarkets.com/report/longevity-market">Longevity Market — Research and Markets, 2025 (report commerciale)</a></li>
+  <li id="ME-11"><a href="https://longevity.technology/news/617-billion-longevity-biotech-market-takes-shape/">$617 billion longevity biotech market takes shape — Longevity.Technology, 2026</a></li>
+  <li id="ME-12"><a href="https://www.cosmeticaitalia.it/press-area/comunicati-stampa/">Comunicati stampa sui consumi cosmetici 2025 — Cosmetica Italia, 26/3/2026</a></li>
+  <li id="ME-13"><a href="https://longevigo.beehiiv.com/p/italy-s-longevity-market-lives-inside-its-hotels">Italy's longevity market lives inside its hotels — Longevigo, 11/6/2026</a></li>
+  <li id="ME-14"><a href="https://press.gimbe.org/press/comunicato.it-IT.html?id=503">Manovra 2027: alla sanità le briciole — GIMBE, 2/11/2026</a></li>
+  <li id="ME-15"><a href="https://hotellerie.pambianconews.com/2026/01/07/the-longevity-suite-accelera-del-30-a-16-milioni-di-euro/">The Longevity Suite accelera del 30% a 16 milioni — Pambianco Hotellerie, 7/1/2026</a></li>
+  <li id="ME-16"><a href="https://www.milanofinanza.it/news/the-longevity-suite-round-fino-a-20-milioni-per-l-europa-nel-capitale-barilla-azimut-bizzarri-e-202609172122038885">The Longevity Suite, round fino a 20 milioni — Milano Finanza, 17/9/2026</a></li>
+  <li id="ME-17"><a href="https://www.galaw.it/wp-content/uploads/2022/12/Azimut-Longevity-Bebeez-27.12.2022.pdf">Azimut compra il 30% di The Longevity Suite — BeBeez, 27/12/2022</a></li>
+  <li id="ME-18"><a href="https://forbes.it/2026/03/03/la-startup-italiana-qura-raccoglie-15-milioni-per-ripensare-il-modello-di-salute/">Qura raccoglie 1,5 milioni — Forbes Italia, 3/3/2026</a></li>
+  <li id="ME-19"><a href="https://forbes.it/2026/09/01/holifya-ia-obesita-round-2-milioni">Holifya, round da 2 milioni — Forbes Italia, 1/9/2026</a></li>
+  <li id="ME-20"><a href="https://en.ilsole24ore.com/art/clinique-prairie-launches-longevity-fund-AIjZ4ZT">Clinique La Prairie launches longevity fund — Il Sole 24 Ore, 18/12/2025</a></li>
+  <li id="ME-21"><a href="https://www.europeactive.eu/blog/press-corner-4/strong-growth-in-members-and-revenues-for-european-health-fitness-market-in-2025-140">European Health &amp; Fitness Market 2025 — EuropeActive e Deloitte, 22/4/2026</a></li>
+  <li id="ME-22"><a href="https://pub-22da695f2b6542a48e234bc59bc67d23.r2.dev/item19/cmfed98pf01q01vbtexyp7hgc.pdf">Perspire Sauna Studio, FDD 2025, Item 19–20 — documento del franchisor, 2025</a></li>
+  <li id="ME-23"><a href="https://1851franchise.com/restore-hyper-wellness-franchise-costs-fees-profit-2026-2732798">Restore Hyper Wellness: costi e ricavi 2026 — 1851 Franchise, 14/8/2026</a></li>
+  <li id="ME-24"><a href="https://www.next-health.com/locations">Sedi e membership — Next Health, 2026</a></li>
+  <li id="ME-25"><a href="https://franchiseoverview.com/company/next-health">Next Health franchise — Franchise Overview, 2026</a></li>
+  <li id="ME-26"><a href="https://1851franchise.com/sweathouz-franchise-costs-fees-profit-and-data-for-2026-2730419">Sweathouz: costi e ricavi 2026 — 1851 Franchise, 5/6/2026</a></li>
+  <li id="ME-27"><a href="https://www.remedyplace.com/plans">Piani di abbonamento — Remedy Place, 2026</a></li>
+  <li id="ME-28"><a href="https://www.pulseclubsauna.com/">Prezzi — Pulse Club, 2026</a></li>
+  <li id="ME-29"><a href="https://longevity-hub.cliniquelaprairie.com/madrid/">Longevity Hub Madrid — Clinique La Prairie, 2026</a></li>
+  <li id="ME-30"><a href="https://techcrunch.com/2025/01/22/neko-the-body-scanning-startup-co-founded-by-spotifys-daniel-ek-snaps-up-260m-at-a-1-8b-valuation">Neko raccoglie 260 M$ — TechCrunch, 22/1/2025</a></li>
+  <li id="ME-31"><a href="https://insider.fitt.co/neko-health-raises-700m-series-c/">Neko Health raises $700M Series C — Fitt Insider, 15/7/2026</a></li>
+  <li id="ME-32"><a href="https://hum2n.com/programmes">Programmi e prezzi — HUM2N, 2026</a></li>
+  <li id="ME-33"><a href="https://perspiresaunastudio.com/franchise/">Franchising — Perspire Sauna Studio, 2026</a></li>
+  <li id="ME-34"><a href="https://www.franchisechatter.com/2025/11/27/restore-hyper-wellness-franchise-review-2025-costs-fees-news-average-revenues-and-or-profits/">Restore Hyper Wellness franchise review 2025 — Franchise Chatter, 27/11/2025</a></li>
+  <li id="ME-35"><a href="https://franchisevalidate.com/franchise/restore-hyper-wellness">Restore Hyper Wellness, dati FDD 2026 — Franchise Validate, 2026</a></li>
+  <li id="ME-36"><a href="https://www.yahoo.com/lifestyle/remedy-place-open-york-secures-140047069.html">Remedy Place to open in New York — BeautyMatter via Yahoo, 20/5/2022</a></li>
+  <li id="ME-37"><a href="https://www.community-sauna.co.uk/memberships">Abbonamenti — Community Sauna Baths, 2026</a></li>
+  <li id="ME-38"><a href="https://athletechnews.com/nyc-neko-healths-body-scan-clinic-plots-nationwide-expansion/">Neko Health a New York — Athletech News, 16/10/2026</a></li>
+  <li id="ME-39"><a href="https://www.othership.us/">Sedi — Othership, 2026</a></li>
+  <li id="ME-40"><a href="https://www.arc-community.com/buy-passes">Pass e prezzi — Arc, 2026</a></li>
+  <li id="ME-41"><a href="https://www.thirdspace.london/membership/">Membership e Recovery — Third Space, 2026</a></li>
+  <li id="ME-42"><a href="https://luxurylondon.co.uk/travel/uk/members-clubs-mayfair-london/">Members' clubs in Mayfair — Luxury London, 11/6/2026</a></li>
+  <li id="ME-43"><a href="https://theartsclub.co.uk/lanserhof-at-the-arts-club/">Lanserhof at The Arts Club — The Arts Club, 2026</a></li>
+  <li id="ME-44"><a href="https://www.hooke.london/">Hooke London — sito ufficiale, 2026</a></li>
+  <li id="ME-45"><a href="https://www.functionhealth.com/pricing">Prezzi — Function Health, 2026</a></li>
+  <li id="ME-46"><a href="https://biograph.com/">Biograph — sito ufficiale, 2026</a></li>
+  <li id="ME-47"><a href="https://www.fountainlife.com/">Fountain Life — sito ufficiale, 2026</a></li>
+  <li id="ME-48"><a href="https://ayun.ch/">Ayun Zürich — sito ufficiale, 2026</a></li>
+  <li id="ME-49"><a href="https://businessden.com/?p=118700">Fallimento di tre centri di crioterapia — BusinessDen, 29/1/2024</a></li>
+  <li id="ME-50"><a href="https://www.wmra.org/2026-06-08/one-charlottesville-iv-spa-remains-shuttered-others-thrive-through-wedding-season">Charlottesville IV spa remains shuttered — WMRA, 8/6/2026</a></li>
+  <li id="ME-51"><a href="https://thedevicepulse.com/cost/">Stime dei prezzi delle macchine — The Device Pulse, 15/9/2026 (bassa affidabilità)</a></li>
+  <li id="ME-52"><a href="https://www.elettromedicaliusati.it/">Annunci di macchine usate (Ultherapy, Morpheus8, Optimas, bioimpedenza, HRV) — elettromedicaliusati.it, 2025–2026</a></li>
+  <li id="ME-53"><a href="https://allwillgroup.com/knowledge/is-the-true-total-cost-of-ownership-lower-with-independent-1400-cartridges/">Costo dei trasduttori Ultherapy — Allwill Group, 14/8/2026 (venditore concorrente)</a></li>
+  <li id="ME-54"><a href="https://cmomilano.it/clinica-estetica/medicina-rigenerativa/ultherapy/">Ultherapy — CMO Milano, 2026</a></li>
+  <li id="ME-55"><a href="https://www.estheticon.it/prezzi/ultherapy-lifting-non-chirurgico">Prezzi Ultherapy — Estheticon, consultato 9/11/2026</a></li>
+  <li id="ME-56"><a href="https://erbprinz.de/en/morpheus8-optimas-inmode">Morpheus8 — Erbprinz (Germania), consultato 9/11/2026</a></li>
+  <li id="ME-57"><a href="https://bioskin.it/en/?p=258047">XERF — Bioskin Italia, 2026</a></li>
+  <li id="ME-58"><a href="https://shop.bioskin.it/it/23-apparecchiature-varie">Shop e usato — Bioskin Italia, 2026</a></li>
+  <li id="ME-59"><a href="https://xerf-kinauramed.com">XERF — KinAura Milano, 2026</a></li>
+  <li id="ME-60"><a href="https://www.centromedicoambrosiano.com/thermage">Thermage — Centro Medico Ambrosiano, 2026</a></li>
+  <li id="ME-61"><a href="https://laclinicadermatologicaestetica.it/trattamenti/thermage/">Thermage — La Clinica Dermatologica Estetica, consultato 9/11/2026</a></li>
+  <li id="ME-62"><a href="https://www.estheticon.it/prezzi/thermage">Prezzi Thermage — Estheticon, consultato 9/11/2026</a></li>
+  <li id="ME-63"><a href="https://enermedica.it/sofwave/">Sofwave — Enermedica, consultato 9/11/2026</a></li>
+  <li id="ME-64"><a href="https://www.elettromedicaleusato.com/btl-emsculpt-neo/">Emsculpt NEO usato — elettromedicaleusato.com, 24/12/2025</a></li>
+  <li id="ME-65"><a href="https://cerva16.com/emsculpt/">Emsculpt — Cerva 16 Milano, 2026</a></li>
+  <li id="ME-66"><a href="https://dottormarino.com/emsculpt-summer-body-luglio/">Emsculpt — Studio Dott. Marino, Milano</a></li>
+  <li id="ME-67"><a href="https://guidaestetica.it/prezzi/emsculpt">Prezzi Emsculpt — Guidaestetica, 8/11/2026</a></li>
+  <li id="ME-68"><a href="https://aurial.it/trattamenti/emsculpt-neo-addome/">Emsculpt NEO — Aurial, consultato 9/11/2026</a></li>
+  <li id="ME-69"><a href="https://www.perfectcorp.com/business/blog/ai-skincare/hydrafacial-machines">Prezzi delle macchine HydraFacial — Perfect Corp, blog (bassa affidabilità)</a></li>
+  <li id="ME-70"><a href="https://www.quotidiano.net/magazine/hydrafacial-come-funziona-la-pulizia-del-viso-hi-tech-c4c5b2a4">HydraFacial, come funziona — Quotidiano.net</a></li>
+  <li id="ME-71"><a href="https://www.my-personaltrainer.it/bellezza/trattamento-hydrafacial-viso-recensione.html">Trattamento HydraFacial — My-personaltrainer</a></li>
+  <li id="ME-72"><a href="https://endospheres.com">Endospheres — Fenix Group, 2026</a></li>
+  <li id="ME-73"><a href="https://www.rp-x.com/case-study/the-longevity-suite-mecotec">The Longevity Suite e Mecotec — RP-X, 15/1/2026</a></li>
+  <li id="ME-74"><a href="https://www.healthclubmanagement.co.uk/health-club-management-features/Going-hot-and-cold/36055">Going hot and cold — Health Club Management, n. 9/2022</a></li>
+  <li id="ME-75"><a href="https://www.rp-x.com/blog/the-cost-of-cryotherapy">The cost of cryotherapy — RP-X, 10/8/2022</a></li>
+  <li id="ME-76"><a href="https://thelongevitysuite.com/wp-content/uploads/2024/03/TLS_CATALOGO-TRATTAMENTI_Bologna_2024_ita_.pdf">Catalogo trattamenti Bologna 2024 (valido fino al 31/10/2024) — The Longevity Suite</a></li>
+  <li id="ME-77"><a href="https://thelongevitysuite.com/prodotto/3-sessioni-cryosuite-total-body/">3 sessioni Cryosuite — The Longevity Suite, consultato 9/11/2026</a></li>
+  <li id="ME-78"><a href="https://poliambulatorio-takecare.it/longevity/crioterapia-whole-body/">Crioterapia whole body — Poliambulatorio Take Care, Milano, 2026</a></li>
+  <li id="ME-79"><a href="https://www.ice.it/en/my-home/find-your-italian-partner/company-details/602499/Crioterapia.com">Crioterapia.com, profilo aziendale — ICE</a></li>
+  <li id="ME-80"><a href="https://westwon.co.uk/?p=9727">CryoSense Cryosauna, prezzo e leasing — Westwon, 2026</a></li>
+  <li id="ME-81"><a href="https://ogs.it/sites/default/files/2024-09/OCE%20550-2024.pdf">Ordine di azoto liquido — OGS Trieste, settembre 2024</a></li>
+  <li id="ME-82"><a href="https://www.my-personaltrainer.it/salute/criosauna.html">Criosauna — My-personaltrainer, 19/2/2024</a></li>
+  <li id="ME-83"><a href="https://fitprime.com/it/servizi/places/centri-sportivi/modena/body_twenty_criosauna">Body Twenty Modena — Fitprime, 2026</a></li>
+  <li id="ME-84"><a href="https://www.starpool.com/it/e-shop">E-shop — Starpool, consultato 9/11/2026</a></li>
+  <li id="ME-85"><a href="https://icebarrel.com/">Prezzi — Ice Barrel, consultato 9/11/2026</a></li>
+  <li id="ME-86"><a href="https://plunge.com/">Plunge — sito ufficiale, consultato 9/11/2026</a></li>
+  <li id="ME-87"><a href="https://www.novothor.com/">NovoTHOR — sito ufficiale, consultato 9/11/2026</a></li>
+  <li id="ME-88"><a href="https://mitolight.com/">MITO LIGHT Master 5.0 — sito del produttore, consultato 9/11/2026</a></li>
+  <li id="ME-89"><a href="https://poliambulatorio-takecare.it/longevity/red-light-therapy/">Red light therapy — Poliambulatorio Take Care, Milano, 2026</a></li>
+  <li id="ME-90"><a href="https://cellgym.de/">Cellgym — sito ufficiale, consultato 9/11/2026</a></li>
+  <li id="ME-91"><a href="https://www.aimediq.com/">Aimediq (ReOxy) — sito ufficiale, consultato 9/11/2026</a></li>
+  <li id="ME-92"><a href="https://www.oxyhealth.com/">OxyHealth — sito ufficiale, consultato 9/11/2026</a></li>
+  <li id="ME-93"><a href="https://hbot-kinauramed.com">Camera iperbarica — KinAura Milano (visto in anteprima di ricerca)</a></li>
+  <li id="ME-94"><a href="https://itechmedicaldivision.com/en/pressotherapy-costs/">Costi della pressoterapia — I-Tech Medical Division</a></li>
+  <li id="ME-95"><a href="https://cosmed.com">COSMED — sito ufficiale, consultato 9/11/2026</a></li>
+  <li id="ME-96"><a href="https://ilccnl.it/ccnl/acconciatura-ed-estetica/acconciatura-ed-estetica/tabelleretributive">CCNL acconciatura ed estetica, tabelle dal 1/10/2026 — ilccnl.it</a></li>
+  <li id="ME-97"><a href="https://it.indeed.com/career/estetista/salaries">Stipendi estetista — Indeed, aggiornato al 2/11/2026</a></li>
+  <li id="ME-98"><a href="https://it.talent.com/salary?job=estetista">Stipendio estetista — Talent.com, 2026</a></li>
+  <li id="ME-99"><a href="https://it.talent.com/salary?job=receptionist">Stipendio receptionist — Talent.com, 2026</a></li>
+  <li id="ME-100"><a href="https://it.talent.com/salary?job=spa+manager">Stipendio spa manager — Talent.com, 2026</a></li>
+  <li id="ME-101"><a href="https://it.talent.com/salary?job=infermiere+libero+professionista">Infermiere libero professionista — Talent.com, 2026</a></li>
+  <li id="ME-102"><a href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/key_ecb_interest_rates/html/index.en.html">Tassi di interesse ufficiali — Banca centrale europea, consultato 9/11/2026</a></li>
+  <li id="ME-103"><a href="https://www.unicreditleasing.it/it/prodotti/leasing-strumentale.html">Leasing strumentale — UniCredit Leasing, 2026</a></li>
+  <li id="ME-104"><a href="https://bioskin.it/en/leasing-rental-trade-in-aesthetic-equipment/">Leasing, noleggio e permuta — Bioskin Italia, 2026</a></li>
+  <li id="ME-105"><a href="https://www.cushmanwakefield.com/en/insights/emea-fit-out-cost-guide">EMEA Fit-out cost guide — Cushman &amp; Wakefield, 2026</a></li>
+  <li id="ME-106"><a href="https://thelongevitysuite.com/en/franchising/">Franchising — The Longevity Suite, 2026</a></li>
+</ol></div>
+<footer>Progetto LONGEVITY · documento di lavoro · novembre 2026 · ricerca esplorativa, nessuna decisione presa</footer>
+</div>
+<script>
+(function(){var L=[].slice.call(document.querySelectorAll('.side a'));if(!L.length||!('IntersectionObserver' in window))return;
+var m={};L.forEach(function(a){m[a.getAttribute('href').slice(1)]=a});
+var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){L.forEach(function(a){a.classList.remove('on')});var a=m[e.target.id];if(a)a.classList.add('on')}})},{rootMargin:'-10% 0px -80% 0px'});
+document.querySelectorAll('section[id]').forEach(function(s){o.observe(s)})})();
+</script>
+</body></html>

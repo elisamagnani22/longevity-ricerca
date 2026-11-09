@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="it"><head><meta name="robots" content="noindex,nofollow"><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Centri longevity · Presentazione</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--linen:#D9D1C1;--sand:#C8BBA6;--stone:#B9B0A0;--olive:#5A542D;--moss:#5E6B3A;--bronze:#8B6A43;--brown:#3E3226;--paper:#FBF8F3;--tint:#EFE9DF;--ink:#2F2820;--text:#3B342C;--muted:#6E6558;
+--serif:'Cormorant Garamond',Georgia,serif;--font:'Inter',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Helvetica,Arial,sans-serif;color-scheme:light}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#E9E4DA;overflow:hidden}
+body{font-family:var(--font);font-weight:400;color:var(--text);-webkit-font-smoothing:antialiased}
+b{font-weight:600;color:var(--ink)}
+.stage{position:absolute;left:50%;top:50%;width:1600px;height:900px;transform-origin:center center}
+.slide{position:absolute;inset:0;background:var(--paper);padding:70px 110px 80px;display:none;flex-direction:column}
+.slide.on{display:flex}
+.lab{font-size:20px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--bronze);margin-bottom:18px}
+h1{font-family:var(--serif);font-weight:500;font-size:170px;line-height:.95;color:#F5F1EA}
+h2{font-family:var(--serif);font-weight:500;font-size:84px;line-height:1.02;color:var(--brown);margin-bottom:40px}
+.sub{font-size:40px;line-height:1.35;margin-top:30px;color:var(--linen)}
+.big{font-size:38px;line-height:1.45;color:var(--ink);max-width:1300px}
+.expl{margin-top:auto;font-size:30px;line-height:1.4;color:var(--ink);border-left:5px solid var(--moss);padding:6px 0 6px 28px;max-width:1340px}
+.cover-body{margin-top:auto}
+.foot{margin-top:auto;display:flex;gap:90px;padding-top:28px;border-top:1px solid rgba(217,209,193,.4);font-size:26px;color:var(--linen)}
+.foot b{display:block;font-size:16px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:6px;color:var(--sand)}
+.agenda{list-style:none;font-size:40px;line-height:1.25}
+.agenda li{display:flex;gap:36px;padding:14px 0;border-bottom:1px solid var(--linen)}
+.agenda span{color:var(--bronze);font-weight:600;font-size:26px;padding-top:8px;min-width:44px}
+.steps4{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;border-top:2px solid var(--olive);padding-top:30px}
+.steps4 span{display:block;font-size:22px;font-weight:600;color:var(--bronze);margin-bottom:12px}
+.steps4 b{font-size:36px;display:block;margin-bottom:10px;font-weight:600}
+.steps4 p{font-size:28px;line-height:1.35}
+.figs{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--olive);border-bottom:1px solid var(--linen)}
+.figs>div{padding:30px 30px 30px 0}
+.figs .n{font-family:var(--serif);font-size:120px;font-weight:500;color:var(--olive);line-height:1}
+.figs .l{font-size:28px;line-height:1.3;margin-top:12px;color:var(--text)}
+.t{width:100%;border-collapse:collapse;font-size:30px}
+.t th{text-align:left;font-size:18px;letter-spacing:.14em;text-transform:uppercase;color:#F5F1EA;background:var(--olive);font-weight:600;padding:14px 22px}
+.t td{padding:16px 22px;border-bottom:1px solid var(--linen);line-height:1.25;color:var(--text)}
+.t td:first-child{font-weight:600;color:var(--ink)}
+.t tbody tr:nth-child(even) td{background:var(--tint)}
+.t tr.hl td{background:#E3E7D6!important}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:80px;border-top:2px solid var(--olive);padding-top:26px}
+.h{display:block;font-size:20px;letter-spacing:.18em;text-transform:uppercase;color:var(--moss);font-weight:600;margin-bottom:12px}
+.h.neg{color:var(--bronze)}
+.two ul{list-style:none;font-size:34px;line-height:1.3}
+.two ul li{padding:12px 0 12px 34px;position:relative;border-bottom:1px solid var(--linen)}
+.two ul li::before{content:'';position:absolute;left:0;top:32px;width:18px;height:2px;background:var(--moss)}
+.two ul.neg li::before{background:var(--bronze)}
+.dark{background:var(--brown);color:var(--linen)}
+.dark h2,.dark b{color:#F5F1EA}.dark .lab,.dark .agenda span{color:var(--sand)}
+.dark .expl{color:var(--linen);border-color:var(--sand)}
+.dark .agenda li{border-color:rgba(217,209,193,.3)}
+.dark .t td{color:var(--linen);border-color:rgba(217,209,193,.25)}
+.dark .t td:first-child{color:#F5F1EA}
+.dark .t tbody tr:nth-child(even) td{background:rgba(217,209,193,.1)}
+.pg{position:absolute;right:110px;top:76px;font-size:18px;letter-spacing:.12em;color:var(--stone)}
+.cover .pg{display:none}
+.bar{position:fixed;left:0;bottom:0;height:4px;background:var(--olive);transition:width .3s}
+.notes{position:fixed;left:0;right:0;bottom:0;background:rgba(47,40,32,.95);color:#F5F1EA;font-size:18px;line-height:1.55;padding:18px 28px 22px;display:none}
+.notes.on{display:block}.notes b{color:var(--sand);font-size:13px;letter-spacing:.18em;text-transform:uppercase;display:block;margin-bottom:6px}
+.hint{position:fixed;top:12px;right:16px;font:500 12px var(--font);color:var(--muted)}
+@media print{@page{size:1600px 900px;margin:0}html,body{overflow:visible;height:auto;background:#fff}.stage{position:static;transform:none!important}.slide{position:relative;display:flex!important;width:1600px;height:900px;page-break-after:always}.bar,.notes,.hint{display:none!important}}
+</style></head><body>
+<div class="stage" id="stage"><section class="slide dark cover" data-notes="Ringraziare. Spiegare che in 30 minuti mostriamo la ricerca; poi decidiamo insieme." data-min="0"><div class="lab">Documento riservato</div>
+<div class="cover-body"><h1>Centri longevity</h1><p class="sub">Il mercato, i modelli che funzionano<br>e le possibilità a Modena.</p></div>
+<div class="foot"><span><b>Data</b>Novembre 2026</span></div><div class="pg">01 / 16</div></section><section class="slide " data-notes="Siamo in fase di esplorazione." data-min="1"><div class="lab">Agenda</div><h2>Cinque domande in 30 minuti</h2>
+<ol class="agenda"><li><span>01</span>Cos'è un centro longevity</li><li><span>02</span>Che modelli esistono in Italia</li><li><span>03</span>Cosa dice la legge</li><li><span>04</span>Chi guadagna davvero</li><li><span>05</span>Cosa ha senso fare a Modena</li></ol>
+<p class="expl">Oggi non presentiamo una decisione: mostriamo cosa abbiamo trovato e scegliamo insieme la direzione.</p><div class="pg">02 / 16</div></section><section class="slide " data-notes="Fonte OMS. È un settore di benessere e prevenzione, non di cura." data-min="2"><div class="lab">01 · Cos'è</div><h2>Prevenzione per chi sta bene</h2>
+<p class="big">Un centro longevity aiuta persone <b>sane</b> a vivere più a lungo <b>in buona salute</b>. Non cura malattie: misura come stai invecchiando e interviene prima che arrivino i problemi.</p>
+<p class="expl">La parola chiave è healthspan: gli anni vissuti in salute. Secondo l'OMS sono circa nove in meno rispetto agli anni di vita.</p><div class="pg">03 / 16</div></section><section class="slide " data-notes="Collegare al tema economico che vedremo dopo." data-min="2"><div class="lab">01 · Come funziona</div><h2>Un percorso in quattro passi</h2>
+<div class="steps4">
+<div><span>01</span><b>Si misura</b><p>Esami, età biologica, pelle, corpo</p></div>
+<div><span>02</span><b>Si fa un piano</b><p>Alimentazione, movimento, sonno</p></div>
+<div><span>03</span><b>Si tratta</b><p>Tecnologie per pelle e corpo</p></div>
+<div><span>04</span><b>Si rinnova</b><p>Abbonamento con controlli periodici</p></div></div>
+<p class="expl">È il quarto passo, l'abbonamento, che porta incassi ogni mese e rende il centro sostenibile.</p><div class="pg">04 / 16</div></section><section class="slide " data-notes="Fonte: Longevigo 2026. A RiminiWellness 2026 il mercato mondiale è stato stimato in 500 miliardi." data-min="2"><div class="lab">01 · Il mercato</div><h2>Un mercato giovane</h2>
+<div class="figs"><div><div class="n">148</div><div class="l">centri longevity in Italia</div></div><div><div class="n">44%</div><div class="l">in mano a due catene</div></div><div><div class="n">72%</div><div class="l">sono hotel e resort</div></div></div>
+<p class="expl">In Italia la longevity è nata soprattutto negli hotel di lusso. In città i centri sono ancora pochi: lì c'è spazio per nuovi operatori.</p><div class="pg">05 / 16</div></section><section class="slide " data-notes="KinAura (Milano, Via Sant'Andrea): riferimento per esperienza e membership." data-min="3"><div class="lab">02 · I modelli</div><h2>Cinque tipi di centro</h2>
+<table class="t"><thead><tr><th>Modello</th><th>Cosa fa · esempio</th></tr></thead><tbody><tr class=""><td>Clinica diagnostica</td><td>Check-up approfonditi con risonanza · A-Life, SoLongevity</td></tr><tr class=""><td>City clinic</td><td>Criosauna, estetica, flebo · The Longevity Suite, KinAura</td></tr><tr class=""><td>Laboratorio</td><td>Esami del sangue con referto · Cerba</td></tr><tr class=""><td>Resort medicale</td><td>Soggiorni di più giorni · Palazzo Fiuggi, Lefay</td></tr><tr class=""><td>Estetica avanzata</td><td>Tecnologie per pelle e corpo · SkinMedic</td></tr></tbody></table>
+<p class="expl">Vanno dal più medico e costoso al più leggero. Cambiano investimento, personale e permessi.</p><div class="pg">06 / 16</div></section><section class="slide " data-notes="Medico ed estetica non possono condividere gli stessi locali: chi fa entrambi usa due società con ingressi separati. Da verificare con SUAP e AUSL di Modena." data-min="3"><div class="lab">03 · La legge</div><h2>Il “centro longevity” per legge non esiste</h2>
+<table class="t"><thead><tr><th>Tipo di attività</th><th>Chi serve</th><th>Come si apre</th></tr></thead><tbody><tr class=""><td>Centro estetico</td><td>Un'estetista qualificata</td><td>SCIA, subito</td></tr><tr class=""><td>Studio medico</td><td>Uno o più medici</td><td>Comunicazione, subito</td></tr><tr class=""><td>Poliambulatorio</td><td>Direttore sanitario</td><td>Autorizzazione, 3–6 mesi</td></tr><tr class=""><td>Palestra</td><td>Laureato in scienze motorie</td><td>Comunicazione</td></tr></tbody></table>
+<p class="expl">Ogni servizio rientra in una di queste categorie. Il medico serve solo se vendiamo servizi medici: prima si sceglie cosa offrire, poi chi assumere.</p><div class="pg">07 / 16</div></section><section class="slide " data-notes="SoLongevity −2,4 M€ su 0,52 M€ di ricavi (2025). Dati da banche dati, da confermare." data-min="3"><div class="lab">04 · Chi guadagna</div><h2>Guadagna chi incassa ogni mese</h2>
+<table class="t"><thead><tr><th>Modello</th><th>Investimento</th><th>Risultato</th></tr></thead><tbody><tr class="hl"><td>City clinic con abbonamenti</td><td>da 500k €</td><td>The Longevity Suite: da 3,5 a 16 M€</td></tr><tr class="hl"><td>Estetica avanzata</td><td>89–300k €</td><td>SkinMedic: 50+ centri, 21 M€</td></tr><tr class=""><td>Clinica diagnostica</td><td>300–800k €</td><td>SoLongevity: in perdita</td></tr><tr class=""><td>Resort medicale</td><td>decine di M€</td><td>Palazzo Fiuggi: in perdita</td></tr></tbody></table>
+<p class="expl">I centri che vendono abbonamenti e trattamenti ripetuti crescono. Chi vende solo check-up costosi ha clienti che tornano di rado.</p><div class="pg">08 / 16</div></section><section class="slide " data-notes="Punti deboli: sconti fino al 50%, qualità variabile, dipende dalla criosauna. Round da 15–20 M€ in corso." data-min="2"><div class="lab">04 · Il caso da studiare</div><h2>The Longevity Suite</h2>
+<div class="figs"><div><div class="n">16 M€</div><div class="l">ricavi 2025</div></div><div><div class="n">~23</div><div class="l">sedi in Italia e all'estero</div></div><div><div class="n">500k €</div><div class="l">per aprire in franchising</div></div></div>
+<p class="expl">Prima ha aperto centri propri, poi il franchising, poi sono arrivati grandi investitori: Azimut, Barilla, Florim, Smeg. È il nostro concorrente a Modena.</p><div class="pg">09 / 16</div></section><section class="slide " data-notes="KinAura offre la prima visita XERF gratis. SoLongevity è l'unico a pubblicare il listino." data-min="2"><div class="lab">04 · Cosa vendono</div><h2>Tecnologie e prezzi dei migliori</h2>
+<table class="t"><thead><tr><th>Centro</th><th>Tecnologia simbolo</th><th>Prezzo</th></tr></thead><tbody><tr class=""><td>KinAura</td><td>XERF, Morpheus8, iperbarica</td><td>XERF ~1.700 € a seduta</td></tr><tr class=""><td>SoLongevity</td><td>Check-up con DEXA e VO₂max</td><td>1.475 € · abbonamento 7.300 €</td></tr><tr class=""><td>The Longevity Suite</td><td>Criosauna</td><td>65 € · illimitato 3.300 €/anno</td></tr></tbody></table>
+<p class="expl">Ognuno ha una porta d'ingresso (una visita o una seduta) e poi un abbonamento che fa tornare il cliente.</p><div class="pg">10 / 16</div></section><section class="slide " data-notes="Fonti: Camera di Commercio 2025, MEF 2024. Bacino allargato: Reggio, Carpi, Sassuolo." data-min="2"><div class="lab">05 · Modena</div><h2>Una città ricca</h2>
+<div class="figs"><div><div class="n">4ª</div><div class="l">provincia d'Italia per ricchezza prodotta per abitante</div></div><div><div class="n">8.422</div><div class="l">persone con reddito oltre 75.000 € in città</div></div><div><div class="n">1</div><div class="l">solo marchio longevity</div></div></div>
+<p class="expl">Per coprire i costi di un centro con abbonamento servono circa 100–140 abbonati: poco più dell'1% di chi guadagna oltre 75.000 € in città.</p><div class="pg">11 / 16</div></section><section class="slide " data-notes="Elenco completo nel documento di supporto, capitolo 10." data-min="2"><div class="lab">05 · I concorrenti</div><h2>Chi c'è già a Modena</h2>
+<table class="t"><thead><tr><th>Centro</th><th>Cosa offre</th><th>Medico</th></tr></thead><tbody><tr class="hl"><td>The Longevity Suite</td><td>Criosauna e benessere</td><td>No</td></tr><tr class=""><td>Dott. Lizio</td><td>Emsculpt, laser, Endolift</td><td>Sì</td></tr><tr class=""><td>Alba Clinic</td><td>Medicina e chirurgia estetica</td><td>Sì</td></tr><tr class=""><td>Oxycenter</td><td>Estetica avanzata</td><td>No</td></tr><tr class=""><td>Body Twenty</td><td>Criosauna e allenamento</td><td>No</td></tr></tbody></table>
+<p class="expl">Abbiamo mappato 16 centri tra Modena e provincia. Nessuno unisce estetica, recupero e longevity sotto un unico marchio.</p><div class="pg">12 / 16</div></section><section class="slide " data-notes="Sofwave: USA 2.500–4.500 $. XERF: stesso distributore a Bologna (Bioskin)." data-min="2"><div class="lab">05 · Lo spazio libero</div><h2>Cosa manca a Modena</h2>
+<div class="two">
+<div><b class="h">Già presente</b><ul><li>Criosauna</li><li>Laser e HIFU</li><li>Emsculpt</li></ul></div>
+<div><b class="h neg">Assente in provincia</b><ul class="neg"><li>Lifting viso di fascia alta (Ultherapy, Sofwave, XERF)</li><li>Club di recupero caldo-freddo</li><li>Longevity con medico</li></ul></div></div>
+<p class="expl">Le tecnologie viso più redditizie richiedono un medico. Senza medico si punta su abbonamenti, recupero ed esperienza.</p><div class="pg">13 / 16</div></section><section class="slide " data-notes="Ogni punto viene da un caso reale." data-min="1"><div class="lab">05 · Dal benchmark</div><h2>Cosa funziona, cosa evitare</h2>
+<div class="two">
+<div><b class="h">Funziona</b><ul><li>Abbonamento a livelli</li><li>Porta d'ingresso chiara</li><li>Listino trasparente</li><li>Community</li></ul></div>
+<div><b class="h neg">Da evitare</b><ul class="neg"><li>Macchinari da milioni</li><li>Puntare sulla criosauna</li><li>Sconti aggressivi</li><li>Spazi troppo grandi</li></ul></div></div><div class="pg">14 / 16</div></section><section class="slide dark" data-notes="Non presentare una scelta. Chiedere a loro. Qui la domanda su Milano, come loro ipotesi." data-min="3"><div class="lab">Da decidere insieme</div><h2>Quattro direzioni</h2>
+<table class="t"><thead><tr><th></th><th>Investimento</th><th>Pareggio</th><th>Medico</th></tr></thead><tbody><tr class=""><td>A · Estetica avanzata</td><td>0,4–0,6 M€</td><td>~100 abbonati</td><td>No</td></tr><tr class=""><td>B · City clinic</td><td>0,8–1,0 M€</td><td>~140 abbonati</td><td>Partner</td></tr><tr class=""><td>C · Clinica medicale</td><td>oltre 0,8 M€</td><td>oltre 3 anni</td><td>Sì</td></tr><tr class=""><td>D · Franchising</td><td>89k–500k €</td><td>della catena</td><td>Dipende</td></tr></tbody></table>
+<p class="expl">Esiste anche una strada intermedia: partire con A e aggiungere il medico (B) quando il centro funziona. Tutte stime da verificare nel business plan.</p><div class="pg">15 / 16</div></section><section class="slide dark" data-notes="Chiudere con chi fa cosa e la data del prossimo incontro." data-min="0"><div class="lab">Prossimi passi</div><h2>Le prossime tre settimane</h2>
+<ol class="agenda"><li><span>01</span>Scegliere la direzione</li><li><span>02</span>Verificarla con Comune e AUSL</li><li><span>03</span>Preventivi delle tecnologie</li><li><span>04</span>Interviste a clienti e aziende</li><li><span>05</span>Business plan, insieme</li></ol><div class="pg">16 / 16</div></section></div><div class="bar" id="bar"></div><div class="notes" id="notes"></div>
+<div class="hint">← → per scorrere · N note · F schermo intero</div>
+<script>
+const S=[...document.querySelectorAll('.slide')],stage=document.getElementById('stage'),bar=document.getElementById('bar'),notes=document.getElementById('notes');
+let i=0;try{i=Math.min(S.length-1,Math.max(0,parseInt(location.hash.slice(1))-1||0))}catch(e){}
+function fit(){const s=Math.min(innerWidth/1600,innerHeight/900);stage.style.transform='translate(-50%,-50%) scale('+s+')'}
+function show(){S.forEach((x,k)=>x.classList.toggle('on',k===i));bar.style.width=((i+1)/S.length*100)+'%';const s=S[i];notes.innerHTML='<b>Note'+(s.dataset.min>0?' · '+s.dataset.min+' min':'')+'</b>'+s.dataset.notes;try{history.replaceState(null,'','#'+(i+1))}catch(e){}}
+function go(d){i=Math.min(S.length-1,Math.max(0,i+d));show()}
+addEventListener('keydown',e=>{if(['ArrowRight','ArrowDown','PageDown',' '].includes(e.key)){e.preventDefault();go(1)}else if(['ArrowLeft','ArrowUp','PageUp'].includes(e.key)){e.preventDefault();go(-1)}else if(e.key==='n'||e.key==='N')notes.classList.toggle('on');else if(e.key==='f'||e.key==='F'){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen()}});
+addEventListener('click',e=>{if(e.target.closest('a'))return;go(e.clientX>innerWidth/3?1:-1)});
+let x0=null;addEventListener('touchstart',e=>x0=e.touches[0].clientX);addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)go(dx<0?1:-1);x0=null});
+addEventListener('resize',fit);fit();show();
+</script></body></html>

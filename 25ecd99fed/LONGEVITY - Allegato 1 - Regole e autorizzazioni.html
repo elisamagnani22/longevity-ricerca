@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="it"><head><meta name="robots" content="noindex,nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light only">
+<title>LONGEVITY · Regole e autorizzazioni</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F5F1EA; --paper:#FBF8F3; --linen:#D9D1C1; --sand:#C8BBA6; --stone:#B9B0A0;
+  --olive:#5A542D; --moss:#5E6B3A; --sage:#8A9472; --bronze:#8B6A43; --brown:#3E3226;
+  --ink:#2F2820; --text:#3B342C; --muted:#6E6558; --tint:#EFE9DF;
+  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --font:'Inter',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Helvetica,Arial,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--text);font-family:var(--font);font-weight:400;font-size:18px;line-height:1.7;-webkit-font-smoothing:antialiased;padding-inline:24px;overflow-x:hidden}
+b,strong{font-weight:600;color:var(--ink)}
+a{color:var(--moss);text-decoration:underline;text-decoration-color:var(--sand);text-underline-offset:3px}
+.page{max-width:1080px;margin:0 auto}
+.narrow{max-width:760px}
+
+.cover{min-height:92vh;display:flex;flex-direction:column;justify-content:space-between;padding-block:56px 48px;margin-inline:calc(50% - 50vw);padding-inline:max(24px,calc(50vw - 540px));background:var(--brown);color:var(--linen)}
+.label{font-size:12.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--bronze)}
+.cover .label{color:var(--sand)}
+.cover h1{font-family:var(--serif);font-weight:500;font-size:clamp(56px,10vw,112px);line-height:.98;letter-spacing:-.01em;color:#F5F1EA;margin:28px 0 24px}
+.cover .subtitle{font-size:clamp(20px,2.6vw,25px);color:var(--linen);max-width:34ch;line-height:1.45}
+.cover .meta{display:flex;flex-wrap:wrap;gap:10px 48px;font-size:15px;color:var(--linen);padding-top:22px;border-top:1px solid rgba(217,209,193,.35)}
+.cover .meta span b{display:block;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--sand);font-weight:600;margin-bottom:3px}
+.cover .back{font-size:15px;margin-top:20px}
+.cover .back a{color:var(--linen)}
+
+.toc{padding-block:56px;border-bottom:1px solid var(--linen)}
+.toc ol{list-style:none;margin-top:20px;columns:2 300px;column-gap:48px}
+.toc li{break-inside:avoid;padding:9px 0;border-bottom:1px solid var(--tint);font-size:17px}
+.toc a{text-decoration:none;color:var(--ink);display:flex;gap:16px}
+.toc a span{color:var(--bronze);font-weight:600;min-width:26px;font-size:15px;padding-top:2px}
+.toc a:hover{color:var(--moss)}
+
+section{padding-block:80px 16px;scroll-margin-top:16px}
+.num{font-size:13px;font-weight:600;letter-spacing:.2em;color:var(--bronze);text-transform:uppercase;margin-bottom:10px}
+h2{font-family:var(--serif);font-weight:500;font-size:clamp(38px,5.4vw,54px);line-height:1.05;color:var(--brown);margin-bottom:20px;padding-bottom:18px;border-bottom:2px solid var(--olive)}
+.lead{font-size:21px;line-height:1.6;color:var(--ink);margin-bottom:30px;max-width:62ch}
+h3{font-size:14px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--moss);margin:46px 0 16px}
+p{margin-bottom:16px;max-width:72ch}
+ul.list,ol.list{margin:6px 0 22px 0;padding-left:0;list-style:none;max-width:72ch}
+ul.list li{position:relative;padding-left:24px;margin-bottom:10px}
+ul.list li::before{content:'';position:absolute;left:2px;top:.8em;width:10px;height:2px;background:var(--olive)}
+ol.list{counter-reset:n}
+ol.list li{counter-increment:n;position:relative;padding-left:44px;margin-bottom:14px}
+ol.list li::before{content:counter(n,decimal-leading-zero);position:absolute;left:0;top:.1em;font-size:15px;font-weight:600;color:var(--bronze)}
+
+.figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));margin:10px 0 30px;border-top:2px solid var(--olive);border-bottom:1px solid var(--linen)}
+.fig{padding:22px 20px 22px 0}
+.fig .n{font-family:var(--serif);font-size:52px;font-weight:500;color:var(--olive);line-height:1}
+.fig .l{font-size:15.5px;color:var(--text);margin-top:8px;line-height:1.45}
+
+.tw{overflow-x:auto;margin:12px 0 26px;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:16px;line-height:1.5}
+th{text-align:left;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#F5F1EA;background:var(--olive);padding:12px 14px;vertical-align:bottom}
+td{padding:14px;border-bottom:1px solid var(--linen);vertical-align:top;color:var(--text)}
+tbody tr:nth-child(even) td{background:var(--cream)}
+td:first-child{font-weight:600;color:var(--ink)}
+td.r,th.r{text-align:right;white-space:nowrap}
+tr.hl td{background:#E8EBDD!important}
+tr.hl td:first-child{box-shadow:inset 4px 0 0 var(--moss)}
+
+dl{margin:8px 0 22px}
+dl .it{display:grid;grid-template-columns:230px 1fr;gap:4px 30px;padding:18px 0;border-bottom:1px solid var(--linen)}
+dl dt{font-weight:600;color:var(--ink);line-height:1.4}
+dl dt small{display:block;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze);margin-top:6px}
+dl dd p{margin-bottom:6px}
+
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin:10px 0 24px}
+.cols .col h4{font-size:14px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding-bottom:10px;margin-bottom:12px;border-bottom:2px solid var(--moss);color:var(--moss)}
+.cols .col.neg h4{border-color:var(--bronze);color:var(--bronze)}
+.cols .col.neg ul.list li::before{background:var(--bronze)}
+
+.key{background:var(--tint);border-left:4px solid var(--moss);padding:20px 26px;margin:30px 0;font-size:19px;color:var(--ink);line-height:1.6}
+.key .label{display:block;margin-bottom:8px;color:var(--moss)}
+.note{font-size:15px;color:var(--muted);margin-top:-8px}
+.est{font-size:.85em;font-style:italic;color:var(--muted);white-space:nowrap}
+sup{font-size:11px;line-height:0;margin-left:1px}
+sup a{text-decoration:none;color:var(--bronze);font-weight:600}
+
+.sources{padding-block:72px 40px;border-top:1px solid var(--linen);margin-top:56px}
+.sources ol{list-style:none;counter-reset:s;margin-top:16px;font-size:14px;color:var(--muted)}
+.sources li{counter-increment:s;padding:5px 0 5px 40px;position:relative;word-break:break-word;scroll-margin-top:20px}
+.sources li::before{content:counter(s);position:absolute;left:0;color:var(--bronze);font-weight:600}
+.sources li:target{background:var(--tint)}
+footer{padding-block:32px 60px;font-size:13px;color:var(--muted);border-top:1px solid var(--linen)}
+
+@media (max-width:700px){
+  body{font-size:17px}
+  dl .it{grid-template-columns:1fr}
+  .cols{grid-template-columns:1fr;gap:24px}
+  .cover{min-height:auto;padding-block:44px}
+  section{padding-block:56px 8px}
+  table{font-size:15px}
+}
+@media print{body{padding:0;font-size:11pt}.cover{min-height:auto;page-break-after:always}h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}
+
+/* ===== LONGEVITY: aggiunte per la leggibilità ===== */
+body{font-size:17px;line-height:1.65}
+.cover{min-height:62vh}
+.cover h1{font-size:clamp(46px,7.5vw,88px)}
+.topnav{position:sticky;top:0;z-index:20;margin-inline:calc(50% - 50vw);padding:10px max(24px,calc(50vw - 540px));background:rgba(251,248,243,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--linen);display:flex;gap:6px 22px;flex-wrap:wrap;font-size:13.5px}
+.topnav a{text-decoration:none;color:var(--muted);font-weight:500;white-space:nowrap}
+.topnav a:hover{color:var(--moss)}
+.topnav a.on{color:var(--ink);font-weight:600;box-shadow:inset 0 -2px 0 var(--moss)}
+.topnav .home{color:var(--bronze);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:12px;padding-top:1px}
+section{scroll-margin-top:60px}
+.sources li,.src li,.card{scroll-margin-top:70px}
+.toc .ptitle{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--bronze);margin:30px 0 4px}
+.toc ol{margin-top:6px}
+.part{margin:90px calc(50% - 50vw) 0;padding:44px max(24px,calc(50vw - 540px));background:var(--olive);color:#F5F1EA}
+.part .label{color:var(--linen)}
+.part h2{color:#F5F1EA;border:0;margin:8px 0 6px;padding:0}
+.part p{color:var(--linen);max-width:64ch;margin:0}
+.side{display:none}
+@media (min-width:1500px){
+  .side{display:block;position:fixed;left:max(16px,calc(50vw - 540px - 250px));top:70px;width:210px;max-height:calc(100vh - 90px);overflow:auto;font-size:13px;line-height:1.35}
+  .side b{display:block;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--bronze);margin:16px 0 6px}
+  .side a{display:block;text-decoration:none;color:var(--muted);padding:4px 0 4px 10px;border-left:2px solid var(--linen)}
+  .side a:hover,.side a.on{color:var(--ink);border-left-color:var(--moss)}
+}
+h4{font-size:16px;font-weight:600;color:var(--ink);margin:26px 0 8px}
+.key ul.list{margin:0;max-width:none}
+.key ul.list li{margin-bottom:6px}
+.key ul.list li:last-child{margin-bottom:0}
+.key p:last-child{margin-bottom:0}
+.alert{background:#F6E9DE;border-left:4px solid #A4532B;padding:16px 22px;margin:20px 0;font-size:16.5px;color:var(--ink);line-height:1.55}
+.alert .label{display:block;margin-bottom:6px;color:#A4532B}
+.tag{display:inline-block;font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:1px 7px;border-radius:99px;vertical-align:.12em;margin-left:3px;white-space:nowrap;border:1px solid}
+.tag.d{color:#7A5A22;border-color:#D9C08C;background:#FAF1DC}
+.tag.r{color:#55606B;border-color:#C5CCD3;background:#EEF1F3}
+.tag.s{color:#6B4E7A;border-color:#D3C2DC;background:#F4EEF7}
+.tag.n{color:#A4532B;border-color:#E3BFA9;background:#FBEFE7}
+.legend{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:14px;color:var(--muted);margin:14px 0 26px}
+.dot{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+.dot.g{background:#5E7B3A}.dot.y{background:#D0A23A}.dot.r{background:#B4502F}
+
+.card{background:#fff;border:1px solid var(--linen);border-top:4px solid var(--olive);border-radius:4px;padding:28px 30px 24px;margin:34px 0}
+.card header{margin-bottom:14px}
+h3.card-t{font-family:var(--serif);font-size:34px;font-weight:600;letter-spacing:0;text-transform:none;color:var(--brown);margin:0;line-height:1.1}
+.card-s{font-size:14.5px;color:var(--muted);margin:6px 0 10px;max-width:none}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:12px;font-weight:600;padding:3px 11px;border-radius:99px;background:var(--tint);color:var(--text);border:1px solid var(--linen)}
+.chip.ok{background:#E6EDD8;border-color:#BECBA2;color:#3F5320}
+.chip.warn{background:#FAF1DC;border-color:#E2CD98;color:#7A5A22}
+.chip.bad{background:#F6E3D8;border-color:#E3BFA9;color:#8E3F1D}
+.card-lead{font-size:18px;color:var(--ink);line-height:1.55;max-width:none;margin-bottom:14px}
+dl.facts{margin:0 0 6px}
+dl.facts>div{display:grid;grid-template-columns:150px 1fr;gap:4px 22px;padding:11px 0;border-top:1px solid var(--tint);font-size:16px}
+dl.facts dt{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--bronze);padding-top:3px}
+dl.facts dd{line-height:1.55}
+.swot{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.swot>div{padding:14px 18px 12px;border-radius:4px;font-size:15.5px;line-height:1.5}
+.swot h4{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 8px}
+.swot ul{list-style:none}
+.swot li{position:relative;padding-left:16px;margin-bottom:6px}
+.swot li::before{content:'';position:absolute;left:0;top:.7em;width:7px;height:2px;background:currentColor;opacity:.55}
+.swot .pro{background:#EEF2E4}.swot .pro h4{color:#4A5E24}
+.swot .con{background:#F5EEE6}.swot .con h4{color:#8B6A43}
+.swot .copy{background:#E3ECD9;box-shadow:inset 0 0 0 1.5px #9DB07A}.swot .copy h4{color:#3F5320}
+.swot .avoid{background:#F6E6DC;box-shadow:inset 0 0 0 1.5px #DDB199}.swot .avoid h4{color:#8E3F1D}
+.src{margin-top:44px;padding-top:18px;border-top:1px solid var(--linen)}
+.src h3{margin-top:0}
+.src ol{list-style:none;counter-reset:s;font-size:13.5px;color:var(--muted);columns:2 380px;column-gap:40px}
+.src li{counter-increment:s;padding:3px 0 3px 34px;position:relative;word-break:break-word;break-inside:avoid}
+.src li::before{content:counter(s);position:absolute;left:0;color:var(--bronze);font-weight:600}
+.src li:target{background:var(--tint)}
+.src a{color:var(--muted)}
+details.more{margin:14px 0 24px;border:1px solid var(--linen);border-radius:4px;background:#fff}
+details.more>summary{cursor:pointer;padding:12px 18px;font-weight:600;color:var(--moss)}
+details.more>div{padding:4px 18px 14px}
+.hub{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin:20px 0 30px}
+.hub a{display:block;text-decoration:none;background:#fff;border:1px solid var(--linen);border-top:4px solid var(--olive);border-radius:4px;padding:22px 24px;color:var(--text)}
+.hub a:hover{border-top-color:var(--moss);box-shadow:0 6px 20px rgba(62,50,38,.08)}
+.hub a.main{grid-column:1/-1;border-top-color:var(--bronze);background:var(--tint)}
+.hub b{display:block;font-family:var(--serif);font-size:28px;font-weight:600;color:var(--brown);line-height:1.15;margin:6px 0 8px}
+.hub small{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--bronze)}
+.hub span{font-size:15.5px;line-height:1.5;display:block}
+@media (max-width:700px){
+  dl.facts>div{grid-template-columns:1fr}
+  .swot{grid-template-columns:1fr}
+  .card{padding:20px 18px}
+  .src ol{columns:1}
+}
+@media print{.topnav,.side{display:none}.card{break-inside:avoid}.part{margin-top:30px}}
+</style></head><body>
+<div class="page">
+<header class="cover"><div><span class="label">Allegato 1 · Novembre 2026</span><h1>Regole e<br>autorizzazioni</h1><p class="subtitle">Cosa si può fare senza medico, cosa no, e cosa chiedere a Comune e AUSL.</p></div><div class="meta"><span><b>Tipo</b>Scheda informativa, non parere legale</span><span><b>Da validare con</b>SUAP, AUSL Modena, un avvocato sanitario</span></div></header>
+<nav class="topnav"><a class="home" href="LONGEVITY%20-%20Control%20Room.html">Longevity</a><a href="LONGEVITY%20-%20Ricerca%20competitor%20e%20Modena.html">Ricerca: competitor e Modena</a><a href="LONGEVITY%20-%20Allegato%201%20-%20Regole%20e%20autorizzazioni.html" class="on">Regole</a><a href="LONGEVITY%20-%20Allegato%202%20-%20Cosa%20dice%20la%20scienza.html">Scienza</a><a href="LONGEVITY%20-%20Allegato%203%20-%20Mercato,%20format%20esteri,%20tecnologie.html">Mercato e tecnologie</a></nav>
+<div class="toc"><span class="label">Indice</span><ol><li><a href="#NO-quadro"><span>01</span>Le quattro categorie di legge</a></li><li><a href="#NO-semaforo"><span>02</span>Cosa si può fare, servizio per servizio</a></li><li><a href="#NO-medico"><span>03</span>Se c&#x27;è un medico: studio o ambulatorio?</a></li><li><a href="#NO-misti"><span>04</span>Estetica e medicina nello stesso centro</a></li><li><a href="#NO-controlli"><span>05</span>Controlli e precedenti</a></li><li><a href="#NO-comunicazione"><span>06</span>Pubblicità, dati personali, IVA, welfare</a></li><li><a href="#NO-domande"><span>07</span>Le domande da portare a Comune, AUSL, avvocato e fornitori</a></li></ol></div>
+<aside class="side"><a href="#NO-quadro">01 · Le quattro categorie di legge</a><a href="#NO-semaforo">02 · Cosa si può fare, servizio per servizio</a><a href="#NO-medico">03 · Se c&#x27;è un medico: studio o ambulatorio?</a><a href="#NO-misti">04 · Estetica e medicina nello stesso centro</a><a href="#NO-controlli">05 · Controlli e precedenti</a><a href="#NO-comunicazione">06 · Pubblicità, dati personali, IVA, welfare</a><a href="#NO-domande">07 · Le domande da portare a Comune, AUSL, avvocato e fornitori</a></aside>
+<section id="NO-quadro">
+<div class="num">Capitolo 01</div>
+  <h2>Le quattro categorie di legge</h2>
+  <p class="note">Questa è una scheda informativa, non un parere legale. Ogni punto va validato con lo Sportello unico del Comune di Modena (SUAP), con l'AUSL di Modena e con un avvocato esperto di diritto sanitario.</p>
+  <p class="lead">Il "centro longevity" non esiste come categoria di legge. Ogni servizio va inquadrato da solo: estetica, attività sanitaria, palestra e benessere, oppure vendita.</p>
+  <div class="key"><span class="label">In breve</span>
+    <ul class="list">
+      <li>Il centro estetico si apre con una segnalazione al Comune (SCIA) e parte subito. Serve un'estetista abilitata sempre presente.<sup><a href="#NO-1">1</a></sup><sup><a href="#NO-2">2</a></sup></li>
+      <li>L'estetista può usare solo gli apparecchi di un elenco nazionale, entro limiti tecnici precisi. L'elenco ha 25 schede.<sup><a href="#NO-3">3</a></sup></li>
+      <li>Lo studio di un medico singolo si "comunica" al Comune e parte subito. Un ambulatorio gestito come impresa va autorizzato: per legge circa 90 giorni.<sup><a href="#NO-4">4</a></sup><sup><a href="#NO-5">5</a></sup></li>
+      <li>I locali sanitari possono ospitare solo attività sanitarie. Estetica e medicina possono stare nello stesso immobile, ma in spazi distinti.<sup><a href="#NO-6">6</a></sup><sup><a href="#NO-1">1</a></sup></li>
+      <li>La scelta dei servizi viene prima della scelta del modello: è la lista dei servizi a decidere se serve un medico.</li>
+    </ul>
+  </div>
+
+  <h3>Le quattro categorie a confronto</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Categoria</th><th>Chi serve</th><th>Cosa può fare</th><th>Come si apre</th><th>Tempi e costi</th></tr></thead>
+    <tbody>
+      <tr><td>Centro estetico</td><td>Un'estetista abilitata come responsabile tecnico, presente durante l'attività. Può essere titolare, socia o dipendente</td><td>Trattamenti sulla superficie del corpo, a mano o con gli apparecchi dell'elenco. Sauna, bagno turco, solarium, massaggio estetico</td><td>SCIA al SUAP sul portale regionale "Accesso Unitario", con planimetria quotata. Il Comune la trasmette all'AUSL</td><td>Efficace subito. Decade se l'attività non parte entro 60 giorni. Costi delle pratiche: non trovati<sup><a href="#NO-1">1</a></sup></td></tr>
+      <tr><td>Studio medico (singolo)</td><td>Un medico iscritto all'Ordine che lavora in autonomia</td><td>Visite e prestazioni a bassa complessità, senza procedure "a rischio"</td><td>"Comunicazione di svolgimento di attività sanitaria" al Comune</td><td>Attività possibile dal giorno della comunicazione. Nessun costo<sup><a href="#NO-4">4</a></sup><sup><a href="#NO-7">7</a></sup></td></tr>
+      <tr class="hl"><td>Ambulatorio o poliambulatorio</td><td>Una società come gestore, un direttore sanitario medico, i professionisti</td><td>Prestazioni mediche organizzate come impresa, anche con più specialità, flebo, procedure complesse</td><td>Autorizzazione del Comune, dopo il parere della commissione AUSL</td><td>Per legge: 60 giorni per il parere AUSL più 30 per il Comune. Costi: 16 € di bollo per la domanda e 16 € per l'autorizzazione<sup><a href="#NO-4">4</a></sup><sup><a href="#NO-8">8</a></sup></td></tr>
+      <tr><td>Palestra e benessere</td><td>Il gestore e istruttori qualificati</td><td>Allenamento, corsi. Sauna, bagno turco e idromassaggio come servizi complementari, senza estetista</td><td>Pratica al SUAP. La legge regionale di riferimento va confermata <span class="tag n">da verificare</span></td><td>Non trovati<sup><a href="#NO-1">1</a></sup></td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>L'estetica: due parole decidono tutto</h3>
+  <p>La legge definisce l'estetica come trattamenti "sulla superficie del corpo", con apparecchi "di cui all'elenco".<sup><a href="#NO-9">9</a></sup> Ciò che agisce in profondità, o usa apparecchi fuori elenco, non è estetica. Lo stesso vale se servono aghi, farmaci o una diagnosi (interpretazione prevalente).</p>
+  <ul class="list">
+    <li>Sono esclusi i trattamenti con scopo specificamente terapeutico.<sup><a href="#NO-9">9</a></sup></li>
+    <li>Se l'estetista responsabile manca, anche per poco, l'attività va sospesa. Dal 21 aprile 2026 si può nominare un sostituto temporaneo: fino a 30 giorni, 90 per motivi di salute, con almeno 3 anni di esperienza.<sup><a href="#NO-2">2</a></sup><sup><a href="#NO-10">10</a></sup></li>
+    <li>Chi esercita senza titolo a Modena paga da 516,45 € a 1.032,91 €.<sup><a href="#NO-1">1</a></sup></li>
+  </ul>
+
+  <h3>I requisiti dei locali a Modena (centro estetico)</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Requisito</th><th>Regola</th></tr></thead>
+    <tbody>
+      <tr><td>Tipo di immobile</td><td>Negozio o laboratorio (categoria catastale C1 o C3)</td></tr>
+      <tr><td>Altezza</td><td>Almeno 2,70 m</td></tr>
+      <tr><td>Cabine</td><td>La prima almeno 6 m²; le altre 6 m² con lettino, 4 m² senza. Lavandino nella maggior parte delle cabine</td></tr>
+      <tr><td>Spazi</td><td>Sala d'attesa separata; bagno con antibagno se dà sui locali di lavoro</td></tr>
+      <tr><td>Luce e aria</td><td>Finestre pari ad almeno 1/8 del pavimento; aperture pari ad almeno 1/16</td></tr>
+      <tr><td>Massaggi con oli o fanghi</td><td>Doccia collegata alla cabina</td></tr>
+      <tr><td>Vendita di prodotti</td><td>Libera solo per cosmetici e prodotti legati ai trattamenti. Per il resto valgono le norme del commercio</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Fonte di tutta la tabella: Regolamento comunale di Modena, artt. 3, 6 e 8.<sup><a href="#NO-1">1</a></sup></p>
+</section>
+
+<section id="NO-semaforo">
+<div class="num">Capitolo 02</div>
+  <h2>Cosa si può fare, servizio per servizio</h2>
+  <p class="lead">Sauna, freddo "benessere", apparecchi estetici a norma e analisi della pelle sono fattibili anche senza medico. Le tecnologie viso di fascia alta, le flebo e i prelievi richiedono un medico e, spesso, una struttura sanitaria.</p>
+  <div class="key"><span class="label">In breve</span>
+    <ul class="list">
+      <li>Scenario A: solo estetica e benessere, senza medico. Scenario B: con un medico partner, in uno studio o in un ambulatorio.</li>
+      <li>Il rischio più alto senza medico è la flebo in vena. Seguono criosauna e IHHT, il respiro con poco e molto ossigeno alternati.</li>
+      <li>La marcatura CE non basta: per l'estetista conta che l'apparecchio corrisponda a una delle 25 schede del decreto.<sup><a href="#NO-3">3</a></sup><sup><a href="#NO-11">11</a></sup></li>
+      <li>Ogni volta che un fornitore dice "lo può usare l'estetista", serve una sua dichiarazione scritta sulla scheda e sui parametri.</li>
+    </ul>
+  </div>
+  <p class="note">Legenda: <span class="dot g"></span> sì = fattibile con i titoli ordinari · <span class="dot y"></span> con cautela = fattibile con condizioni o chiarimenti preventivi · <span class="dot r"></span> no = da non fare in quello scenario. Le valutazioni "con cautela" sono spesso interpretazione prevalente, non regola scritta.</p>
+
+  <h3>Recupero e benessere</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Servizio</th><th>Categoria di legge</th><th>Chi può farlo</th><th>A senza medico</th><th>B con medico</th><th>Nota</th></tr></thead>
+    <tbody>
+      <tr><td>Sauna finlandese, a infrarossi, bagno turco</td><td>Estetica, o palestra se complementare</td><td>Estetista o gestore della palestra</td><td><span class="dot g"></span> sì</td><td><span class="dot g"></span> sì</td><td>Seduta 10–30 minuti, cartello di avvertenze, operatore formato al primo soccorso<sup><a href="#NO-3">3</a></sup><sup><a href="#NO-1">1</a></sup></td></tr>
+      <tr><td>Vasca fredda (cold plunge)</td><td>Benessere; nessuna regola specifica</td><td>Personale formato al primo soccorso</td><td><span class="dot y"></span> con cautela</td><td><span class="dot g"></span> sì</td><td>Chiedere all'AUSL se valgono le regole di igiene delle piscine <span class="tag n">da verificare</span></td></tr>
+      <tr><td>Club caldo-freddo di gruppo</td><td>Palestra o estetica</td><td>Gestore o estetista</td><td><span class="dot y"></span> con cautela</td><td><span class="dot g"></span> sì</td><td>Inquadramento da chiarire con il SUAP</td></tr>
+      <tr><td>Criocamera o criosauna (corpo intero, −85/−110 °C)</td><td>Terapia medica secondo il Ministero; dispositivo medico se l'uso dichiarato è medico</td><td>Medico, o personale formato sotto responsabilità medica</td><td><span class="dot r"></span> no</td><td><span class="dot y"></span> con cautela</td><td>Non è tra gli apparecchi dell'estetista. Criosauna ad azoto: rischio di asfissia<sup><a href="#NO-12">12</a></sup></td></tr>
+      <tr><td>Crio localizzata (aria fredda sul viso o su una zona)</td><td>Zona grigia; medica se usata per dolore o traumi</td><td>Medico o fisioterapista per l'uso terapeutico</td><td><span class="dot y"></span> con cautela</td><td><span class="dot g"></span> sì</td><td>Non è nelle schede dell'estetista<sup><a href="#NO-3">3</a></sup></td></tr>
+      <tr><td>Lettini a luce rossa (LED)</td><td>Zona grigia</td><td>Personale benessere, senza promesse di cura</td><td><span class="dot y"></span> con cautela</td><td><span class="dot g"></span> sì</td><td>Il LED non è nelle schede. È ammesso solo un laser leggero (fino a 10 mW/cm²)<sup><a href="#NO-3">3</a></sup></td></tr>
+      <tr><td>Maschere LED</td><td>Prodotto di consumo; zona grigia in cabina</td><td>Estetista</td><td><span class="dot y"></span> con cautela</td><td><span class="dot g"></span> sì</td><td>Rischio basso-medio (interpretazione prevalente)</td></tr>
+      <tr><td>IHHT (respiro alternato con poco e molto ossigeno)</td><td>Dispositivo medico se marcato così; altrimenti zona grigia</td><td>Consigliato medico; controllo delle controindicazioni</td><td><span class="dot r"></span> no</td><td><span class="dot y"></span> con cautela</td><td>L'ossigeno medicinale è un farmaco. Classe dei prodotti non verificata <span class="tag n">da verificare</span></td></tr>
+      <tr><td>Camera iperbarica rigida</td><td>Attività sanitaria</td><td>Medico iperbarico e personale dedicato</td><td><span class="dot r"></span> no</td><td><span class="dot r"></span> no</td><td>Serve una struttura sanitaria autorizzata. Sproporzionata per il progetto</td></tr>
+      <tr><td>Camera iperbarica "soft"</td><td>Zona grigia, vicina alla sanità</td><td>Medico consigliato</td><td><span class="dot r"></span> no</td><td><span class="dot y"></span> con cautela</td><td>Nessuna regola specifica trovata</td></tr>
+      <tr><td>Inalazione di idrogeno</td><td>Nessuna regola trovata</td><td>—</td><td><span class="dot r"></span> no</td><td><span class="dot y"></span> con cautela</td><td>Rischi: infiammabilità e promesse di salute</td></tr>
+      <tr><td>Vasca di galleggiamento (float tank)</td><td>Benessere</td><td>Gestore</td><td><span class="dot y"></span> con cautela</td><td><span class="dot g"></span> sì</td><td>Igiene dell'acqua da chiarire con l'AUSL</td></tr>
+      <tr><td>Massaggio sportivo e di recupero</td><td>Né estetica né sanità</td><td>Massaggiatore sportivo qualificato; fisioterapista per il massaggio terapeutico</td><td><span class="dot g"></span> sì</td><td><span class="dot g"></span> sì</td><td>Escluso dall'estetica dal regolamento di Modena<sup><a href="#NO-1">1</a></sup></td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Estetica viso e corpo</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Servizio</th><th>Categoria di legge</th><th>Chi può farlo</th><th>A senza medico</th><th>B con medico</th><th>Nota</th></tr></thead>
+    <tbody>
+      <tr><td>Radiofrequenza estetica</td><td>Estetica, se entro i limiti</td><td>Estetista</td><td><span class="dot g"></span> sì</td><td><span class="dot g"></span> sì</td><td>Pelle sotto 38 °C e aumento massimo di 1 °C; potenza fino a 25 o 50 W<sup><a href="#NO-3">3</a></sup></td></tr>
+      <tr><td>Thermage, XERF, Volnewmer (radiofrequenza medicale)</td><td>Dispositivo medico</td><td>Medico</td><td><span class="dot r"></span> no</td><td><span class="dot g"></span> sì</td><td>Scaldano la pelle profonda ben oltre 38 °C. Regime dello studio da chiarire con l'AUSL</td></tr>
+      <tr><td>Morpheus8 (radiofrequenza con microaghi)</td><td>Atto medico</td><td>Medico</td><td><span class="dot r"></span> no</td><td><span class="dot y"></span> con cautela</td><td>Gli aghi vanno oltre la superficie. Può servire un'autorizzazione</td></tr>
+      <tr><td>Ultherapy, Sofwave, HIFU (ultrasuoni focalizzati)</td><td>Dispositivo medico</td><td>Medico</td><td><span class="dot r"></span> no</td><td><span class="dot g"></span> sì</td><td>All'estetista sono ammessi solo ultrasuoni superficiali, fino a 3 W/cm²<sup><a href="#NO-3">3</a></sup></td></tr>
+      <tr><td>Emsculpt NEO, EMFACE (stimolazione magnetica)</td><td>Dispositivo medico</td><td>Medico</td><td><span class="dot r"></span> no</td><td><span class="dot g"></span> sì</td><td>La stimolazione magnetica non è nelle schede. Il produttore li presenta come medici <span class="tag r">riferito</span></td></tr>
+      <tr><td>Criolipolisi (freddo che riduce il grasso)</td><td>Dispositivo medico</td><td>Medico</td><td><span class="dot r"></span> no</td><td><span class="dot g"></span> sì</td><td>Nessun apparecchio a freddo è nelle schede<sup><a href="#NO-3">3</a></sup></td></tr>
+      <tr><td>Laser per depilazione</td><td>Estetica, se entro i limiti</td><td>Estetista formata</td><td><span class="dot g"></span> sì</td><td><span class="dot g"></span> sì</td><td>800–1.200 nm, spot almeno 10 mm, massimo 40 J/cm². Serve la valutazione del rischio da radiazioni ottiche<sup><a href="#NO-3">3</a></sup><sup><a href="#NO-11">11</a></sup></td></tr>
+      <tr><td>Luce pulsata (IPL) per depilazione</td><td>Estetica, solo per depilazione</td><td>Estetista</td><td><span class="dot g"></span> sì</td><td><span class="dot g"></span> sì</td><td>Massimo 26 J/cm² con raffreddamento, 13 J/cm² senza<sup><a href="#NO-3">3</a></sup></td></tr>
+      <tr><td>Laser o IPL per macchie, rughe, capillari, tatuaggi</td><td>Dispositivo medico</td><td>Medico</td><td><span class="dot r"></span> no</td><td><span class="dot g"></span> sì</td><td>Con laser potenti (classe 4) servono valutazione del rischio, addetto alla sicurezza laser e zona controllata</td></tr>
+      <tr><td>HydraFacial (pulizia con fluidi, senza aghi)</td><td>Estetica</td><td>Estetista</td><td><span class="dot g"></span> sì</td><td><span class="dot g"></span> sì</td><td>Rientra nella scheda della pulizia del viso, con dichiarazione del fornitore (interpretazione prevalente)</td></tr>
+      <tr><td>Endospheres (microvibrazione)</td><td>Zona grigia</td><td>Estetista, solo con dichiarazione del fornitore</td><td><span class="dot y"></span> con cautela</td><td><span class="dot g"></span> sì</td><td>Esistono anche versioni medicali <span class="tag n">da verificare</span></td></tr>
+      <tr><td>Pressoterapia</td><td>Estetica; sanitaria se per una patologia</td><td>Estetista</td><td><span class="dot g"></span> sì</td><td><span class="dot g"></span> sì</td><td>Non su persone con ipertensione o cardiopatie<sup><a href="#NO-3">3</a></sup></td></tr>
+      <tr><td>Elettrostimolazione (EMS) e tute EMS</td><td>Estetica se entro i limiti; in palestra zona grigia</td><td>Estetista o istruttore</td><td><span class="dot g"></span> sì / <span class="dot y"></span> con cautela</td><td><span class="dot g"></span> sì</td><td>Corrente massima 1,5 mA/cm²<sup><a href="#NO-3">3</a></sup></td></tr>
+      <tr><td>Pedana vibrante</td><td>Estetica o palestra</td><td>Estetista o istruttore</td><td><span class="dot g"></span> sì</td><td><span class="dot g"></span> sì</td><td>È nelle schede<sup><a href="#NO-3">3</a></sup></td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Infusioni e trattamenti in vena</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Servizio</th><th>Categoria di legge</th><th>Chi può farlo</th><th>A senza medico</th><th>B con medico</th><th>Nota</th></tr></thead>
+    <tbody>
+      <tr class="hl"><td>Flebo di vitamine o NAD+</td><td>Attività sanitaria con farmaci</td><td>Prescrive il medico; somministra medico o infermiere</td><td><span class="dot r"></span> no</td><td><span class="dot y"></span> con cautela</td><td>Probabile ambulatorio autorizzato, con dotazioni per le emergenze (interpretazione prevalente)</td></tr>
+      <tr><td>Ozonoterapia</td><td>Attività sanitaria</td><td>Medico</td><td><span class="dot r"></span> no</td><td><span class="dot y"></span> con cautela</td><td>The Longevity Suite la offre solo nelle sedi medicali<sup><a href="#NO-13">13</a></sup></td></tr>
+      <tr><td>Prelievi di sangue in sede</td><td>Punto prelievo sanitario</td><td>Infermiere o medico</td><td><span class="dot r"></span> no</td><td><span class="dot y"></span> con cautela</td><td>Serve l'autorizzazione come punto prelievo, collegato a un laboratorio autorizzato<sup><a href="#NO-5">5</a></sup></td></tr>
+      <tr><td>Check-up con laboratorio partner (prelievo al laboratorio)</td><td>Attività del laboratorio</td><td>Laboratorio; medico per la lettura</td><td><span class="dot y"></span> con cautela</td><td><span class="dot g"></span> sì</td><td>Senza medico il centro non deve interpretare né refertare</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Diagnostica e test</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Servizio</th><th>Categoria di legge</th><th>Chi può farlo</th><th>A senza medico</th><th>B con medico</th><th>Nota</th></tr></thead>
+    <tbody>
+      <tr><td>Analisi della pelle (VISIA)</td><td>Analisi estetica</td><td>Estetista o consulente</td><td><span class="dot g"></span> sì</td><td><span class="dot g"></span> sì</td><td>Senza diagnosi dermatologica</td></tr>
+      <tr><td>Composizione corporea (InBody, impedenza)</td><td>Misura di benessere</td><td>Personale formato</td><td><span class="dot g"></span> sì</td><td><span class="dot g"></span> sì</td><td>Senza diagnosi</td></tr>
+      <tr class="hl"><td>DEXA (raggi X per ossa e grasso)</td><td>Radiologia</td><td>Radiologo e tecnico di radiologia</td><td><span class="dot r"></span> no</td><td><span class="dot r"></span> no</td><td>Anche per uso non medico serve una giustificazione; vietata ai minori e in gravidanza<sup><a href="#NO-14">14</a></sup></td></tr>
+      <tr><td>Test VO₂max (consumo massimo di ossigeno)</td><td>Sportivo per persone sane; sanitario se con ECG e lettura clinica</td><td>Chinesiologo; medico per la prova da sforzo</td><td><span class="dot y"></span> con cautela</td><td><span class="dot g"></span> sì</td><td>Interpretazione prevalente</td></tr>
+      <tr><td>Test genetici, epigenetici ("età biologica"), microbioma</td><td>Vendita di kit più dati genetici</td><td>Lettura e consulenza da genetista o medico</td><td><span class="dot r"></span> no</td><td><span class="dot y"></span> con cautela</td><td>Il Garante privacy prevede consulenza genetica e restituzione dei risultati tramite medico<sup><a href="#NO-15">15</a></sup></td></tr>
+      <tr><td>Sensori della glicemia (CGM)</td><td>Dispositivo medico</td><td>Vendita libera se senza prescrizione; lettura clinica dal medico</td><td><span class="dot y"></span> con cautela</td><td><span class="dot g"></span> sì</td><td>Senza medico solo vendita, senza interpretazione</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Altro</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Servizio</th><th>Categoria di legge</th><th>Chi può farlo</th><th>A senza medico</th><th>B con medico</th><th>Nota</th></tr></thead>
+    <tbody>
+      <tr><td>Piani nutrizionali</td><td>Attività sanitaria</td><td>Medico; biologo nutrizionista; dietista su prescrizione medica</td><td><span class="dot r"></span> no</td><td><span class="dot g"></span> sì</td><td>Il biologo può valutare i bisogni nutritivi ed energetici<sup><a href="#NO-16">16</a></sup></td></tr>
+      <tr><td>Coaching su abitudini e stile di vita</td><td>Attività libera</td><td>Chiunque</td><td><span class="dot g"></span> sì</td><td><span class="dot g"></span> sì</td><td>Senza diete personalizzate, diagnosi o psicoterapia</td></tr>
+      <tr><td>Vendita di integratori</td><td>Commercio di alimenti</td><td>Chi ha i titoli commerciali</td><td><span class="dot y"></span> con cautela</td><td><span class="dot y"></span> con cautela</td><td>Probabile pratica di vendita alimentare in più. Solo promesse di salute autorizzate</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Le sorprese</h3>
+  <p>Molti centri danno per scontato che l'estetista possa usare questi apparecchi. Non è così: nessuno di questi rientra nelle 25 schede del decreto.<sup><a href="#NO-3">3</a></sup></p>
+  <ul class="list">
+    <li><strong>Freddo.</strong> Nessun apparecchio a freddo è ammesso: né criosauna, né criocamera, né criolipolisi.</li>
+    <li><strong>Stimolazione magnetica.</strong> Emsculpt, EMFACE e simili non hanno una scheda.</li>
+    <li><strong>Ultrasuoni focalizzati.</strong> HIFU, Ultherapy e Sofwave sono fuori. Gli ultrasuoni estetici si fermano a 3 W/cm² in superficie.</li>
+    <li><strong>Luce LED.</strong> Non è nell'elenco. L'unica luce "terapeutica" ammessa è un laser leggero nell'infrarosso, fino a 10 mW/cm².</li>
+    <li><strong>Radiofrequenza sopra i 38 °C.</strong> Thermage, XERF e Volnewmer scaldano molto di più. Sono strumenti medici.</li>
+    <li><strong>Luce pulsata e laser per macchie o rughe.</strong> All'estetista sono ammessi solo per la depilazione.</li>
+    <li><strong>Microaghi.</strong> Qualunque ago oltre la superficie esce dall'estetica.</li>
+    <li><strong>Marcatura CE.</strong> Non basta. Se le istruzioni indicano come utilizzatore un medico, l'estetista non lo può usare (interpretazione prevalente).<sup><a href="#NO-17">17</a></sup> <span class="tag r">riferito</span></li>
+  </ul>
+  <div class="alert"><span class="label">Attenzione</span>Il catalogo di The Longevity Suite attribuisce alla criosauna effetti come "bruciare calorie", "detossificare" e "migliorare il tono dell'umore".<sup><a href="#NO-18">18</a></sup> Sono promesse di salute: per un servizio non medico non vanno copiate.</div>
+</section>
+
+<section id="NO-medico">
+<div class="num">Capitolo 03</div>
+  <h2>Se c'è un medico: studio o ambulatorio?</h2>
+  <p class="lead">Un medico che lavora da solo, in modo autonomo e con prestazioni semplici, apre uno studio con una comunicazione. Se le prestazioni mediche sono vendute dal centro, con il suo marchio, diventa con ogni probabilità un ambulatorio da autorizzare.</p>
+  <div class="key"><span class="label">In breve</span>
+    <ul class="list">
+      <li>Studio: comunicazione al Comune, si parte subito, nessun costo.<sup><a href="#NO-4">4</a></sup><sup><a href="#NO-7">7</a></sup></li>
+      <li>Ambulatorio: autorizzazione del Comune dopo il parere AUSL. Per legge 60 + 30 giorni; il sito del Comune indica 30 giorni.<sup><a href="#NO-4">4</a></sup><sup><a href="#NO-8">8</a></sup></li>
+      <li>Marchio del centro, reception comune e prestazioni mediche nelle membership fanno pensare a un ambulatorio (interpretazione prevalente).<sup><a href="#NO-19">19</a></sup><sup><a href="#NO-20">20</a></sup></li>
+      <li>Ogni struttura sanitaria privata deve avere un direttore sanitario medico.<sup><a href="#NO-21">21</a></sup><sup><a href="#NO-22">22</a></sup></li>
+      <li>L'AUSL di Modena non dà pareri informali sui progetti: si esprime solo su richiesta del Comune.<sup><a href="#NO-23">23</a></sup></li>
+    </ul>
+  </div>
+
+  <h3>La differenza in una tabella</h3>
+  <div class="tw"><table>
+    <thead><tr><th></th><th>Studio medico</th><th>Ambulatorio o poliambulatorio</th></tr></thead>
+    <tbody>
+      <tr><td>Che cos'è</td><td>Il medico lavora "personalmente in regime di autonomia". Lo studio coincide con lui</td><td>Un'impresa: gestore, direttore sanitario e medici sono ruoli distinti</td></tr>
+      <tr><td>Pratica</td><td>Comunicazione al Comune</td><td>Autorizzazione del Comune con parere AUSL</td></tr>
+      <tr><td>Quando si parte</td><td>Dal giorno della comunicazione</td><td>Dopo il rilascio</td></tr>
+      <tr><td>Tempi di legge</td><td>Nessuna attesa; controlli dopo</td><td>60 giorni per l'AUSL più 30 per il Comune, più eventuali prescrizioni</td></tr>
+      <tr><td>Costi della pratica</td><td>Nessuno</td><td>16 € + 16 € di bollo</td></tr>
+      <tr><td>Direttore sanitario</td><td>No</td><td>Sì</td></tr>
+      <tr><td>Procedure "a rischio"</td><td>Non ammesse</td><td>Ammesse se autorizzate</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Fonti della tabella: legge regionale 22/2019, delibera regionale 1919/2023, pagine del Comune di Modena e presentazione regionale del 15/4/2024.<sup><a href="#NO-4">4</a></sup><sup><a href="#NO-5">5</a></sup><sup><a href="#NO-8">8</a></sup><sup><a href="#NO-19">19</a></sup></p>
+
+  <h3>Quando lo studio diventa ambulatorio</h3>
+  <ul class="list">
+    <li><strong>Procedure complesse o a rischio.</strong> Uno studio "attrezzato" per chirurgia ambulatoriale o per procedure che comportano un rischio per il paziente va autorizzato. Lo dice la legge nazionale.<sup><a href="#NO-24">24</a></sup> La Regione conferma: questi studi non possono restare in comunicazione.<sup><a href="#NO-20">20</a></sup></li>
+    <li><strong>Organizzazione da impresa.</strong> Un gruppo di medici resta "polistudio" solo senza gestione unitaria, senza un unico apparato amministrativo e senza nome di fantasia. Altrimenti diventa poliambulatorio.<sup><a href="#NO-19">19</a></sup><sup><a href="#NO-20">20</a></sup></li>
+    <li><strong>Per noi.</strong> Se le prestazioni mediche sono vendute con il marchio del centro, prenotate dalla nostra reception, incluse in abbonamento e incassate dalla nostra società, è con ogni probabilità un ambulatorio <span class="tag n">da verificare</span>.</li>
+  </ul>
+  <p>Quali procedure precise rendono "a rischio" uno studio (laser potenti, radiofrequenza con aghi, flebo) è scritto in una delibera regionale del 2008 che non abbiamo letto. Va chiesto all'AUSL.</p>
+
+  <h3>Cosa serve a uno studio nuovo</h3>
+  <ul class="list">
+    <li>Una stanza visita di norma di 12 m², un'area d'attesa e un bagno.<sup><a href="#NO-5">5</a></sup></li>
+    <li>In base a ciò che si fa: pareti lavabili fino a 2 m, lavabo con comando non manuale, spogliatoio, deposito, spazio per sterilizzare.</li>
+    <li>Da allegare: planimetria in scala 1:100. Da tenere in sede: conformità dell'impianto elettrico per locali medici, conformità delle apparecchiature e contratto per i rifiuti sanitari.</li>
+    <li>Dal 1° gennaio 2025 i nuovi studi devono avere tutti i requisiti da subito.<sup><a href="#NO-6">6</a></sup></li>
+  </ul>
+
+  <h3>Direttore sanitario</h3>
+  <ul class="list">
+    <li>Obbligatorio per ogni struttura sanitaria privata. Va comunicato all'Ordine dei medici.<sup><a href="#NO-21">21</a></sup></li>
+    <li>Il modulo regionale consente di dichiarare altri incarichi di direzione, con le ore settimanali. Non fissa un numero massimo.<sup><a href="#NO-22">22</a></sup></li>
+    <li>Requisiti regionali di specializzazione o di ore minime: non trovati.</li>
+  </ul>
+
+  <h3>Flebo e prelievi</h3>
+  <ul class="list">
+    <li><strong>Flebo.</strong> Servono la prescrizione del medico e un medico o un infermiere. Un infermiere può aprire un proprio studio in comunicazione, con requisiti su farmaci e rifiuti.<sup><a href="#NO-20">20</a></sup> Se però le flebo sono un servizio organizzato dal centro, si va verso l'ambulatorio autorizzato <span class="tag n">da verificare</span>.</li>
+    <li><strong>Prelievi.</strong> Il punto prelievo va autorizzato e deve dipendere da un laboratorio autorizzato, indicato nel provvedimento.<sup><a href="#NO-5">5</a></sup><sup><a href="#NO-25">25</a></sup> I requisiti di dettaglio sono in una delibera del 2022 che non abbiamo letto. L'alternativa più semplice: il cliente fa il prelievo presso il laboratorio partner.</li>
+  </ul>
+
+  <h3>Cosa fa e cosa non fa l'AUSL di Modena</h3>
+  <div class="cols">
+    <div class="col"><h4>Fa</h4><ul class="list">
+      <li>Esprime il parere sulle autorizzazioni, su richiesta formale del Comune.<sup><a href="#NO-23">23</a></sup></li>
+      <li>Controlla ogni anno almeno il 10% delle strutture autorizzate.<sup><a href="#NO-4">4</a></sup></li>
+      <li>Riceve le SCIA dei centri estetici e le comunicazioni degli studi.<sup><a href="#NO-1">1</a></sup><sup><a href="#NO-5">5</a></sup></li>
+    </ul></div>
+    <div class="col neg"><h4>Non fa</h4><ul class="list">
+      <li>Valutazioni preventive informali dei progetti.<sup><a href="#NO-23">23</a></sup></li>
+      <li>Pareri sugli studi in sola comunicazione.<sup><a href="#NO-23">23</a></sup></li>
+      <li>Non pubblica tempi né costi.</li>
+    </ul></div>
+  </div>
+  <p class="note">Per avere risposte prima di investire si può scrivere alla Regione (comunicazioneattivitasan@regione.emilia-romagna.it) o chiedere un incontro al SUAP.<sup><a href="#NO-6">6</a></sup></p>
+</section>
+
+<section id="NO-misti">
+<div class="num">Capitolo 04</div>
+  <h2>Estetica e medicina nello stesso centro</h2>
+  <p class="lead">I locali sanitari devono restare solo sanitari. Estetica e medicina possono però convivere nello stesso immobile, in spazi distinti. Nessuna norma trovata obbliga a usare due società.</p>
+  <div class="key"><span class="label">In breve</span>
+    <ul class="list">
+      <li>La Regione vieta attività non sanitarie dentro una struttura sanitaria, anche dentro uno studio.<sup><a href="#NO-6">6</a></sup><sup><a href="#NO-20">20</a></sup></li>
+      <li>Il Comune di Modena ammette l'estetista "presso strutture sanitarie", con il parere dell'AUSL.<sup><a href="#NO-1">1</a></sup></li>
+      <li>Come conciliare le due regole (ingressi, reception, bagni) va chiesto all'AUSL <span class="tag n">da verificare</span>.</li>
+      <li>The Longevity Suite a Bologna e Parma ha la parte estetica e quella medica allo stesso indirizzo.<sup><a href="#NO-13">13</a></sup><sup><a href="#NO-26">26</a></sup></li>
+    </ul>
+  </div>
+
+  <h3>Le due regole da leggere insieme</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Chi</th><th>Cosa dice</th><th>Cosa comporta</th></tr></thead>
+    <tbody>
+      <tr><td>Regione Emilia-Romagna</td><td>In una struttura sanitaria si svolgono "esclusivamente attività sanitarie". Nello studio possono alternarsi solo professionisti sanitari<sup><a href="#NO-6">6</a></sup><sup><a href="#NO-20">20</a></sup></td><td>Le stanze mediche non possono ospitare estetica</td></tr>
+      <tr><td>Comune di Modena</td><td>L'estetista può lavorare "presso strutture sanitarie pubbliche o private", con parere dell'AUSL. L'ingresso deve essere lo stesso per le due attività<sup><a href="#NO-1">1</a></sup></td><td>La convivenza nello stesso immobile è prevista</td></tr>
+      <tr><td>Legge regionale</td><td>Se più soggetti operano nella stessa struttura, l'autorizzazione dice chi ha la responsabilità complessiva<sup><a href="#NO-4">4</a></sup><sup><a href="#NO-5">5</a></sup></td><td>Serve un contratto chiaro tra centro e medico</td></tr>
+    </tbody>
+  </table></div>
+  <p>Lettura combinata (interpretazione prevalente): lo spazio sanitario è un'unità distinta in planimetria, usata solo per la sanità. L'estetica sta accanto, come unità separata.</p>
+
+  <h3>Le opzioni a confronto</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Opzione</th><th>Come funziona</th><th>Pro</th><th>Contro</th><th>Pratiche</th></tr></thead>
+    <tbody>
+      <tr><td>A. Solo non medico</td><td>Centro estetico più area benessere e recupero</td><td>Veloce, si parte subito. Promozioni libere. Nessun direttore sanitario</td><td>Niente tecnologie viso di fascia alta. Criosauna e IHHT a rischio</td><td>SCIA estetica; eventuale pratica per palestra o vendita</td></tr>
+      <tr><td>B1. Medico con studio proprio</td><td>Il medico apre il suo studio in uno spazio distinto. Il centro gli affitta locali o servizi a prezzo di mercato</td><td>Avvio veloce, costi bassi</td><td>Lo studio deve restare del medico: niente marchio del centro, niente membership con prestazioni mediche. Rischio di essere considerato un ambulatorio</td><td>Comunicazione del medico; SCIA estetica del centro</td></tr>
+      <tr class="hl"><td>B2. Ambulatorio della società</td><td>Spazio sanitario autorizzato con direttore sanitario. Estetica in un'unità separata</td><td>Marchio unico, flebo e medicina estetica integrate. Modello che può crescere</td><td>Circa 90 giorni per legge più la progettazione. Pubblicità vincolata. Direttore sanitario e assicurazione</td><td>Autorizzazione (Comune + AUSL); SCIA estetica</td></tr>
+      <tr><td>B3. Due società</td><td>Come B2, ma una società per l'estetica e una per la sanità</td><td>Separazione di IVA, responsabilità, pubblicità e rischio. Il modello più chiaro nei controlli</td><td>Più costi societari. Contratti tra le società a prezzi di mercato</td><td>Come B2</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Le valutazioni di pro e contro sono interpretazione prevalente, da validare con l'avvocato.</p>
+
+  <h3>Cosa fa The Longevity Suite</h3>
+  <ul class="list">
+    <li>Ha tre tipi di sede: "City Clinic" (estetica, crioterapia, benessere), "Medical City Clinic" e spa negli hotel. La capogruppo è Longevity S.p.A. di Milano.<sup><a href="#NO-13">13</a></sup></li>
+    <li>A Bologna (Via Farini 11/F) e a Parma (Via dell'Arpa 8) le due sedi hanno lo stesso indirizzo, telefono ed e-mail.<sup><a href="#NO-13">13</a></sup><sup><a href="#NO-26">26</a></sup></li>
+    <li>Flebo, NAD+, ozonoterapia e visite sono nel catalogo "medicale"; criosauna ed estetica nel catalogo "retail".<sup><a href="#NO-13">13</a></sup><sup><a href="#NO-18">18</a></sup></li>
+    <li>A Modena (Via Vignolese 70) c'è solo la parte non medica: criosauna, estetica, benessere.<sup><a href="#NO-27">27</a></sup></li>
+    <li>Non risultano pubblicamente la società che gestisce la parte medica, il direttore sanitario, l'autorizzazione né la separazione dei locali. Si possono cercare con una visura camerale o una richiesta di accesso agli atti.</li>
+  </ul>
+  <div class="key"><span class="label">In sintesi</span><p>Il modello di The Longevity Suite in Emilia-Romagna fa pensare a uno spazio sanitario autorizzato distinto, sotto lo stesso marchio e nello stesso immobile. Non dimostra che usino due società.</p></div>
+</section>
+
+<section id="NO-controlli">
+<div class="num">Capitolo 05</div>
+  <h2>Controlli e precedenti</h2>
+  <p class="lead">I carabinieri del NAS (Nuclei antisofisticazioni e sanità) controllano spesso crioterapia e medicina estetica. Nel 2022 hanno denunciato una palestra di Modena per crioterapia senza autorizzazione.</p>
+  <div class="key"><span class="label">In breve</span>
+    <ul class="list">
+      <li>Aprile 2022: denunciati titolare e dipendente di una palestra di Modena per crioterapia senza autorizzazione e con personale non qualificato <span class="tag r">riferito</span>.<sup><a href="#NO-28">28</a></sup></li>
+      <li>Nella stessa operazione: sequestri di criosaune a Bologna, Ravenna e Piacenza <span class="tag r">riferito</span>.<sup><a href="#NO-29">29</a></sup></li>
+      <li>Nel 2023 il Ministero della Salute ha definito la crioterapia una terapia medica, con regole di sicurezza anche fuori dalla sanità.<sup><a href="#NO-12">12</a></sup></li>
+      <li>Il medico che fa lavorare personale non abilitato rischia più dell'abusivo: da 1 a 5 anni.<sup><a href="#NO-30">30</a></sup></li>
+    </ul>
+  </div>
+
+  <h3>I casi principali</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Quando</th><th>Dove</th><th>Cosa è successo</th><th>Motivo contestato</th></tr></thead>
+    <tbody>
+      <tr class="hl"><td>Aprile 2022</td><td>Modena e Reggio Emilia</td><td>Denunciati titolare e dipendente di una palestra di Modena e due persone di una palestra di Reggio Emilia <span class="tag r">riferito</span><sup><a href="#NO-28">28</a></sup></td><td>Crioterapia senza autorizzazione, personale non qualificato</td></tr>
+      <tr><td>Aprile 2022</td><td>Piacenza</td><td>Sequestrato un intero centro benessere, criocamera compresa <span class="tag r">riferito</span><sup><a href="#NO-29">29</a></sup></td><td>Nessuna SCIA</td></tr>
+      <tr><td>Aprile 2022</td><td>Bologna</td><td>Sequestrata una criosauna in un centro estetico <span class="tag r">riferito</span><sup><a href="#NO-29">29</a></sup></td><td>Vietata dal regolamento d'igiene comunale</td></tr>
+      <tr><td>Aprile 2022</td><td>Ravenna</td><td>Sequestrate 2 criosaune in due società sportive, valore 140.000 € <span class="tag r">riferito</span><sup><a href="#NO-29">29</a></sup></td><td>"Norma regionale" non precisata <span class="tag n">da verificare</span></td></tr>
+      <tr><td>Aprile 2022</td><td>Italia</td><td>488 criocamere controllate, 50 irregolari, 16 denunce. Sequestrate 3 stanze usate come ambulatori dentro centri estetici<sup><a href="#NO-31">31</a></sup></td><td>Esercizio abusivo, ambulatori non autorizzati</td></tr>
+      <tr><td>Marzo 2022</td><td>Roma</td><td>6 criocamere sequestrate, 72.000 € di sanzioni<sup><a href="#NO-32">32</a></sup></td><td>Nessuna autorizzazione regionale</td></tr>
+      <tr><td>Maggio 2022</td><td>Italia</td><td>793 centri estetici e studi controllati, 110 irregolari, 33 denunce. Sequestri di filler e tossina botulinica<sup><a href="#NO-33">33</a></sup></td><td>Esercizio abusivo, farmaci</td></tr>
+      <tr><td>Giugno 2025</td><td>Italia</td><td>1.160 controlli, 132 irregolari, 104 denunce, 14 strutture chiuse o sospese<sup><a href="#NO-34">34</a></sup></td><td>Esercizio abusivo, ambulatori di medicina estetica non autorizzati</td></tr>
+      <tr><td>Maggio 2019</td><td>Bologna</td><td>Centro estetico con anestetici, aghi e 10 apparecchi senza dichiarazione di conformità<sup><a href="#NO-35">35</a></sup></td><td>Esercizio abusivo della professione sanitaria</td></tr>
+      <tr><td>Aprile 2025</td><td>Parigi</td><td>Fuga di azoto in una sala crioterapia di una palestra: muore una dipendente di 30 anni<sup><a href="#NO-36">36</a></sup></td><td>Incidente</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Cosa dice il Ministero sulla crioterapia</h3>
+  <ul class="list">
+    <li>Se l'uso dichiarato è medico (dolore, malattie reumatiche, lesioni muscolari), l'apparecchio è un dispositivo medico.<sup><a href="#NO-12">12</a></sup></li>
+    <li>Gli studi "indicano questa metodica come una terapia medica". Il rapporto tra rischi e benefici va valutato da un medico.<sup><a href="#NO-12">12</a></sup></li>
+    <li>Anche fuori dalla sanità servono: esclusione scritta delle controindicazioni, informazione e consenso, personale formato, avvertenze visibili e controllo dell'aria.<sup><a href="#NO-12">12</a></sup></li>
+    <li>La circolare non vieta in modo esplicito la criosauna fuori dalle strutture sanitarie. Insieme ai controlli del NAS, la rende però un servizio ad alto rischio senza medico (interpretazione prevalente).</li>
+  </ul>
+
+  <h3>Cosa si rischia, in parole semplici</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Situazione</th><th>Conseguenza</th></tr></thead>
+    <tbody>
+      <tr><td>Chi esercita una professione sanitaria senza abilitazione</td><td>Reclusione da 6 mesi a 3 anni e multa da 10.000 € a 50.000 €. Confisca degli apparecchi e pubblicazione della sentenza<sup><a href="#NO-30">30</a></sup></td></tr>
+      <tr class="hl"><td>Il professionista che ha diretto chi esercita senza abilitazione</td><td>Reclusione da 1 a 5 anni e multa da 15.000 € a 75.000 €<sup><a href="#NO-30">30</a></sup></td></tr>
+      <tr><td>Estetista senza titolo a Modena</td><td>Sanzione da 516,45 € a 1.032,91 €<sup><a href="#NO-1">1</a></sup></td></tr>
+      <tr><td>Struttura sanitaria con rischi per la salute</td><td>Diffida, sospensione o decadenza decise dal Comune<sup><a href="#NO-4">4</a></sup></td></tr>
+    </tbody>
+  </table></div>
+  <div class="alert"><span class="label">Attenzione</span>Nello scenario B, se il medico partner fa usare apparecchi medici (HIFU, radiofrequenza medicale, laser potenti) a estetiste o tecnici, è lui a rischiare la pena più alta.</div>
+  <p class="note">Non abbiamo trovato casi italiani su flebo o NAD+, camere iperbariche, ozonoterapia abusiva, né sentenze di Cassazione sulle estetiste. Non è detto che non esistano: la ricerca si è interrotta.</p>
+</section>
+
+<section id="NO-comunicazione">
+<div class="num">Capitolo 06</div>
+  <h2>Pubblicità, dati personali, IVA, welfare</h2>
+  <p class="lead">Sconti e pacchetti si possono fare sull'estetica e sul benessere, non sulle prestazioni mediche. Dati genetici e sanitari richiedono regole severe. Dal 2027 cambiano i testi delle leggi fiscali.</p>
+  <div class="key"><span class="label">In breve</span>
+    <ul class="list">
+      <li>Strutture sanitarie e medici non possono usare offerte, sconti e promozioni che spingano a cure non necessarie.<sup><a href="#NO-37">37</a></sup></li>
+      <li>Promettere "età biologica più giovane" o effetti di cura senza prove è a rischio di sanzione: fino a 10 M€.<sup><a href="#NO-38">38</a></sup></li>
+      <li>I test genetici richiedono consulenza genetica e risultati consegnati tramite un medico.<sup><a href="#NO-15">15</a></sup></li>
+      <li>La medicina estetica senza scopo di cura paga l'IVA al 22% <span class="tag r">riferito</span>. Una "nuova norma 2023–2024" sull'IVA della medicina estetica non l'abbiamo trovata.</li>
+      <li>Dal 1° gennaio 2027 si citano i nuovi testi unici di IVA e imposte sui redditi.<sup><a href="#NO-39">39</a></sup><sup><a href="#NO-40">40</a></sup></li>
+    </ul>
+  </div>
+
+  <h3>Pubblicità: cosa si può e non si può dire</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Tema</th><th>Estetica e benessere</th><th>Parte medica</th></tr></thead>
+    <tbody>
+      <tr><td>Sconti, pacchetti, "prima seduta gratis"</td><td>Ammessi, con promesse vere</td><td>Da evitare<sup><a href="#NO-37">37</a></sup><sup><a href="#NO-41">41</a></sup></td></tr>
+      <tr><td>Prezzi</td><td>Liberi</td><td>Ammessi come informazione, non come richiamo</td></tr>
+      <tr><td>Nome del direttore sanitario</td><td>—</td><td>Obbligatorio nelle comunicazioni<sup><a href="#NO-21">21</a></sup></td></tr>
+      <tr><td>Foto prima e dopo, testimonianze</td><td>Con cautela</td><td>Ad alto rischio per il medico</td></tr>
+      <tr><td>Abbonamenti con prestazioni mediche incluse</td><td>—</td><td>Rischio alto: da far validare all'avvocato o all'Ordine dei medici</td></tr>
+    </tbody>
+  </table></div>
+  <ul class="list">
+    <li><strong>La regola.</strong> Dal 2023 la legge esclude ogni elemento "attrattivo e suggestivo, tra cui comunicazioni contenenti offerte, sconti e promozioni", se può portare a cure non necessarie.<sup><a href="#NO-37">37</a></sup></li>
+    <li><strong>Chi controlla.</strong> L'Ordine dei medici con procedimenti disciplinari; segnala le violazioni all'Autorità per le comunicazioni (AGCOM) <span class="tag r">riferito</span>.<sup><a href="#NO-21">21</a></sup></li>
+    <li><strong>Codice dei medici.</strong> Il medico non diffonde innovazioni "non ancora validate" e non promuove prodotti.<sup><a href="#NO-41">41</a></sup> Questo pesa su "età biologica" e NAD+ (interpretazione prevalente).</li>
+    <li><strong>Promesse di salute.</strong> Dire, contro il vero, che un prodotto cura malattie è sempre pratica ingannevole. Sanzioni da 5.000 € a 10 M€.<sup><a href="#NO-38">38</a></sup></li>
+    <li><strong>Integratori.</strong> Ammesse solo le promesse autorizzate in Europa. Non ne esiste una per "anti-aging" o "longevità" <span class="tag r">riferito</span>.</li>
+    <li><strong>Influencer.</strong> Valgono le linee guida e il codice di condotta AGCOM del 2025. La pubblicità deve essere riconoscibile.<sup><a href="#NO-42">42</a></sup></li>
+  </ul>
+
+  <h3>Dati sanitari e genetici</h3>
+  <ul class="list">
+    <li>Senza un rapporto di cura con un medico, serve di regola il consenso esplicito del cliente (interpretazione prevalente).</li>
+    <li>Per i test genetici il Garante prevede:<sup><a href="#NO-15">15</a></sup>
+      <ul class="list">
+        <li>dati cifrati e campioni tracciati;</li>
+        <li>informazione anche sui risultati inattesi;</li>
+        <li>consulenza genetica prima e dopo il test;</li>
+        <li>risultati consegnati "di regola" tramite un medico.</li>
+      </ul>
+    </li>
+    <li>Le regole non citano i test venduti direttamente al cliente. Applicarle anche a questi è la scelta prudente <span class="tag n">da verificare</span>.</li>
+    <li>Con test genetici, sensori indossabili e profilazione serve di fatto una valutazione d'impatto sulla privacy (DPIA) (interpretazione prevalente).</li>
+    <li>Nei pacchetti welfare i risultati genetici non devono mai arrivare all'azienda.<sup><a href="#NO-15">15</a></sup></li>
+  </ul>
+
+  <h3>Consenso e assicurazione</h3>
+  <ul class="list">
+    <li>Il consenso alle prestazioni sanitarie va documentato per iscritto.<sup><a href="#NO-43">43</a></sup> Per crioterapia, IHHT e sauna serve un questionario firmato su salute e controindicazioni.<sup><a href="#NO-12">12</a></sup><sup><a href="#NO-3">3</a></sup></li>
+    <li>Le strutture sanitarie private devono essere assicurate.<sup><a href="#NO-44">44</a></sup> Il massimale minimo per un ambulatorio è 1 M€ per sinistro, con un tetto annuo almeno triplo.<sup><a href="#NO-45">45</a></sup></li>
+    <li>Per il centro estetico non abbiamo trovato un obbligo di legge. L'assicurazione resta indispensabile e deve coprire crio, sauna e apparecchi.</li>
+  </ul>
+
+  <h3>IVA</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Servizio</th><th>IVA</th></tr></thead>
+    <tbody>
+      <tr><td>Prestazioni mediche con scopo di cura</td><td>Esenti <span class="tag r">riferito</span></td></tr>
+      <tr><td>Medicina estetica senza scopo di cura</td><td>22% <span class="tag r">riferito</span></td></tr>
+      <tr><td>Estetica</td><td>22% <span class="tag r">riferito</span></td></tr>
+      <tr><td>Palestra</td><td>22%, salvo associazioni sportive <span class="tag r">riferito</span></td></tr>
+    </tbody>
+  </table></div>
+  <p>Negli abbonamenti misti conviene separare i prezzi per voce, perché le aliquote sono diverse (interpretazione prevalente).</p>
+
+  <h3>Abbonamenti</h3>
+  <ul class="list">
+    <li>Sono a rischio di nullità le clausole che trattengono i soldi in caso di recesso, le penali eccessive e le disdette con preavviso troppo lungo.<sup><a href="#NO-46">46</a></sup></li>
+    <li>Le vendite online o fuori sede hanno 14 giorni di recesso. I servizi sanitari sono esclusi.<sup><a href="#NO-47">47</a></sup></li>
+    <li>Utile prevedere la sospensione per motivi di salute e tenere le prestazioni mediche fuori dai rinnovi automatici (interpretazione prevalente).</li>
+  </ul>
+
+  <h3>Welfare aziendale</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Servizio</th><th>Ammissibile?</th></tr></thead>
+    <tbody>
+      <tr><td>Palestra, recupero, benessere</td><td>Probabilmente sì, come "ricreazione" <span class="tag r">riferito</span></td></tr>
+      <tr><td>Check-up e visite mediche</td><td>Sì, come "assistenza sanitaria" <span class="tag r">riferito</span></td></tr>
+      <tr><td>Trattamenti solo estetici</td><td>Probabilmente no <span class="tag n">da verificare</span></td></tr>
+    </tbody>
+  </table></div>
+  <p>I servizi devono essere offerti a tutti i dipendenti o a categorie di dipendenti.<sup><a href="#NO-48">48</a></sup> I "fringe benefit" esenti salgono a 1.000 € (2.000 € con figli) per il 2025–2027 <span class="tag n">da verificare</span>.</p>
+
+  <h3>Il cambio dei codici fiscali nel 2027</h3>
+  <p>Dal 1° gennaio 2027 il decreto IVA del 1972 e il testo unico delle imposte sui redditi (TUIR) sono sostituiti da due nuovi testi unici.<sup><a href="#NO-39">39</a></sup><sup><a href="#NO-40">40</a></sup> Le regole su esenzioni e welfare andranno cercate lì. La nuova numerazione degli articoli non l'abbiamo verificata.</p>
+
+  <h3>Chi può possedere la parte sanitaria</h3>
+  <ul class="list">
+    <li>Un ambulatorio può essere gestito da una normale società commerciale, con autorizzazione e direttore sanitario <span class="tag r">riferito</span>.</li>
+    <li>La società tra professionisti è un'alternativa: i professionisti devono avere i due terzi dei voti.<sup><a href="#NO-49">49</a></sup> In Emilia-Romagna non può usare la sola comunicazione.<sup><a href="#NO-6">6</a></sup></li>
+  </ul>
+</section>
+
+<section id="NO-domande">
+<div class="num">Capitolo 07</div>
+  <h2>Le domande da portare a Comune, AUSL, avvocato e fornitori</h2>
+  <p class="lead">Prima di firmare un affitto o comprare un apparecchio servono risposte scritte su alcuni punti. Qui sono divise per interlocutore.</p>
+  <div class="key"><span class="label">In breve</span>
+    <ul class="list">
+      <li>Al Comune: come inquadrare l'area benessere e come far convivere estetica e sanità.</li>
+      <li>All'AUSL e alla Regione: quando la parte medica diventa ambulatorio, e cosa vale per flebo, prelievi e crioterapia.</li>
+      <li>All'avvocato: società, contratto con il medico, pubblicità, abbonamenti, privacy.</li>
+      <li>Ai fornitori: una dichiarazione scritta sulla scheda del decreto e sull'utilizzatore previsto.</li>
+    </ul>
+  </div>
+
+  <h3>Al SUAP del Comune di Modena</h3>
+  <ol class="list">
+    <li>Per sauna, vasca fredda e luce rossa basta la SCIA estetica o serve un'altra pratica?</li>
+    <li>Vasca fredda e float tank devono rispettare le regole di igiene delle piscine?</li>
+    <li>Si può usare la norma sull'"estetista presso strutture sanitarie" se la parte sanitaria è un ambulatorio autorizzato? Come si concilia con il divieto regionale?</li>
+    <li>L'obbligo di ingresso unico vale anche se l'attività principale è sanitaria? Oppure servono ingressi separati?</li>
+    <li>Per vendere integratori serve una pratica di commercio alimentare?</li>
+    <li>Per l'autorizzazione sanitaria valgono i 30 giorni del sito o i 90 della legge? Ci sono altri costi oltre al bollo?</li>
+    <li>Esiste un regolamento d'igiene che vieta la criosauna, come a Bologna? Con quale pratica è aperta la criosauna di The Longevity Suite in Via Vignolese?</li>
+    <li>È possibile un incontro preliminare sulla planimetria?</li>
+  </ol>
+
+  <h3>All'AUSL di Modena e alla Regione</h3>
+  <ol class="list">
+    <li>Un medico partner che usa HIFU, radiofrequenza medicale, laser potenti o microaghi deve avere un'autorizzazione?</li>
+    <li>Se le prestazioni mediche sono vendute con il nostro marchio e in abbonamento, è un ambulatorio con direttore sanitario?</li>
+    <li>Flebo di vitamine o NAD+ fatte da un infermiere su prescrizione: basta la comunicazione? Quali dotazioni di emergenza servono?</li>
+    <li>Quali requisiti per un punto prelievi collegato a un laboratorio di Modena?</li>
+    <li>In quale tipo di struttura è ammessa la crioterapia? Serve un medico? Quali misure per l'azoto?</li>
+    <li>IHHT e camera iperbarica "soft" sono attività sanitarie?</li>
+    <li>Separazione tra spazio sanitario e non sanitario: bastano locali dedicati o servono anche ingresso, attesa e bagni separati?</li>
+    <li>Quali requisiti per il direttore sanitario: specializzazione, ore minime, altri incarichi?</li>
+  </ol>
+
+  <h3>All'avvocato esperto di diritto sanitario</h3>
+  <ol class="list">
+    <li>Una società o due? Come impostare i contratti tra le società e l'affitto al medico a prezzo di mercato.</li>
+    <li>Contratto con il medico: responsabilità, assicurazione, direzione sanitaria, esclusiva, uso del marchio. Divieto di far usare apparecchi medici a personale non abilitato.</li>
+    <li>Pubblicità: come separare sito, social e listini tra parte medica ed estetica. Si possono includere prestazioni mediche nelle membership?</li>
+    <li>Abbonamenti: recesso, rinnovo automatico, clausole, sospensione per salute.</li>
+    <li>Privacy: chi è titolare dei dati (centro o medico), dati genetici, valutazione d'impatto, consensi, app e sensori.</li>
+    <li>IVA: prestazioni mediche esenti o al 22%, pacchetti misti.</li>
+    <li>Welfare aziendale: quali servizi sono ammissibili.</li>
+    <li>Criosauna: come inquadrarla in modo sicuro dopo la circolare del 2023 e i controlli NAS.</li>
+  </ol>
+
+  <h3>Ai fornitori di apparecchi</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Domanda</th><th>Perché</th></tr></thead>
+    <tbody>
+      <tr><td>A quale scheda del decreto corrisponde l'apparecchio? Con parametri e dichiarazione firmata</td><td>È ciò che controllano AUSL e NAS</td></tr>
+      <tr><td>È un dispositivo medico? Di quale classe? È registrato?</td><td>Decide chi può usarlo</td></tr>
+      <tr><td>Chi è l'utilizzatore previsto nelle istruzioni?</td><td>Se è un medico, l'estetista non può usarlo</td></tr>
+      <tr><td>Quali marcature e norme tecniche rispetta?</td><td>Conformità</td></tr>
+      <tr><td>Che formazione prevede? Per i laser: quale classe e chi è l'addetto alla sicurezza?</td><td>Sicurezza del lavoro</td></tr>
+      <tr><td>Che assicurazione ha il prodotto? Come si segnalano gli incidenti?</td><td>Responsabilità</td></tr>
+      <tr><td>Crio: ad azoto o elettrica? Con sensori di ossigeno?</td><td>Circolare del Ministero<sup><a href="#NO-12">12</a></sup></td></tr>
+      <tr><td>IHHT: è un dispositivo medico? Usa ossigeno medicinale?</td><td>Inquadramento</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Cosa non siamo riusciti a verificare</h3>
+  <ul class="list">
+    <li>Il testo delle leggi regionali sull'estetica (1992) e sulle palestre: la banca dati regionale era fuori servizio. Non sappiamo se la legge sulle palestre del 2000 sia stata sostituita da quella del 2017.</li>
+    <li>Le delibere regionali che elencano le procedure "a rischio" (2008), i requisiti generali (2004), il punto prelievi (2022) e il divieto di attività non sanitarie (2013): le conosciamo solo da citazioni della Regione.</li>
+    <li>Il testo europeo sugli apparecchi estetici con regole da dispositivo medico: il sito EUR-Lex era bloccato.</li>
+    <li>La "norma regionale" che a Ravenna vieterebbe le criosaune nei centri sportivi.</li>
+    <li>Casi su flebo e NAD+, camere iperbariche, ozonoterapia; sentenze di Cassazione; decisioni AGCM su "età biologica".</li>
+    <li>Requisiti regionali del direttore sanitario; regole di igiene per vasche fredde e float tank.</li>
+    <li>Circolari dell'Agenzia delle Entrate su welfare e medicina estetica; soglie 2025 degli influencer; voci della lista DPIA.</li>
+    <li>Come The Longevity Suite separa società e locali a Bologna e Parma.</li>
+  </ul>
+</section>
+<div class="src"><h3>Fonti di questa parte</h3><ol>
+  <li id="NO-1"><a href="https://www.comune.modena.it/amministrazione/documenti-e-dati/atti-normativi/regolamenti/regolamenti-in-materia-di-commercio/regolamento-comunale-per-le-attivita-di-acconciatura-estetica-tatuaggio-e-piercing">Regolamento comunale per acconciatura, estetica, tatuaggio e piercing, Delibera C.C. 46/2022 — Comune di Modena, pagina aggiornata 8/8/2025</a></li>
+  <li id="NO-2"><a href="https://www.mo.camcom.it/sportello-genesi/sportello-genesi/modulistica/estetista-scheda-informativa">Estetista, scheda informativa di avvio attività — Camera di Commercio di Modena, aggiornata 5/8/2026</a></li>
+  <li id="NO-3"><a href="https://www.gazzettaufficiale.it/eli/gu/2015/12/28/300/sg/pdf">DM 15 ottobre 2015 n. 206, apparecchi elettromeccanici per l'estetista (modifica il DM 110/2011) — Gazzetta Ufficiale n. 300, 28/12/2015</a></li>
+  <li id="NO-4"><a href="https://bur.regione.emilia-romagna.it/area-bollettini/bollettini-in-lavorazione/n-356-del-06-11-2019-parte-prima.2019-11-06.5292485935/bollettino_view/++widget++form.widgets.pdf_firmato/@@download">L.R. Emilia-Romagna 6 novembre 2019 n. 22, autorizzazione e accreditamento delle strutture sanitarie — BURERT n. 356, 6/11/2019</a></li>
+  <li id="NO-5"><a href="https://servizissiir.regione.emilia-romagna.it/deliberegiunta/servlet/AdapterHTTP?action_name=ACTIONRICERCADELIBERE&amp;operation=downloadTesto&amp;codProtocollo=GPG/2023/601&amp;ENTE=1">DGR 13 novembre 2023 n. 1919, procedure per autorizzazione e comunicazione di attività sanitaria — Regione Emilia-Romagna, BURERT n. 355, 20/12/2023</a></li>
+  <li id="NO-6"><a href="https://salute.regione.emilia-romagna.it/ssr/strumenti-e-informazioni/autorizzazione-e-accreditamento/sanitario/autorizzazione">Autorizzazione dell'attività sanitaria: norme, moduli, FAQ e risposte a quesiti (cita la DGR 53/2013) — Regione Emilia-Romagna, consultata 9/11/2026</a></li>
+  <li id="NO-7"><a href="https://www.comune.modena.it/servizi/imprese-e-commercio/comunicazioni-svolgimento-attivita-sanitaria-art-10-e-11-della-l-r-22-2019">Comunicazione di svolgimento di attività sanitaria (artt. 10–11 L.R. 22/2019) — Comune di Modena</a></li>
+  <li id="NO-8"><a href="https://www.comune.modena.it/servizi/imprese-e-commercio/autorizzazione-strutture-sanitarie-pubbliche-e-private">Autorizzazione strutture sanitarie pubbliche e private — Comune di Modena, pagina aggiornata 30/3/2026</a></li>
+  <li id="NO-9"><a href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1990-01-04;1">Legge 4 gennaio 1990 n. 1, Disciplina dell'attività di estetista (testo vigente) — Normattiva</a></li>
+  <li id="NO-10"><a href="https://www.fiscoetasse.com/new-rassegna-stampa/3617-dl-pnrr-novita-per-estetisti-e-parrucchieri-responsabile-tecnico-temporaneo.html">DL 19/2026 (convertito con L. 50/2026): responsabile tecnico temporaneo per estetisti — Fisco e Tasse, 2026</a></li>
+  <li id="NO-11"><a href="https://salute.regione.emilia-romagna.it/prp/aree-tematiche/sicurezza-e-salute-in-ambiente-di-vita-e-di-lavoro/ambiente-lavoro-2023/workshop-laser-estetico/3-bogi_stacchini.pdf/@@download/file/3.%20Bogi_Stacchini.pdf">Rischi delle apparecchiature elettromeccaniche ad uso estetico, workshop "Laser estetico" — Regione Emilia-Romagna, Bologna, 11/10/2023</a></li>
+  <li id="NO-12"><a href="https://www.ats-bg.it/system/files/pagina_standard/files/2323/7782/Crioterapia_merged.pdf">Circolare DGDMF.3/P/I.1.b.f/2022/20 su criosauna e criocamera, con documento tecnico — Ministero della Salute, 16/5/2023 (copia ATS Bergamo)</a></li>
+  <li id="NO-13"><a href="https://thelongevitysuite.com/centri/bologna-medical-city-clinics/">The Longevity Suite Bologna, City Clinic e Medical City Clinic — sito aziendale, consultato 9/11/2026</a></li>
+  <li id="NO-14"><a href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2020-07-31;101~art156">D.Lgs. 31 luglio 2020 n. 101, artt. 156–157 (esposizioni mediche e non mediche a radiazioni) — Normattiva</a></li>
+  <li id="NO-15"><a href="https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9124510">Provvedimento 5 giugno 2019 n. 146, Allegato 1 punto 4: prescrizioni sui dati genetici — Garante privacy</a></li>
+  <li id="NO-16"><a href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1967-05-24;396~art3">Legge 24 maggio 1967 n. 396, art. 3, professione di biologo — Normattiva</a></li>
+  <li id="NO-17"><a href="https://eur-lex.europa.eu/eli/reg/2017/745/oj">Regolamento (UE) 2017/745 sui dispositivi medici, Allegato XVI — EUR-Lex (non letto direttamente)</a></li>
+  <li id="NO-18"><a href="https://thelongevitysuite.com/wp-content/uploads/2025/02/TLS-CATALOGO-trattamenti-retail_2025-02-ita-WEB.pdf">Catalogo trattamenti retail 2025 — The Longevity Suite, febbraio 2025</a></li>
+  <li id="NO-19"><a href="https://salute.regione.emilia-romagna.it/ssr/strumenti-e-informazioni/autorizzazione-e-accreditamento/sanitario/autorizzazione/incontro-15-aprile-2024-cna-legge-regionale-22-2019-1.pdf/@@download/file/INCONTRO%2015%20APRILE%202024%20-%20CNA-%20LEGGE%20REGIONALE%2022%202019.pdf">L.R. 22/2019: studi, ambulatori e polistudi, presentazione al webinar CNA — Regione Emilia-Romagna, 15/4/2024</a></li>
+  <li id="NO-20"><a href="https://salute.regione.emilia-romagna.it/ssr/strumenti-e-informazioni/autorizzazione-e-accreditamento/sanitario/autorizzazione/nota-interpretativa_pg_30_09_2024_1090990_u.pdf/@@download/file/nota%20interpretativa_PG_30_09_2024_1090990_U.pdf">Nota interpretativa PG 30/09/2024.1090990.U sui requisiti degli studi — Coordinatore regionale autorizzazione, Regione Emilia-Romagna, 30/9/2024</a></li>
+  <li id="NO-21"><a href="https://odmeo.re.it/wp-content/uploads/2025/03/Documentazione-normativainformazionesanitaria-agg20-2-2025.pdf">Normativa sull'informazione sanitaria (L. 145/2018 c. 525 e 536, L. 175/1992) — OMCeO Reggio Emilia, aggiornamento 20/2/2025</a></li>
+  <li id="NO-22"><a href="https://salute.regione.emilia-romagna.it/ssr/strumenti-e-informazioni/autorizzazione-e-accreditamento/sanitario/autorizzazione/modulo_14_def_21-2-2024.docx/@@download/file/MODULO_14_def_21-2-2024.docx">Modulo 14, autodichiarazione del direttore sanitario — Regione Emilia-Romagna, 21/2/2024</a></li>
+  <li id="NO-23"><a href="https://www.ausl.mo.it/organizzazione/dipartimenti-territoriali/dipartimento-di-sanita-pubblica/autorizzazione-allesercizio-delle-strutture-sanitarie-socio-sanitarie-e-socio-assistenziali">Autorizzazione all'esercizio delle strutture sanitarie — AUSL Modena, Dipartimento di Sanità Pubblica</a></li>
+  <li id="NO-24"><a href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1992-12-30;502~art8ter">D.Lgs. 30 dicembre 1992 n. 502, art. 8-ter — Normattiva</a></li>
+  <li id="NO-25"><a href="https://salute.regione.emilia-romagna.it/ssr/strumenti-e-informazioni/autorizzazione-e-accreditamento/sanitario/autorizzazione/tabella_2_def_8-3-2024-1.pdf/@@download/file/Tabella_2_def_8-3-2024.pdf">Tabella 2, tipologie di attività sanitarie e requisiti di riferimento — Regione Emilia-Romagna, 8/3/2024</a></li>
+  <li id="NO-26"><a href="https://thelongevitysuite.com/centri/parma-medical-city-clinic/">The Longevity Suite Parma, City Clinic e Medical City Clinic — sito aziendale, consultato 9/11/2026</a></li>
+  <li id="NO-27"><a href="https://thelongevitysuite.com/en/centres/modena/">The Longevity Suite Modena, Via Vignolese 70 — sito aziendale, consultato 9/11/2026</a></li>
+  <li id="NO-28"><a href="https://www.lapressa.it/rubriche/pressa_tube/crioterapia-non-autorizzata-denunciati-titolarie-dip-palestra-a-moden">Crioterapia non autorizzata, denunciati titolare e dipendente di palestra a Modena — LaPressa, 25/4/2022</a></li>
+  <li id="NO-29"><a href="https://www.sulpanaro.net/2022/04/crioterapia-abusiva-i-nas-controllano-488-strutture-sequestrate-13-apparecchiature/">Crioterapia abusiva, i NAS controllano 488 strutture — SulPanaro, aprile 2022</a></li>
+  <li id="NO-30"><a href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2018-01-11;3~art12">Legge 11 gennaio 2018 n. 3, art. 12 (nuovo art. 348 codice penale) — Normattiva</a></li>
+  <li id="NO-31"><a href="https://www.ilfattoquotidiano.it/2022/04/23/crioterapia-in-strutture-non-autorizzate-o-usate-da-personale-non-qualificato-controlli-dei-nas-in-488-centri-16-le-denunce/6568496/">Crioterapia in strutture non autorizzate, controlli NAS in 488 centri — Il Fatto Quotidiano, 23/4/2022</a></li>
+  <li id="NO-32"><a href="https://www.quotidianosanita.it/?p=114697">NAS Roma, sequestrate 6 criocamere — Quotidiano Sanità, marzo 2022</a></li>
+  <li id="NO-33"><a href="https://www.agi.it/cronaca/news/2022-05-24/controlli-nas-centri-estetici-16844693/">Controlli NAS nei centri estetici — AGI, 24/5/2022</a></li>
+  <li id="NO-34"><a href="https://www.lapresse.it/cronaca/2025/06/12/sanita-1160-controlli-dei-nas-in-centri-medicina-estetica-sequestrate-14-strutture/">1.160 controlli NAS in centri di medicina estetica, 14 strutture sequestrate — LaPresse, 12/6/2025</a></li>
+  <li id="NO-35"><a href="https://www.ilrestodelcarlino.it/bologna/cronaca/estetista-04024619">Bologna, estetista senza titolo eseguiva atti sanitari — Il Resto del Carlino, 9/5/2019</a></li>
+  <li id="NO-36"><a href="https://www.ilfattoquotidiano.it/2025/04/15/laria-era-diventata-irrespirabile-una-donna-muore-durante-una-seduta-di-crioterapia-in-palestra/7954133/">Parigi, morta una dipendente durante una seduta di crioterapia in palestra — Il Fatto Quotidiano, 15/4/2025</a></li>
+  <li id="NO-37"><a href="https://www.fiscoetasse.com/files/16825/testo-dl-13062023-n69-coordinato-con-legge-conversione-10082023-n103.pdf">DL 13 giugno 2023 n. 69, art. 6 (pubblicità sanitaria), testo coordinato con la L. 103/2023 — copia del testo in Gazzetta Ufficiale</a></li>
+  <li id="NO-38"><a href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2005-09-06;206~art23">Codice del consumo (D.Lgs. 206/2005), artt. 23 e 27 — Normattiva</a></li>
+  <li id="NO-39"><a href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2026-01-19;10">D.Lgs. 19 gennaio 2026 n. 10, Testo unico IVA — Normattiva</a></li>
+  <li id="NO-40"><a href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2026-06-19;117">D.Lgs. 19 giugno 2026 n. 117, Testo unico imposte sui redditi — Normattiva</a></li>
+  <li id="NO-41"><a href="https://www.odmeo.re.it/wp-content/uploads/2024/07/Medici-e-uguale-Odontoiatri-Informazione-e-pubblicita-sanitaria-da-inserire-come-allegato-CDM-Artt-55-56-e-57.pdf">Codice di deontologia medica, artt. 55–57 (informazione e pubblicità sanitaria) — OMCeO Reggio Emilia, 2024</a></li>
+  <li id="NO-42"><a href="https://www.agcom.it/provvedimenti/delibera-197-25-cons">Delibera 197/25/CONS, linee guida e codice di condotta per gli influencer — AGCOM, 23/7/2025</a></li>
+  <li id="NO-43"><a href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2017-12-22;219~art1">Legge 22 dicembre 2017 n. 219, art. 1 (consenso informato) — Normattiva</a></li>
+  <li id="NO-44"><a href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2017-03-08;24~art10">Legge 8 marzo 2017 n. 24, art. 10, obbligo di assicurazione — Normattiva</a></li>
+  <li id="NO-45"><a href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:ministero.imprese.made.in.italy:decreto:2023-12-15;232">DM 15 dicembre 2023 n. 232, requisiti minimi delle polizze sanitarie — Normattiva</a></li>
+  <li id="NO-46"><a href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2005-09-06;206~art33">Codice del consumo, art. 33 (clausole vessatorie) — Normattiva</a></li>
+  <li id="NO-47"><a href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2005-09-06;206~art47">Codice del consumo, art. 47 (esclusione dei servizi sanitari dal recesso) — Normattiva</a></li>
+  <li id="NO-48"><a href="https://www.brocardi.it/testo-unico-imposte-redditi/titolo-i/capo-iv/art51.html">TUIR, art. 51 (redditi di lavoro dipendente, welfare) — Brocardi</a></li>
+  <li id="NO-49"><a href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2011-11-12;183~art10">Legge 12 novembre 2011 n. 183, art. 10 (società tra professionisti) — Normattiva</a></li>
+</ol></div>
+<footer>Progetto LONGEVITY · documento di lavoro · novembre 2026 · ricerca esplorativa, nessuna decisione presa</footer>
+</div>
+<script>
+(function(){var L=[].slice.call(document.querySelectorAll('.side a'));if(!L.length||!('IntersectionObserver' in window))return;
+var m={};L.forEach(function(a){m[a.getAttribute('href').slice(1)]=a});
+var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){L.forEach(function(a){a.classList.remove('on')});var a=m[e.target.id];if(a)a.classList.add('on')}})},{rootMargin:'-10% 0px -80% 0px'});
+document.querySelectorAll('section[id]').forEach(function(s){o.observe(s)})})();
+</script>
+</body></html>

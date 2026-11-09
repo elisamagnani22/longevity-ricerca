@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="it"><head><meta name="robots" content="noindex,nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light only">
+<title>LONGEVITY · Cosa dice la scienza</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F5F1EA; --paper:#FBF8F3; --linen:#D9D1C1; --sand:#C8BBA6; --stone:#B9B0A0;
+  --olive:#5A542D; --moss:#5E6B3A; --sage:#8A9472; --bronze:#8B6A43; --brown:#3E3226;
+  --ink:#2F2820; --text:#3B342C; --muted:#6E6558; --tint:#EFE9DF;
+  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --font:'Inter',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Helvetica,Arial,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--text);font-family:var(--font);font-weight:400;font-size:18px;line-height:1.7;-webkit-font-smoothing:antialiased;padding-inline:24px;overflow-x:hidden}
+b,strong{font-weight:600;color:var(--ink)}
+a{color:var(--moss);text-decoration:underline;text-decoration-color:var(--sand);text-underline-offset:3px}
+.page{max-width:1080px;margin:0 auto}
+.narrow{max-width:760px}
+
+.cover{min-height:92vh;display:flex;flex-direction:column;justify-content:space-between;padding-block:56px 48px;margin-inline:calc(50% - 50vw);padding-inline:max(24px,calc(50vw - 540px));background:var(--brown);color:var(--linen)}
+.label{font-size:12.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--bronze)}
+.cover .label{color:var(--sand)}
+.cover h1{font-family:var(--serif);font-weight:500;font-size:clamp(56px,10vw,112px);line-height:.98;letter-spacing:-.01em;color:#F5F1EA;margin:28px 0 24px}
+.cover .subtitle{font-size:clamp(20px,2.6vw,25px);color:var(--linen);max-width:34ch;line-height:1.45}
+.cover .meta{display:flex;flex-wrap:wrap;gap:10px 48px;font-size:15px;color:var(--linen);padding-top:22px;border-top:1px solid rgba(217,209,193,.35)}
+.cover .meta span b{display:block;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--sand);font-weight:600;margin-bottom:3px}
+.cover .back{font-size:15px;margin-top:20px}
+.cover .back a{color:var(--linen)}
+
+.toc{padding-block:56px;border-bottom:1px solid var(--linen)}
+.toc ol{list-style:none;margin-top:20px;columns:2 300px;column-gap:48px}
+.toc li{break-inside:avoid;padding:9px 0;border-bottom:1px solid var(--tint);font-size:17px}
+.toc a{text-decoration:none;color:var(--ink);display:flex;gap:16px}
+.toc a span{color:var(--bronze);font-weight:600;min-width:26px;font-size:15px;padding-top:2px}
+.toc a:hover{color:var(--moss)}
+
+section{padding-block:80px 16px;scroll-margin-top:16px}
+.num{font-size:13px;font-weight:600;letter-spacing:.2em;color:var(--bronze);text-transform:uppercase;margin-bottom:10px}
+h2{font-family:var(--serif);font-weight:500;font-size:clamp(38px,5.4vw,54px);line-height:1.05;color:var(--brown);margin-bottom:20px;padding-bottom:18px;border-bottom:2px solid var(--olive)}
+.lead{font-size:21px;line-height:1.6;color:var(--ink);margin-bottom:30px;max-width:62ch}
+h3{font-size:14px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--moss);margin:46px 0 16px}
+p{margin-bottom:16px;max-width:72ch}
+ul.list,ol.list{margin:6px 0 22px 0;padding-left:0;list-style:none;max-width:72ch}
+ul.list li{position:relative;padding-left:24px;margin-bottom:10px}
+ul.list li::before{content:'';position:absolute;left:2px;top:.8em;width:10px;height:2px;background:var(--olive)}
+ol.list{counter-reset:n}
+ol.list li{counter-increment:n;position:relative;padding-left:44px;margin-bottom:14px}
+ol.list li::before{content:counter(n,decimal-leading-zero);position:absolute;left:0;top:.1em;font-size:15px;font-weight:600;color:var(--bronze)}
+
+.figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));margin:10px 0 30px;border-top:2px solid var(--olive);border-bottom:1px solid var(--linen)}
+.fig{padding:22px 20px 22px 0}
+.fig .n{font-family:var(--serif);font-size:52px;font-weight:500;color:var(--olive);line-height:1}
+.fig .l{font-size:15.5px;color:var(--text);margin-top:8px;line-height:1.45}
+
+.tw{overflow-x:auto;margin:12px 0 26px;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:16px;line-height:1.5}
+th{text-align:left;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#F5F1EA;background:var(--olive);padding:12px 14px;vertical-align:bottom}
+td{padding:14px;border-bottom:1px solid var(--linen);vertical-align:top;color:var(--text)}
+tbody tr:nth-child(even) td{background:var(--cream)}
+td:first-child{font-weight:600;color:var(--ink)}
+td.r,th.r{text-align:right;white-space:nowrap}
+tr.hl td{background:#E8EBDD!important}
+tr.hl td:first-child{box-shadow:inset 4px 0 0 var(--moss)}
+
+dl{margin:8px 0 22px}
+dl .it{display:grid;grid-template-columns:230px 1fr;gap:4px 30px;padding:18px 0;border-bottom:1px solid var(--linen)}
+dl dt{font-weight:600;color:var(--ink);line-height:1.4}
+dl dt small{display:block;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze);margin-top:6px}
+dl dd p{margin-bottom:6px}
+
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin:10px 0 24px}
+.cols .col h4{font-size:14px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding-bottom:10px;margin-bottom:12px;border-bottom:2px solid var(--moss);color:var(--moss)}
+.cols .col.neg h4{border-color:var(--bronze);color:var(--bronze)}
+.cols .col.neg ul.list li::before{background:var(--bronze)}
+
+.key{background:var(--tint);border-left:4px solid var(--moss);padding:20px 26px;margin:30px 0;font-size:19px;color:var(--ink);line-height:1.6}
+.key .label{display:block;margin-bottom:8px;color:var(--moss)}
+.note{font-size:15px;color:var(--muted);margin-top:-8px}
+.est{font-size:.85em;font-style:italic;color:var(--muted);white-space:nowrap}
+sup{font-size:11px;line-height:0;margin-left:1px}
+sup a{text-decoration:none;color:var(--bronze);font-weight:600}
+
+.sources{padding-block:72px 40px;border-top:1px solid var(--linen);margin-top:56px}
+.sources ol{list-style:none;counter-reset:s;margin-top:16px;font-size:14px;color:var(--muted)}
+.sources li{counter-increment:s;padding:5px 0 5px 40px;position:relative;word-break:break-word;scroll-margin-top:20px}
+.sources li::before{content:counter(s);position:absolute;left:0;color:var(--bronze);font-weight:600}
+.sources li:target{background:var(--tint)}
+footer{padding-block:32px 60px;font-size:13px;color:var(--muted);border-top:1px solid var(--linen)}
+
+@media (max-width:700px){
+  body{font-size:17px}
+  dl .it{grid-template-columns:1fr}
+  .cols{grid-template-columns:1fr;gap:24px}
+  .cover{min-height:auto;padding-block:44px}
+  section{padding-block:56px 8px}
+  table{font-size:15px}
+}
+@media print{body{padding:0;font-size:11pt}.cover{min-height:auto;page-break-after:always}h2,h3{page-break-after:avoid}tr{page-break-inside:avoid}}
+
+/* ===== LONGEVITY: aggiunte per la leggibilità ===== */
+body{font-size:17px;line-height:1.65}
+.cover{min-height:62vh}
+.cover h1{font-size:clamp(46px,7.5vw,88px)}
+.topnav{position:sticky;top:0;z-index:20;margin-inline:calc(50% - 50vw);padding:10px max(24px,calc(50vw - 540px));background:rgba(251,248,243,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--linen);display:flex;gap:6px 22px;flex-wrap:wrap;font-size:13.5px}
+.topnav a{text-decoration:none;color:var(--muted);font-weight:500;white-space:nowrap}
+.topnav a:hover{color:var(--moss)}
+.topnav a.on{color:var(--ink);font-weight:600;box-shadow:inset 0 -2px 0 var(--moss)}
+.topnav .home{color:var(--bronze);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:12px;padding-top:1px}
+section{scroll-margin-top:60px}
+.sources li,.src li,.card{scroll-margin-top:70px}
+.toc .ptitle{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--bronze);margin:30px 0 4px}
+.toc ol{margin-top:6px}
+.part{margin:90px calc(50% - 50vw) 0;padding:44px max(24px,calc(50vw - 540px));background:var(--olive);color:#F5F1EA}
+.part .label{color:var(--linen)}
+.part h2{color:#F5F1EA;border:0;margin:8px 0 6px;padding:0}
+.part p{color:var(--linen);max-width:64ch;margin:0}
+.side{display:none}
+@media (min-width:1500px){
+  .side{display:block;position:fixed;left:max(16px,calc(50vw - 540px - 250px));top:70px;width:210px;max-height:calc(100vh - 90px);overflow:auto;font-size:13px;line-height:1.35}
+  .side b{display:block;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--bronze);margin:16px 0 6px}
+  .side a{display:block;text-decoration:none;color:var(--muted);padding:4px 0 4px 10px;border-left:2px solid var(--linen)}
+  .side a:hover,.side a.on{color:var(--ink);border-left-color:var(--moss)}
+}
+h4{font-size:16px;font-weight:600;color:var(--ink);margin:26px 0 8px}
+.key ul.list{margin:0;max-width:none}
+.key ul.list li{margin-bottom:6px}
+.key ul.list li:last-child{margin-bottom:0}
+.key p:last-child{margin-bottom:0}
+.alert{background:#F6E9DE;border-left:4px solid #A4532B;padding:16px 22px;margin:20px 0;font-size:16.5px;color:var(--ink);line-height:1.55}
+.alert .label{display:block;margin-bottom:6px;color:#A4532B}
+.tag{display:inline-block;font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:1px 7px;border-radius:99px;vertical-align:.12em;margin-left:3px;white-space:nowrap;border:1px solid}
+.tag.d{color:#7A5A22;border-color:#D9C08C;background:#FAF1DC}
+.tag.r{color:#55606B;border-color:#C5CCD3;background:#EEF1F3}
+.tag.s{color:#6B4E7A;border-color:#D3C2DC;background:#F4EEF7}
+.tag.n{color:#A4532B;border-color:#E3BFA9;background:#FBEFE7}
+.legend{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:14px;color:var(--muted);margin:14px 0 26px}
+.dot{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+.dot.g{background:#5E7B3A}.dot.y{background:#D0A23A}.dot.r{background:#B4502F}
+
+.card{background:#fff;border:1px solid var(--linen);border-top:4px solid var(--olive);border-radius:4px;padding:28px 30px 24px;margin:34px 0}
+.card header{margin-bottom:14px}
+h3.card-t{font-family:var(--serif);font-size:34px;font-weight:600;letter-spacing:0;text-transform:none;color:var(--brown);margin:0;line-height:1.1}
+.card-s{font-size:14.5px;color:var(--muted);margin:6px 0 10px;max-width:none}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:12px;font-weight:600;padding:3px 11px;border-radius:99px;background:var(--tint);color:var(--text);border:1px solid var(--linen)}
+.chip.ok{background:#E6EDD8;border-color:#BECBA2;color:#3F5320}
+.chip.warn{background:#FAF1DC;border-color:#E2CD98;color:#7A5A22}
+.chip.bad{background:#F6E3D8;border-color:#E3BFA9;color:#8E3F1D}
+.card-lead{font-size:18px;color:var(--ink);line-height:1.55;max-width:none;margin-bottom:14px}
+dl.facts{margin:0 0 6px}
+dl.facts>div{display:grid;grid-template-columns:150px 1fr;gap:4px 22px;padding:11px 0;border-top:1px solid var(--tint);font-size:16px}
+dl.facts dt{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--bronze);padding-top:3px}
+dl.facts dd{line-height:1.55}
+.swot{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.swot>div{padding:14px 18px 12px;border-radius:4px;font-size:15.5px;line-height:1.5}
+.swot h4{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 8px}
+.swot ul{list-style:none}
+.swot li{position:relative;padding-left:16px;margin-bottom:6px}
+.swot li::before{content:'';position:absolute;left:0;top:.7em;width:7px;height:2px;background:currentColor;opacity:.55}
+.swot .pro{background:#EEF2E4}.swot .pro h4{color:#4A5E24}
+.swot .con{background:#F5EEE6}.swot .con h4{color:#8B6A43}
+.swot .copy{background:#E3ECD9;box-shadow:inset 0 0 0 1.5px #9DB07A}.swot .copy h4{color:#3F5320}
+.swot .avoid{background:#F6E6DC;box-shadow:inset 0 0 0 1.5px #DDB199}.swot .avoid h4{color:#8E3F1D}
+.src{margin-top:44px;padding-top:18px;border-top:1px solid var(--linen)}
+.src h3{margin-top:0}
+.src ol{list-style:none;counter-reset:s;font-size:13.5px;color:var(--muted);columns:2 380px;column-gap:40px}
+.src li{counter-increment:s;padding:3px 0 3px 34px;position:relative;word-break:break-word;break-inside:avoid}
+.src li::before{content:counter(s);position:absolute;left:0;color:var(--bronze);font-weight:600}
+.src li:target{background:var(--tint)}
+.src a{color:var(--muted)}
+details.more{margin:14px 0 24px;border:1px solid var(--linen);border-radius:4px;background:#fff}
+details.more>summary{cursor:pointer;padding:12px 18px;font-weight:600;color:var(--moss)}
+details.more>div{padding:4px 18px 14px}
+.hub{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin:20px 0 30px}
+.hub a{display:block;text-decoration:none;background:#fff;border:1px solid var(--linen);border-top:4px solid var(--olive);border-radius:4px;padding:22px 24px;color:var(--text)}
+.hub a:hover{border-top-color:var(--moss);box-shadow:0 6px 20px rgba(62,50,38,.08)}
+.hub a.main{grid-column:1/-1;border-top-color:var(--bronze);background:var(--tint)}
+.hub b{display:block;font-family:var(--serif);font-size:28px;font-weight:600;color:var(--brown);line-height:1.15;margin:6px 0 8px}
+.hub small{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--bronze)}
+.hub span{font-size:15.5px;line-height:1.5;display:block}
+@media (max-width:700px){
+  dl.facts>div{grid-template-columns:1fr}
+  .swot{grid-template-columns:1fr}
+  .card{padding:20px 18px}
+  .src ol{columns:1}
+}
+@media print{.topnav,.side{display:none}.card{break-inside:avoid}.part{margin-top:30px}}
+</style></head><body>
+<div class="page">
+<header class="cover"><div><span class="label">Allegato 2 · Novembre 2026</span><h1>Cosa dice<br>la scienza</h1><p class="subtitle">Trattamento per trattamento: cosa è provato, cosa è promettente, cosa è solo marketing.</p></div><div class="meta"><span><b>Tipo</b>Rassegna degli studi, non consiglio medico</span><span><b>Fonti</b>PubMed, Cochrane, enti regolatori</span></div></header>
+<nav class="topnav"><a class="home" href="LONGEVITY%20-%20Control%20Room.html">Longevity</a><a href="LONGEVITY%20-%20Ricerca%20competitor%20e%20Modena.html">Ricerca: competitor e Modena</a><a href="LONGEVITY%20-%20Allegato%201%20-%20Regole%20e%20autorizzazioni.html">Regole</a><a href="LONGEVITY%20-%20Allegato%202%20-%20Cosa%20dice%20la%20scienza.html" class="on">Scienza</a><a href="LONGEVITY%20-%20Allegato%203%20-%20Mercato,%20format%20esteri,%20tecnologie.html">Mercato e tecnologie</a></nav>
+<div class="toc"><span class="label">Indice</span><ol><li><a href="#EV-sintesi"><span>01</span>Il quadro in una pagina</a></li><li><a href="#EV-stile"><span>02</span>Stile di vita e misure che contano</a></li><li><a href="#EV-recupero"><span>03</span>Recupero e biohacking</a></li><li><a href="#EV-infusioni"><span>04</span>Infusioni e iniettivi</a></li><li><a href="#EV-diagnostica"><span>05</span>Diagnostica e test</a></li><li><a href="#EV-estetica"><span>06</span>Macchine per l&#x27;estetica</a></li><li><a href="#EV-comunicazione"><span>07</span>Come dirlo ai clienti senza promettere troppo</a></li></ol></div>
+<aside class="side"><a href="#EV-sintesi">01 · Il quadro in una pagina</a><a href="#EV-stile">02 · Stile di vita e misure che contano</a><a href="#EV-recupero">03 · Recupero e biohacking</a><a href="#EV-infusioni">04 · Infusioni e iniettivi</a><a href="#EV-diagnostica">05 · Diagnostica e test</a><a href="#EV-estetica">06 · Macchine per l&#x27;estetica</a><a href="#EV-comunicazione">07 · Come dirlo ai clienti senza promettere troppo</a></aside>
+<section id="EV-sintesi">
+<div class="num">Capitolo 01</div>
+  <h2>Il quadro in una pagina</h2>
+  <p class="lead">Nessuna macchina o flebo ha dimostrato di allungare la vita. Movimento, forza, alimentazione e sonno sì: un centro credibile parte da lì.</p>
+  <p class="note">Questa è una rassegna di studi scientifici fatta per una ricerca di mercato. Non è un parere medico e non sostituisce il giudizio di un medico.</p>
+  <div class="key"><span class="label">In breve</span>
+    <ul class="list">
+      <li>Lo stile di vita sano pesa molto più di qualsiasi dispositivo: chi ha cinque abitudini sane vive in media 12–14 anni in più.<sup><a href="#EV-1">1</a></sup></li>
+      <li>Le misure più utili sono semplici: capacità aerobica (VO₂max), forza della stretta di mano e composizione corporea.</li>
+      <li>Sauna, freddo, flotation e luce rossa sono servizi di benessere onesti, se non si promettono effetti medici.</li>
+      <li>Flebo di NAD+, esosomi, peptidi, ozono e ossigeno iperbarico "anti-aging" hanno prove deboli o assenti, e in alcuni casi avvisi delle autorità.</li>
+      <li>Nell'estetica, Ultherapy e Sofwave hanno la base più solida, ma per effetti di pochi millimetri.</li>
+    </ul>
+  </div>
+
+  <h3>Come leggere i livelli di evidenza</h3>
+  <ul class="list">
+    <li><span class="dot g"></span>solida: molti studi seri e concordi, o popolazioni molto grandi.</li>
+    <li><span class="dot y"></span>preliminare: pochi studi piccoli o risultati misti.</li>
+    <li><span class="dot r"></span>debole o assente: nessuno studio serio sul risultato promesso.</li>
+  </ul>
+  <p>RCT = studio randomizzato controllato, con partecipanti sorteggiati. Meta-analisi = studio che riunisce molti studi.</p>
+
+  <h3>Recupero e biohacking</h3>
+  <div class="tw"><table><thead><tr><th>Servizio</th><th>Cosa promette</th><th>Livello di evidenza</th><th>Giudizio pratico</th></tr></thead><tbody>
+    <tr><td>Criosauna (crioterapia total body)</td><td>Recupero, anti-aging</td><td><span class="dot y"></span>preliminare per l'indolenzimento; <span class="dot r"></span>assente per dimagrimento e longevità</td><td>Benessere onesto, con supervisione sanitaria se richiesta</td></tr>
+    <tr><td>Bagno freddo</td><td>Recupero, energia</td><td><span class="dot g"></span>solida per l'indolenzimento; <span class="dot y"></span>preliminare per il benessere</td><td>Benessere onesto</td></tr>
+    <tr class="hl"><td>Sauna finlandese</td><td>Cuore sano, vita più lunga</td><td><span class="dot g"></span>solida come associazione nelle grandi coorti; causa non dimostrata</td><td>Il miglior servizio di benessere</td></tr>
+    <tr><td>Sauna a infrarossi</td><td>Cuore, "detox"</td><td><span class="dot y"></span>preliminare (malati di cuore); <span class="dot r"></span>debole nei sani</td><td>Benessere onesto</td></tr>
+    <tr><td>Caldo-freddo alternati</td><td>Circolazione, recupero</td><td><span class="dot y"></span>preliminare per la fatica percepita</td><td>Benessere onesto</td></tr>
+    <tr><td>Luce rossa su viso o muscolo</td><td>Rughe, recupero</td><td><span class="dot y"></span>preliminare</td><td>Benessere onesto</td></tr>
+    <tr><td>Lettino luce rossa total body</td><td>Recupero, anti-aging</td><td><span class="dot r"></span>debole per il recupero</td><td>Senza promesse, o da evitare</td></tr>
+    <tr><td>IHHT (aria povera e ricca di ossigeno a cicli)</td><td>Anti-aging</td><td><span class="dot y"></span>preliminare in anziani malati; <span class="dot r"></span>assente nei sani</td><td>Solo con medico e cautela</td></tr>
+    <tr><td>Ossigeno iperbarico "anti-aging"</td><td>Telomeri, ringiovanimento</td><td><span class="dot r"></span>debole per l'anti-aging</td><td>Da evitare</td></tr>
+    <tr><td>Idrogeno molecolare</td><td>Antiossidante, energia</td><td><span class="dot r"></span>debole</td><td>Da evitare</td></tr>
+    <tr><td>Flotation (vasca di galleggiamento)</td><td>Relax, meno ansia</td><td><span class="dot y"></span>preliminare per l'ansia a breve termine</td><td>Benessere onesto</td></tr>
+    <tr><td>Pressoterapia</td><td>Drenaggio, cellulite</td><td><span class="dot r"></span>debole per il recupero; assente per la cellulite</td><td>Benessere onesto</td></tr>
+    <tr><td>Elettrostimolazione total body</td><td>"Palestra in 20 minuti"</td><td><span class="dot y"></span>preliminare; rischio di danno muscolare</td><td>Solo con trainer qualificato</td></tr>
+    <tr><td>PEMF (campi magnetici pulsati)</td><td>"Ricarica cellulare"</td><td><span class="dot y"></span>preliminare per l'artrosi; <span class="dot r"></span>assente per il benessere</td><td>Da evitare</td></tr>
+  </tbody></table></div>
+
+  <h3>Infusioni e iniettivi</h3>
+  <div class="tw"><table><thead><tr><th>Servizio</th><th>Cosa promette</th><th>Livello di evidenza</th><th>Giudizio pratico</th></tr></thead><tbody>
+    <tr><td>NAD+ in vena, NR e NMN per bocca</td><td>Energia, anti-aging</td><td><span class="dot r"></span>assente per effetti clinici</td><td>Da evitare</td></tr>
+    <tr><td>Flebo vitaminiche ("Myers")</td><td>Energia, difese</td><td><span class="dot r"></span>assente nei sani</td><td>Da evitare</td></tr>
+    <tr><td>Glutatione in vena</td><td>Pelle chiara, detox</td><td><span class="dot r"></span>assente; sconsigliato dagli studi</td><td>Da evitare</td></tr>
+    <tr><td>Ozonoterapia</td><td>Detox, anti-aging</td><td><span class="dot r"></span>assente per l'anti-aging</td><td>Da evitare</td></tr>
+    <tr><td>Esosomi</td><td>Rigenerazione pelle e capelli</td><td><span class="dot r"></span>debole; nessun prodotto approvato</td><td>Da evitare</td></tr>
+    <tr><td>Peptidi (BPC-157 e simili)</td><td>Guarigione, anti-aging</td><td><span class="dot r"></span>assente nell'uomo</td><td>Da evitare assolutamente</td></tr>
+    <tr><td>PRP (plasma ricco di piastrine)</td><td>Capelli, viso</td><td><span class="dot g"></span>solida per la densità dei capelli; <span class="dot y"></span>preliminare per il viso</td><td>Solo medico</td></tr>
+    <tr><td>Polinucleotidi</td><td>Qualità della pelle</td><td><span class="dot y"></span>preliminare</td><td>Solo medico</td></tr>
+  </tbody></table></div>
+
+  <h3>Diagnostica e test</h3>
+  <div class="tw"><table><thead><tr><th>Servizio</th><th>Cosa promette</th><th>Livello di evidenza</th><th>Giudizio pratico</th></tr></thead><tbody>
+    <tr><td>Test "età biologica" epigenetica</td><td>La tua vera età</td><td><span class="dot g"></span>solida sulle popolazioni; <span class="dot r"></span>debole sul singolo</td><td>Solo come test "sperimentale"</td></tr>
+    <tr><td>Test dei telomeri</td><td>Invecchiamento cellulare</td><td><span class="dot r"></span>debole sul singolo</td><td>Da evitare</td></tr>
+    <tr><td>Risonanza total body nei sani</td><td>Trovare tumori in anticipo</td><td><span class="dot r"></span>debole per il beneficio</td><td>Da evitare come routine</td></tr>
+    <tr class="hl"><td>Calcium score coronarico</td><td>Stato delle coronarie</td><td><span class="dot g"></span>solida per riclassificare il rischio; <span class="dot r"></span>debole come screening per tutti</td><td>Utile se lo decide il medico</td></tr>
+    <tr class="hl"><td>DEXA (composizione corporea)</td><td>Muscolo, grasso, ossa</td><td><span class="dot g"></span>solida come misura</td><td>Pilastro</td></tr>
+    <tr class="hl"><td>VO₂max e forza di presa</td><td>Predire la longevità</td><td><span class="dot g"></span>solida come predittori</td><td>Pilastro</td></tr>
+    <tr><td>Sensore del glucosio nei sani</td><td>Dieta ottimizzata</td><td><span class="dot r"></span>debole nei sani</td><td>Solo come esperienza educativa</td></tr>
+    <tr><td>Test del microbioma</td><td>Dieta su misura</td><td><span class="dot r"></span>debole</td><td>Da evitare</td></tr>
+    <tr><td>Test DNA per la dieta</td><td>Dieta per il tuo DNA</td><td><span class="dot r"></span>assente</td><td>Da evitare</td></tr>
+    <tr><td>Check-up con molti esami</td><td>Prevenzione totale</td><td><span class="dot g"></span>solida, ma contro: nessun beneficio sulla mortalità</td><td>Solo versione essenziale, con medico</td></tr>
+    <tr><td>Galleri e test multi-tumore</td><td>Un prelievo per 50 tumori</td><td><span class="dot y"></span>preliminare</td><td>Da evitare</td></tr>
+  </tbody></table></div>
+
+  <h3>Macchine per l'estetica</h3>
+  <div class="tw"><table><thead><tr><th>Servizio</th><th>Cosa promette</th><th>Livello di evidenza</th><th>Giudizio pratico</th></tr></thead><tbody>
+    <tr class="hl"><td>Ultherapy</td><td>Lifting senza bisturi</td><td><span class="dot g"></span>solida per un lifting lieve</td><td>Pilastro estetico, con medico</td></tr>
+    <tr><td>Sofwave</td><td>Rughe sottili</td><td><span class="dot y"></span>preliminare-moderata</td><td>Credibile, con medico</td></tr>
+    <tr><td>Thermage FLX</td><td>Pelle più tesa</td><td><span class="dot y"></span>preliminare, risultati variabili</td><td>Solo medico</td></tr>
+    <tr><td>XERF e Volnewmer</td><td>Lifting</td><td><span class="dot r"></span>debole: pochissimi studi</td><td>Solo medico, senza percentuali</td></tr>
+    <tr><td>Radiofrequenza con microaghi (Morpheus8)</td><td>Pelle rimodellata, cicatrici</td><td><span class="dot g"></span>solida-moderata per le cicatrici da acne; avviso FDA</td><td>Solo medico e con cautela</td></tr>
+    <tr><td>Emsculpt NEO</td><td>Più muscolo, meno grasso</td><td><span class="dot y"></span>preliminare (millimetri)</td><td>Estetica onesta</td></tr>
+    <tr><td>EMFACE</td><td>Lifting senza aghi</td><td><span class="dot y"></span>preliminare o debole</td><td>Con cautela nei messaggi</td></tr>
+    <tr><td>Criolipolisi</td><td>Togliere grasso localizzato</td><td><span class="dot g"></span>solida per una riduzione modesta</td><td>Estetica medica con consenso scritto</td></tr>
+    <tr><td>Endospheres</td><td>Cellulite, drenaggio</td><td><span class="dot r"></span>assente negli studi pubblicati</td><td>Benessere senza promesse</td></tr>
+    <tr><td>HydraFacial</td><td>Pelle luminosa</td><td><span class="dot y"></span>preliminare, effetto temporaneo</td><td>Benessere onesto</td></tr>
+    <tr><td>Maschere LED</td><td>Rughe, texture</td><td><span class="dot y"></span>preliminare</td><td>Benessere onesto</td></tr>
+  </tbody></table></div>
+
+  <h3>Stile di vita e medicina della longevità</h3>
+  <div class="tw"><table><thead><tr><th>Servizio</th><th>Cosa promette</th><th>Livello di evidenza</th><th>Giudizio pratico</th></tr></thead><tbody>
+    <tr class="hl"><td>Esercizio, forza, dieta mediterranea, sonno, gestione dello stress</td><td>Vita più lunga e sana</td><td><span class="dot g"></span>solida per mortalità, cuore e umore</td><td>Pilastro centrale</td></tr>
+    <tr class="hl"><td>Health coaching (accompagnamento alle abitudini)</td><td>Abitudini che durano</td><td><span class="dot y"></span>preliminare-moderata</td><td>Pilastro, se legato a misure</td></tr>
+    <tr><td>Farmaci GLP-1 (es. semaglutide)</td><td>Dimagrimento, cuore</td><td><span class="dot g"></span>solida nelle indicazioni approvate</td><td>Contesto: solo medico</td></tr>
+    <tr><td>Metformina, rapamicina, senolitici</td><td>Rallentare l'invecchiamento</td><td><span class="dot r"></span>assente per la longevità</td><td>Da evitare</td></tr>
+    <tr><td>Terapia ormonale</td><td>Benessere, giovinezza</td><td><span class="dot g"></span>solida per i sintomi della menopausa</td><td>Contesto: solo specialista</td></tr>
+  </tbody></table></div>
+
+  <h3>Le 8 cose con la base scientifica più solida</h3>
+  <ol class="list">
+    <li>Allenamento della forza seguito da un professionista: il beneficio massimo si vede già con 30–60 minuti a settimana.<sup><a href="#EV-2">2</a></sup></li>
+    <li>Allenamento aerobico per alzare il VO₂max, cioè il consumo massimo di ossigeno.<sup><a href="#EV-3">3</a></sup></li>
+    <li>Misure ripetute nel tempo: VO₂max, forza di presa e DEXA, ogni 6–12 mesi.<sup><a href="#EV-4">4</a>,<a href="#EV-5">5</a></sup></li>
+    <li>Alimentazione mediterranea seguita da un nutrizionista.<sup><a href="#EV-6">6</a></sup></li>
+    <li>Un percorso per il sonno, con invio alla terapia specifica per chi soffre di insonnia.<sup><a href="#EV-7">7</a></sup></li>
+    <li>Gestione dello stress con corsi di mindfulness.<sup><a href="#EV-8">8</a></sup></li>
+    <li>Health coaching continuativo, che lega le misure alle abitudini quotidiane.</li>
+    <li>Valutazione del rischio cardiovascolare fatta bene dal medico, con pochi esami utili.<sup><a href="#EV-9">9</a>,<a href="#EV-10">10</a></sup></li>
+  </ol>
+
+  <h3>I claim da non fare mai</h3>
+  <div class="alert"><span class="label">Attenzione</span>
+    <ul class="list">
+      <li>"Allunga la vita", "inverte l'invecchiamento", per qualsiasi macchina, flebo o integratore.</li>
+      <li>"Ti ringiovanisce di X anni", sulla base di un test di età biologica.</li>
+      <li>"Allunga i telomeri", "rigenera i mitocondri", "detox", "purifica il sangue".</li>
+      <li>"Cura" o "previene" malattie come ansia, artrite, Alzheimer, cancro, diabete.</li>
+      <li>"Trova il cancro prima che sia troppo tardi", per risonanza total body o test del sangue.</li>
+      <li>"Clinicamente provato", o percentuali di risultato, per macchine con uno o due studi.</li>
+      <li>"Lifting senza chirurgia", senza dire che l'effetto è di millimetri e dura mesi.</li>
+      <li>"Dieta su misura per il tuo DNA" o "per il tuo microbioma".</li>
+      <li>Le parole "medico", "clinico", "terapia" per servizi senza medico e senza autorizzazione sanitaria.</li>
+    </ul>
+  </div>
+  <p class="note">In Italia la pubblicità sanitaria è controllata, ad esempio dagli Ordini dei Medici e dall'Autorità garante della concorrenza (AGCM). Il quadro esatto va chiesto a un legale <span class="tag n">da verificare</span>.</p>
+</section>
+
+<section id="EV-stile">
+<div class="num">Capitolo 02</div>
+  <h2>Stile di vita e misure che contano</h2>
+  <p class="lead">Le abitudini quotidiane hanno gli effetti più grandi sulla durata della vita.</p>
+  <div class="key"><span class="label">In breve</span>
+    <ul class="list">
+      <li>Cinque abitudini sane insieme sono associate a molti anni di vita in più.<sup><a href="#EV-1">1</a></sup></li>
+      <li>Muoversi di più riduce la mortalità, anche con attività leggera.<sup><a href="#EV-11">11</a></sup></li>
+      <li>VO₂max e forza della stretta di mano predicono la mortalità meglio di molti esami.</li>
+      <li>Coaching e accompagnamento rendono queste abitudini sostenibili.</li>
+    </ul>
+  </div>
+
+  <div class="figs">
+    <div class="fig"><div class="n">+14 anni</div><div class="l">aspettativa di vita a 50 anni, donne con 5 abitudini sane vs nessuna<sup><a href="#EV-1">1</a></sup></div></div>
+    <div class="fig"><div class="n">−13%</div><div class="l">mortalità per ogni gradino di capacità aerobica in più<sup><a href="#EV-3">3</a></sup></div></div>
+    <div class="fig"><div class="n">+16%</div><div class="l">mortalità per ogni 5 kg di forza di presa in meno<sup><a href="#EV-4">4</a></sup></div></div>
+    <div class="fig"><div class="n">−31%</div><div class="l">eventi cardiovascolari con dieta mediterranea nel PREDIMED<sup><a href="#EV-6">6</a></sup></div></div>
+  </div>
+
+  <h3>Le cinque abitudini</h3>
+  <p>Le cinque abitudini: non fumare, peso nella norma, almeno 30 minuti al giorno di attività, alcol moderato, dieta di qualità.<sup><a href="#EV-1">1</a></sup></p>
+  <p>Chi le aveva tutte aveva circa un quarto del rischio di morte di chi non ne aveva nessuna. A 50 anni, le donne guadagnavano in media 14 anni di vita. Gli uomini ne guadagnavano circa 12.<sup><a href="#EV-1">1</a></sup></p>
+
+  <h3>Movimento e forza</h3>
+  <div class="tw"><table><thead><tr><th>Cosa</th><th>Risultato principale</th><th>Livello</th></tr></thead><tbody>
+    <tr><td>Attività fisica misurata con un sensore</td><td>I più attivi hanno circa un quarto del rischio dei meno attivi</td><td><span class="dot g"></span>solida (mortalità)<sup><a href="#EV-11">11</a></sup></td></tr>
+    <tr><td>Passi al giorno</td><td>Circa 7.800 passi dimezzano quasi il rischio rispetto a 3.500</td><td><span class="dot g"></span>solida (mortalità)<sup><a href="#EV-12">12</a></sup></td></tr>
+    <tr><td>Allenamento della forza</td><td>Mortalità e malattie croniche più basse del 10–17%</td><td><span class="dot g"></span>solida (mortalità)<sup><a href="#EV-2">2</a></sup></td></tr>
+    <tr><td>Forza negli anziani</td><td>La forza cresce del 24–33% con allenamento progressivo</td><td><span class="dot g"></span>solida (forza)<sup><a href="#EV-13">13</a></sup></td></tr>
+  </tbody></table></div>
+  <p>Un limite onesto. In un RCT norvegese su 1.567 persone di 70–77 anni, cinque anni di esercizio guidato non hanno ridotto la mortalità rispetto alle semplici raccomandazioni.<sup><a href="#EV-14">14</a></sup> Ma anche il gruppo di confronto era molto attivo.</p>
+
+  <h3>Alimentazione, sonno, stress</h3>
+  <ul class="list">
+    <li><strong>Dieta mediterranea.</strong> Nel PREDIMED, un RCT su persone ad alto rischio, con olio extravergine o frutta secca, gli eventi cardiovascolari gravi sono scesi di circa un terzo.<sup><a href="#EV-6">6</a></sup> <span class="dot g"></span>solida (eventi cardiovascolari).</li>
+    <li><strong>Sonno.</strong> Dormire poco è associato a una mortalità più alta del 12%.<sup><a href="#EV-15">15</a></sup> Per l'insonnia, la prima scelta è la terapia cognitivo-comportamentale (CBT-I), con effetti clinicamente rilevanti.<sup><a href="#EV-7">7</a></sup> <span class="dot g"></span>solida (insonnia).</li>
+    <li><strong>Stress.</strong> I corsi di mindfulness (MBSR) hanno un effetto moderato sulle persone sane. L'effetto sullo stress è grande e dura alcuni mesi.<sup><a href="#EV-8">8</a></sup> <span class="dot g"></span>solida (stress percepito).</li>
+  </ul>
+
+  <h3>Le misure che contano</h3>
+  <dl class="facts">
+    <div><dt>VO₂max</dt><dd>È il massimo di ossigeno che il corpo usa sotto sforzo. In 33 studi, ogni gradino in più (circa 1 km/h di corsa) riduce la mortalità del 13%.<sup><a href="#EV-3">3</a></sup> In 122.007 pazienti, i più allenati avevano un quinto del rischio dei meno allenati.<sup><a href="#EV-16">16</a></sup> <span class="dot g"></span>solida (predice la mortalità).</dd></div>
+    <div><dt>Forza di presa</dt><dd>Lo studio PURE ha seguito 139.691 persone in 17 Paesi. Ogni 5 kg in meno corrispondono a una mortalità più alta del 16%.<sup><a href="#EV-4">4</a></sup> <span class="dot g"></span>solida (predice la mortalità).</dd></div>
+    <div><dt>DEXA</dt><dd>È una radiografia a dose molto bassa che misura muscolo, grasso e ossa. La società internazionale di densitometria (ISCD) la considera accurata e precisa.<sup><a href="#EV-5">5</a></sup> La sarcopenia, cioè poco muscolo e poca forza, è associata a una mortalità più alta.<sup><a href="#EV-17">17</a></sup> <span class="dot g"></span>solida (come misura).</dd></div>
+  </dl>
+  <p class="note">Il test massimale per il VO₂max richiede uno screening iniziale. La DEXA è un apparecchio radiologico: l'inquadramento va chiesto ad AUSL e SUAP <span class="tag n">da verificare</span>.</p>
+
+  <h3>Health coaching</h3>
+  <p>Le prove riguardano soprattutto persone già malate. Nella broncopneumopatia cronica (BPCO) il coaching migliora la qualità di vita e riduce i ricoveri.<sup><a href="#EV-18">18</a></sup></p>
+  <p>Non abbiamo trovato una meta-analisi recente su adulti sani. <span class="dot y"></span>preliminare-moderata (abitudini). Funziona meglio se legato a numeri concreti.</p>
+
+  <h3>Medicina della longevità: solo contesto</h3>
+  <ul class="list">
+    <li><strong>Farmaci GLP-1</strong> (es. semaglutide). Nel trial SELECT, su 17.604 persone obese con malattie cardiache, gli eventi cardiovascolari sono scesi del 20%.<sup><a href="#EV-19">19</a></sup> Per il centro contano indirettamente: chi dimagrisce perde anche muscolo e tono della pelle.<sup><a href="#EV-20">20</a></sup></li>
+    <li><strong>Metformina.</strong> Il grande trial TAME è descritto come in preparazione.<sup><a href="#EV-21">21</a></sup> <span class="dot r"></span>assente (longevità).</li>
+    <li><strong>Rapamicina.</strong> Nel trial PEARL, a basse dosi per un anno, l'obiettivo principale non è cambiato.<sup><a href="#EV-22">22</a></sup> <span class="dot r"></span>assente (longevità).</li>
+    <li><strong>Senolitici</strong>, farmaci che eliminano cellule invecchiate. Riducono queste cellule in un piccolo studio su malati renali.<sup><a href="#EV-23">23</a></sup> <span class="dot r"></span>assente (longevità).</li>
+    <li><strong>Terapia ormonale della menopausa.</strong> Ha indicazioni chiare per i sintomi. Non è indicata per prevenire malattie croniche o demenza.<sup><a href="#EV-24">24</a></sup> Spetta al ginecologo o all'endocrinologo.</li>
+  </ul>
+</section>
+
+<section id="EV-recupero">
+<div class="num">Capitolo 03</div>
+  <h2>Recupero e biohacking</h2>
+  <p class="lead">Caldo, freddo, luce e galleggiamento possono far stare bene e aiutare il recupero, ma nessuno ha prove sulla longevità.</p>
+  <div class="key"><span class="label">In breve</span>
+    <ul class="list">
+      <li>La sauna finlandese ha i dati di popolazione migliori, ma non dimostrano che sia la sauna la causa.</li>
+      <li>Il freddo riduce l'indolenzimento dopo lo sforzo. Subito dopo i pesi, però, riduce i guadagni muscolari.</li>
+      <li>La luce rossa ha qualche prova su pelle e muscolo locale. Il lettino total body non ha mostrato benefici sul recupero.</li>
+      <li>IHHT, ossigeno iperbarico "anti-aging", idrogeno e PEMF hanno prove deboli per gli obiettivi promessi.</li>
+    </ul>
+  </div>
+
+  <h4>Criosauna (crioterapia total body, da −110 a −140 °C)</h4>
+  <ul class="list">
+    <li><strong>Cosa promette:</strong> recupero, dimagrimento, anti-aging.</li>
+    <li><strong>Cosa dicono gli studi:</strong> sull'indolenzimento dopo lo sforzo funziona come le altre forme di freddo.<sup><a href="#EV-25">25</a>,<a href="#EV-26">26</a></sup> <span class="dot y"></span>preliminare (indolenzimento) · <span class="dot r"></span>assente (dimagrimento, longevità).</li>
+    <li><strong>Sicurezza e giudizio:</strong> per la FDA (agenzia USA del farmaco) nessun apparecchio è approvato per curare malattie. Segnala rischi di asfissia e congelamento.<sup><a href="#EV-27">27</a></sup> <span class="tag r">riferito</span> Gli incidenti documentati sono pochi ed evitabili.<sup><a href="#EV-28">28</a></sup> In Italia la criosauna total body è stata trattata come attività sanitaria <span class="tag n">da verificare</span> con AUSL e SUAP. <span class="dot y"></span>con cautela: benessere onesto, con supervisione sanitaria se richiesta.</li>
+  </ul>
+
+  <h4>Bagno freddo (ice bath, cold plunge, docce fredde)</h4>
+  <ul class="list">
+    <li><strong>Cosa promette:</strong> resistenza allo stress, difese, recupero.</li>
+    <li><strong>Cosa dicono gli studi:</strong> riduce l'indolenzimento meglio di altre tecniche di recupero.<sup><a href="#EV-29">29</a></sup> In uno studio, le docce fredde hanno ridotto del 29% le assenze per malattia.<sup><a href="#EV-30">30</a></sup> <span class="dot g"></span>solida (indolenzimento) · <span class="dot y"></span>preliminare (benessere) · <span class="dot r"></span>assente (longevità).</li>
+    <li><strong>Sicurezza e giudizio:</strong> in uno studio di 12 settimane, il freddo dopo ogni seduta di pesi ha ridotto i guadagni di forza e muscolo.<sup><a href="#EV-31">31</a></sup> <span class="dot g"></span>sì: benessere onesto, consigliando di non farlo subito dopo l'allenamento di forza.</li>
+  </ul>
+
+  <h4>Sauna finlandese e sauna a infrarossi</h4>
+  <ul class="list">
+    <li><strong>Cosa promette:</strong> cuore sano, vita più lunga, detox.</li>
+    <li><strong>Cosa dicono gli studi:</strong> in uno studio finlandese, con 4–7 saune a settimana il rischio di morte cardiaca improvvisa era più basso del 63%.<sup><a href="#EV-32">32</a></sup> Ma è uno studio di osservazione: chi fa molte saune può essere già più sano. In un RCT, sauna più esercizio ha migliorato pressione e fitness più del solo esercizio.<sup><a href="#EV-33">33</a></sup> La sauna a infrarossi è studiata soprattutto nello scompenso cardiaco, con risultati discreti.<sup><a href="#EV-34">34</a></sup> <span class="dot g"></span>solida come associazione · <span class="dot y"></span>preliminare (pressione, infrarossi) · <span class="dot r"></span>assente (detox, dimagrimento).</li>
+    <li><strong>Sicurezza e giudizio:</strong> prudenza con alcol, gravidanza e malattie di cuore. <span class="dot g"></span>sì: il miglior servizio di benessere. Non dire "allunga la vita".</li>
+  </ul>
+
+  <h4>Caldo-freddo alternati (terapia di contrasto)</h4>
+  <ul class="list">
+    <li><strong>Cosa promette:</strong> circolazione, recupero.</li>
+    <li><strong>Cosa dicono gli studi:</strong> negli sport di squadra riduce la fatica percepita il giorno dopo.<sup><a href="#EV-35">35</a></sup> Nel confronto diretto, il bagno freddo da solo funziona meglio.<sup><a href="#EV-29">29</a></sup> <span class="dot y"></span>preliminare (fatica percepita) · <span class="dot r"></span>assente (detox, longevità).</li>
+    <li><strong>Sicurezza e giudizio:</strong> <span class="dot g"></span>sì: benessere onesto, come rituale piacevole e sociale.</li>
+  </ul>
+
+  <h4>Luce rossa e vicino infrarosso (fotobiomodulazione)</h4>
+  <ul class="list">
+    <li><strong>Cosa promette:</strong> collagene, recupero, anti-aging.</li>
+    <li><strong>Cosa dicono gli studi:</strong> in un RCT sul viso, il LED rosso o ambra ha ridotto del 30% il volume delle rughe attorno agli occhi.<sup><a href="#EV-36">36</a></sup> Applicata sul muscolo prima dello sforzo, riduce un po' l'indolenzimento.<sup><a href="#EV-37">37</a>,<a href="#EV-38">38</a></sup> Per i lettini total body, una revisione di 5 studi non ha trovato benefici sul recupero.<sup><a href="#EV-39">39</a></sup> <span class="dot y"></span>preliminare (rughe, indolenzimento locale) · <span class="dot r"></span>debole (lettino total body).</li>
+    <li><strong>Sicurezza e giudizio:</strong> sicura; proteggere gli occhi. <span class="dot y"></span>con cautela: sul viso, "può migliorare l'aspetto della pelle".</li>
+  </ul>
+
+  <h4>IHHT (si respira a cicli aria povera e ricca di ossigeno, da sdraiati)</h4>
+  <ul class="list">
+    <li><strong>Cosa promette:</strong> mitocondri nuovi, energia, anti-aging.</li>
+    <li><strong>Cosa dicono gli studi:</strong> una revisione del 2022 ha trovato solo 8 studi.<sup><a href="#EV-40">40</a></sup> Riguardavano quasi solo anziani malati.<sup><a href="#EV-40">40</a></sup> I risultati sono promettenti ma da confermare.<sup><a href="#EV-40">40</a>,<a href="#EV-41">41</a></sup> In un RCT su cardiopatici anziani, l'IHHT non è stata migliore della riabilitazione con esercizio.<sup><a href="#EV-42">42</a></sup> <span class="dot y"></span>preliminare (anziani malati) · <span class="dot r"></span>assente (anti-aging nei sani).</li>
+    <li><strong>Sicurezza e giudizio:</strong> serve una visita medica. <span class="dot r"></span>no come anti-aging; se mai, solo come protocollo sperimentale con il medico.</li>
+  </ul>
+
+  <h4>Ossigeno iperbarico "anti-aging" e camere morbide</h4>
+  <ul class="list">
+    <li><strong>Cosa promette:</strong> telomeri più lunghi, "20 anni in meno".</li>
+    <li><strong>Cosa dicono gli studi:</strong> lo studio israeliano più citato ha trattato 35 anziani sani con 60 sedute.<sup><a href="#EV-43">43</a></sup> I telomeri dei globuli bianchi sono aumentati di oltre il 20%.<sup><a href="#EV-43">43</a></sup> Ma non c'era un gruppo di confronto e non sono stati misurati effetti sulla salute. L'unico RCT su anziani sani mostra attenzione e velocità mentale migliori.<sup><a href="#EV-44">44</a></sup> <span class="dot r"></span>debole (anti-aging, telomeri) · <span class="dot y"></span>preliminare (memoria negli anziani).</li>
+    <li><strong>Sicurezza e giudizio:</strong> più di 17 pazienti su 100 hanno dolore alle orecchie per la pressione.<sup><a href="#EV-45">45</a></sup> In Italia è un'attività sanitaria in centri convenzionati.<sup><a href="#EV-46">46</a></sup> <span class="tag r">riferito</span> <span class="dot r"></span>no come servizio anti-aging.</li>
+  </ul>
+
+  <h4>Idrogeno molecolare (acqua all'idrogeno, inalazioni)</h4>
+  <ul class="list">
+    <li><strong>Cosa promette:</strong> antiossidante, energia.</li>
+    <li><strong>Cosa dicono gli studi:</strong> una revisione sistematica del 2024 trova studi piccoli e metodi deboli.<sup><a href="#EV-47">47</a></sup> <span class="dot r"></span>debole (qualsiasi effetto nei sani).</li>
+    <li><strong>Sicurezza e giudizio:</strong> l'acqua è innocua; il gas è infiammabile.<sup><a href="#EV-48">48</a></sup> <span class="dot r"></span>no come servizio a pagamento con promesse.</li>
+  </ul>
+
+  <h4>Flotation (vasca di galleggiamento al buio, in acqua molto salata)</h4>
+  <ul class="list">
+    <li><strong>Cosa promette:</strong> relax profondo, meno ansia.</li>
+    <li><strong>Cosa dicono gli studi:</strong> in un piccolo RCT su persone con ansia generalizzata, i sintomi sono scesi rispetto all'attesa.<sup><a href="#EV-49">49</a></sup> In pazienti ansiosi, il beneficio dopo una seduta è durato circa due giorni.<sup><a href="#EV-50">50</a></sup> <span class="dot y"></span>preliminare (ansia a breve termine) · <span class="dot r"></span>assente (longevità).</li>
+    <li><strong>Sicurezza e giudizio:</strong> rischi bassi. <span class="dot g"></span>sì: "esperienza di rilassamento profondo", non "cura l'ansia".</li>
+  </ul>
+
+  <h4>Pressoterapia (gambali che si gonfiano a ritmo)</h4>
+  <ul class="list">
+    <li><strong>Cosa promette:</strong> drenaggio, meno cellulite.</li>
+    <li><strong>Cosa dicono gli studi:</strong> il beneficio sulla funzione muscolare è da trascurabile a piccolo.<sup><a href="#EV-51">51</a></sup> Su cellulite e detox non abbiamo trovato studi. <span class="dot r"></span>debole (recupero) · assente (cellulite, detox).</li>
+    <li><strong>Sicurezza e giudizio:</strong> da evitare con trombosi o scompenso. <span class="dot g"></span>sì: benessere onesto, "sensazione di gambe leggere".</li>
+  </ul>
+
+  <h4>Elettrostimolazione total body (WB-EMS, tuta con elettrodi)</h4>
+  <ul class="list">
+    <li><strong>Cosa promette:</strong> "20 minuti valgono ore di palestra".</li>
+    <li><strong>Cosa dicono gli studi:</strong> le prove sono scarse.<sup><a href="#EV-52">52</a></sup> Una meta-analisi del 2024 trova effetti favorevoli sul metabolismo in adulti a rischio.<sup><a href="#EV-53">53</a></sup> <span class="dot y"></span>preliminare (forza, metabolismo) · <span class="dot r"></span>assente ("equivale a ore di palestra").</li>
+    <li><strong>Sicurezza e giudizio:</strong> sono descritti casi di rabdomiolisi, cioè un danno muscolare grave, dopo una sola seduta.<sup><a href="#EV-54">54</a>,<a href="#EV-55">55</a></sup> Gli esperti dicono che l'uso senza supervisione porta più rischi che benefici.<sup><a href="#EV-56">56</a></sup> <span class="dot y"></span>con cautela: solo con trainer qualificato e protocollo prudente.</li>
+  </ul>
+
+  <h4>PEMF (campi elettromagnetici pulsati)</h4>
+  <ul class="list">
+    <li><strong>Cosa promette:</strong> "ricarica cellulare", anti-aging.</li>
+    <li><strong>Cosa dicono gli studi:</strong> le meta-analisi serie riguardano solo il dolore da artrosi, che si riduce.<sup><a href="#EV-57">57</a>,<a href="#EV-58">58</a></sup> Su benessere e anti-aging nelle persone sane non ci sono studi seri. <span class="dot y"></span>preliminare (artrosi) · <span class="dot r"></span>assente (benessere).</li>
+    <li><strong>Sicurezza e giudizio:</strong> <span class="dot r"></span>no come servizio longevity; possibile solo in un percorso di fisioterapia.</li>
+  </ul>
+</section>
+
+<section id="EV-infusioni">
+<div class="num">Capitolo 04</div>
+  <h2>Infusioni e iniettivi</h2>
+  <p class="lead">Quasi nessuna flebo "longevity" ha prove di efficacia. Alcune sostanze hanno avvisi delle autorità. Ogni iniezione è un atto medico.</p>
+  <div class="key"><span class="label">In breve</span>
+    <ul class="list">
+      <li>NAD+ in vena, flebo vitaminiche e glutatione in vena non hanno prove di beneficio nelle persone sane.</li>
+      <li>Per esosomi e peptidi la FDA segnala prodotti non approvati e rischi di sicurezza.</li>
+      <li>L'unico iniettivo con prove buone è il PRP per i capelli, che spetta al medico.</li>
+    </ul>
+  </div>
+
+  <h4>NAD+ in vena (e NR o NMN per bocca)</h4>
+  <ul class="list">
+    <li><strong>Cosa promette:</strong> NAD+ è una molecola che le cellule usano per produrre energia.</li>
+    <li><strong>Cosa dicono gli studi:</strong> una revisione del 2026 conclude che l'efficacia per anti-aging e benessere non è dimostrata.<sup><a href="#EV-59">59</a></sup> In quello studio il NAD+ infuso sparisce rapidamente dal sangue.<sup><a href="#EV-60">60</a></sup> Le versioni orali NR (nicotinamide riboside) alzano il NAD+ nel sangue. Non hanno però migliorato la memoria negli anziani né l'infiammazione nella BPCO.<sup><a href="#EV-61">61</a>,<a href="#EV-62">62</a></sup> L'NMN non ha cambiato glicemia e colesterolo.<sup><a href="#EV-63">63</a></sup> <span class="dot g"></span>solida (alza il NAD+ nel sangue, per bocca) · <span class="dot r"></span>assente (energia, anti-aging, longevità).</li>
+    <li><strong>Sicurezza e giudizio:</strong> la flebo comporta i rischi di ogni accesso venoso. <span class="dot r"></span>no.</li>
+  </ul>
+
+  <h4>Flebo vitaminiche ("Myers' cocktail")</h4>
+  <ul class="list">
+    <li><strong>Cosa promette:</strong> energia, difese.</li>
+    <li><strong>Cosa dicono gli studi:</strong> l'unico RCT con placebo, sulla fibromialgia, non ha trovato differenze rispetto al placebo.<sup><a href="#EV-64">64</a></sup> Non abbiamo trovato studi su persone sane. <span class="dot r"></span>assente (persone sane senza carenze).</li>
+    <li><strong>Sicurezza e giudizio:</strong> è descritto un caso di sindrome di Stevens-Johnson, una reazione cutanea gravissima, dopo una flebo in un centro benessere.<sup><a href="#EV-65">65</a></sup> <span class="dot r"></span>no.</li>
+  </ul>
+
+  <h4>Glutatione in vena</h4>
+  <ul class="list">
+    <li><strong>Cosa promette:</strong> pelle più chiara, detox, antiossidante.</li>
+    <li><strong>Cosa dicono gli studi:</strong> una revisione del 2025 trova un effetto schiarente moderato e temporaneo per crema e pillole.<sup><a href="#EV-66">66</a>,<a href="#EV-67">67</a></sup> Per la vena conclude che è "controindicato per mancanza di efficacia ed effetti collaterali".<sup><a href="#EV-66">66</a></sup> <span class="dot r"></span>assente (in vena) · <span class="dot y"></span>preliminare (crema o pillole, schiarimento).</li>
+    <li><strong>Sicurezza e giudizio:</strong> <span class="dot r"></span>no.</li>
+  </ul>
+
+  <h4>Ozonoterapia (grande autoemoterapia)</h4>
+  <ul class="list">
+    <li><strong>Cosa promette:</strong> detox, difese, anti-aging. Il sangue viene prelevato, mescolato con ozono e reinfuso.</li>
+    <li><strong>Cosa dicono gli studi:</strong> le revisioni riguardano usi medici precisi. Sulle ulcere croniche riduce l'area della ferita, ma non aumenta le guarigioni complete.<sup><a href="#EV-68">68</a></sup> In dermatologia è "promettente", ma la sicurezza non è dimostrata a sufficienza.<sup><a href="#EV-69">69</a></sup> Non abbiamo trovato studi su anti-aging o benessere. <span class="dot r"></span>assente (anti-aging, detox).</li>
+    <li><strong>Sicurezza e giudizio:</strong> in Italia esistono linee guida della disciplina e una circolare del Ministero della Salute del 2005.<sup><a href="#EV-70">70</a></sup> <span class="tag r">riferito</span> Il testo aggiornato non è stato verificato <span class="tag n">da verificare</span>. È comunque un atto medico invasivo. <span class="dot r"></span>no.</li>
+  </ul>
+
+  <h4>Esosomi (minuscole vescicole prodotte dalle cellule)</h4>
+  <ul class="list">
+    <li><strong>Cosa promette:</strong> "staminali senza cellule" per pelle e capelli.</li>
+    <li><strong>Cosa dicono gli studi:</strong> le revisioni vedono un potenziale per collagene e capelli.<sup><a href="#EV-71">71</a>,<a href="#EV-72">72</a></sup> I metodi di produzione però sono poco standard e la qualità varia.<sup><a href="#EV-71">71</a></sup> <span class="dot r"></span>debole (estetica).</li>
+    <li><strong>Sicurezza e giudizio:</strong> la FDA scrive che non esistono prodotti a base di esosomi approvati.<sup><a href="#EV-73">73</a></sup> Aggiunge che alcuni "possono avere problemi di sicurezza significativi".<sup><a href="#EV-73">73</a></sup> In Europa gli esosomi umani iniettati rientrerebbero tra i medicinali, mentre l'uso in crema è controverso.<sup><a href="#EV-74">74</a>,<a href="#EV-75">75</a></sup> <span class="tag r">riferito</span> Non abbiamo trovato una posizione ufficiale di AIFA o del Ministero <span class="tag n">da verificare</span>. <span class="dot r"></span>no.</li>
+  </ul>
+
+  <h4>Peptidi (BPC-157, TB-500, CJC-1295, ipamorelin e simili)</h4>
+  <ul class="list">
+    <li><strong>Cosa promette:</strong> guarigione dei tendini, anti-aging.</li>
+    <li><strong>Cosa dicono gli studi:</strong> per il BPC-157 i dati sono quasi solo su animali.<sup><a href="#EV-76">76</a></sup> È vietato nello sport professionistico.<sup><a href="#EV-77">77</a></sup> <span class="dot r"></span>assente (nell'uomo).</li>
+    <li><strong>Sicurezza e giudizio:</strong> una pagina FDA aggiornata ad aprile 2026 elenca questi peptidi.<sup><a href="#EV-78">78</a></sup> Segnala rischio di reazioni immunitarie, impurità e pochissimi dati di sicurezza nell'uomo.<sup><a href="#EV-78">78</a></sup> Per ipamorelin e altri sono riportati eventi avversi gravi.<sup><a href="#EV-78">78</a></sup> <span class="dot r"></span>no, in nessuna forma.</li>
+  </ul>
+
+  <h4>PRP (plasma ricco di piastrine) per pelle e capelli</h4>
+  <ul class="list">
+    <li><strong>Cosa promette:</strong> pelle più giovane e capelli più folti, con il plasma del paziente.</li>
+    <li><strong>Cosa dicono gli studi:</strong> nella calvizie di tipo maschile aumenta la densità dei capelli rispetto al placebo.<sup><a href="#EV-79">79</a>,<a href="#EV-80">80</a></sup> Sul viso quasi tutti gli studi sono positivi, ma i risultati sono soprattutto soggettivi.<sup><a href="#EV-81">81</a>,<a href="#EV-82">82</a></sup> <span class="dot g"></span>solida-moderata (densità dei capelli) · <span class="dot y"></span>preliminare (viso).</li>
+    <li><strong>Sicurezza e giudizio:</strong> nessun effetto avverso grave negli studi sui capelli.<sup><a href="#EV-79">79</a></sup> <span class="dot y"></span>con cautela: solo medico, credibile per i capelli.</li>
+  </ul>
+
+  <h4>Polinucleotidi e biostimolatori</h4>
+  <ul class="list">
+    <li><strong>Cosa promette:</strong> iniezioni che migliorano qualità e spessore della pelle.</li>
+    <li><strong>Cosa dicono gli studi:</strong> una revisione del 2026 trova risultati favorevoli e nessun effetto avverso grave.<sup><a href="#EV-83">83</a></sup> Attorno agli occhi i polinucleotidi sono risultati simili all'acido ialuronico.<sup><a href="#EV-84">84</a></sup> <span class="dot y"></span>preliminare.</li>
+    <li><strong>Sicurezza e giudizio:</strong> <span class="dot y"></span>con cautela: solo medico.</li>
+  </ul>
+</section>
+
+<section id="EV-diagnostica">
+<div class="num">Capitolo 05</div>
+  <h2>Diagnostica e test</h2>
+  <p class="lead">I test più venduti dal mercato longevity sono i meno utili per il singolo cliente.</p>
+  <div class="key"><span class="label">In breve</span>
+    <ul class="list">
+      <li>Il test dell'"età biologica" può sbagliare di anni tra due misure dello stesso campione.</li>
+      <li>La risonanza total body nei sani trova qualcosa di dubbio in circa una persona su tre.</li>
+      <li>I check-up con decine di esami non riducono la mortalità.</li>
+      <li>Calcium score, DEXA, VO₂max e forza di presa sono utili, se inseriti in un percorso guidato da un medico.</li>
+    </ul>
+  </div>
+
+  <h4>Test dell'"età biologica" epigenetica</h4>
+  <ul class="list">
+    <li><strong>Cosa promette:</strong> "scopri la tua vera età" e "ringiovanisci di qualche anno con il nostro protocollo".</li>
+    <li><strong>Cosa dicono gli studi:</strong> per sei orologi molto usati, due misure dello stesso campione possono differire fino a 9 anni.<sup><a href="#EV-85">85</a></sup> GrimAge e DunedinPACE predicono malattie e mortalità nelle popolazioni.<sup><a href="#EV-86">86</a>,<a href="#EV-87">87</a></sup> Il consorzio internazionale sui biomarcatori dell'invecchiamento dice che l'uso clinico resta limitato.<sup><a href="#EV-88">88</a>,<a href="#EV-89">89</a></sup> Il famoso "meno 3 anni in 8 settimane" viene da un piccolo studio pilota.<sup><a href="#EV-90">90</a></sup> <span class="dot g"></span>solida (associazione con la mortalità nelle popolazioni) · <span class="dot r"></span>debole (decisioni sul singolo e misura dei risultati).</li>
+    <li><strong>Sicurezza e giudizio:</strong> nessun rischio fisico. <span class="dot y"></span>con cautela: solo come "indicatore sperimentale, non diagnostico", senza promettere riduzioni.</li>
+  </ul>
+
+  <h4>Test dei telomeri</h4>
+  <ul class="list">
+    <li><strong>Cosa promette:</strong> misurare l'invecchiamento cellulare dalle "punte" dei cromosomi.</li>
+    <li><strong>Cosa dicono gli studi:</strong> chi ha i telomeri più corti ha un rischio di morte più alto del 26%.<sup><a href="#EV-91">91</a></sup> I risultati però cambiano molto con la tecnica di misura e l'età.<sup><a href="#EV-91">91</a></sup> <span class="dot y"></span>preliminare (popolazioni) · <span class="dot r"></span>assente (test clinico individuale).</li>
+    <li><strong>Sicurezza e giudizio:</strong> <span class="dot r"></span>no.</li>
+  </ul>
+
+  <h4>Risonanza magnetica total body in persone senza sintomi</h4>
+  <ul class="list">
+    <li><strong>Cosa promette:</strong> "trova il cancro prima che sia troppo tardi", tranquillità.</li>
+    <li><strong>Cosa dicono gli studi:</strong> una meta-analisi del 2026 ha riunito 9.024 persone sane.<sup><a href="#EV-92">92</a></sup> Ha trovato un tumore confermato nell'1,6% dei casi.<sup><a href="#EV-92">92</a></sup> Un'altra meta-analisi ha trovato reperti critici o dubbi nel 32% dei sani.<sup><a href="#EV-93">93</a></sup> Non ci sono prove che riduca la mortalità. <span class="dot r"></span>debole (beneficio) · <span class="dot g"></span>solida (molti reperti incidentali).</li>
+    <li><strong>Sicurezza e giudizio:</strong> le posizioni dei radiologi americani (ACR) ed europei (ESR) non sono state lette <span class="tag n">da verificare</span>. <span class="dot r"></span>no come esame di routine; solo su indicazione medica.</li>
+  </ul>
+
+  <h4>Calcium score coronarico (TAC del cuore senza contrasto)</h4>
+  <ul class="list">
+    <li><strong>Cosa promette:</strong> sapere quanto calcio c'è nelle coronarie, cioè quanto sono "invecchiate".</li>
+    <li><strong>Cosa dicono gli studi:</strong> la società cardiologica di Australia e Nuova Zelanda lo considera il predittore più forte di infarto futuro.<sup><a href="#EV-9">9</a></sup> Lo screening cardiovascolare di massa, però, non ha ridotto in modo significativo la mortalità negli uomini danesi.<sup><a href="#EV-94">94</a>,<a href="#EV-95">95</a></sup> <span class="dot g"></span>solida (riclassificare il rischio intermedio) · <span class="dot r"></span>debole (screening per tutti).</li>
+    <li><strong>Sicurezza e giudizio:</strong> serve una struttura radiologica con medico. <span class="dot g"></span>sì, se lo decide il medico per persone selezionate.</li>
+  </ul>
+
+  <h4>DEXA, VO₂max e forza di presa</h4>
+  <p>Vedi il capitolo "Stile di vita e misure che contano". <span class="dot g"></span>solida (come misure e predittori).</p>
+
+  <h4>Sensore continuo del glucosio (CGM) in persone senza diabete</h4>
+  <ul class="list">
+    <li><strong>Cosa promette:</strong> dieta ottimizzata ed energia, grazie a un sensore sul braccio.</li>
+    <li><strong>Cosa dicono gli studi:</strong> nei sani lo zucchero resta nella norma per il 96% del tempo.<sup><a href="#EV-96">96</a></sup> La stima del sensore sovrastima l'emoglobina glicata, con il rischio di falsi allarmi.<sup><a href="#EV-97">97</a></sup> Non abbiamo trovato RCT con benefici nei sani. <span class="dot g"></span>solida (diabete) · <span class="dot r"></span>debole (persone sane).</li>
+    <li><strong>Sicurezza e giudizio:</strong> <span class="dot y"></span>con cautela: solo come esperienza educativa con un nutrizionista, spiegando che i picchi dopo i pasti sono normali.</li>
+  </ul>
+
+  <h4>Test del microbioma (batteri dell'intestino)</h4>
+  <ul class="list">
+    <li><strong>Cosa promette:</strong> dieta e probiotici su misura.</li>
+    <li><strong>Cosa dicono gli studi:</strong> un gruppo di esperti europei giudica i messaggi delle aziende troppo promettenti.<sup><a href="#EV-98">98</a></sup> <span class="dot r"></span>debole.</li>
+    <li><strong>Sicurezza e giudizio:</strong> <span class="dot r"></span>no.</li>
+  </ul>
+
+  <h4>Test del DNA per la dieta (nutrigenetica)</h4>
+  <ul class="list">
+    <li><strong>Cosa promette:</strong> "la dieta giusta per il tuo DNA".</li>
+    <li><strong>Cosa dicono gli studi:</strong> nel trial DIETFITS, su 609 adulti, il profilo genetico non ha previsto quale dieta funzionasse meglio.<sup><a href="#EV-99">99</a></sup> Sapere il proprio rischio genetico non cambia fumo, dieta o attività fisica.<sup><a href="#EV-100">100</a></sup> <span class="dot r"></span>assente (dieta su misura).</li>
+    <li><strong>Sicurezza e giudizio:</strong> i test per malattie ereditarie spettano al genetista. <span class="dot r"></span>no.</li>
+  </ul>
+
+  <h4>Check-up con molti esami del sangue</h4>
+  <ul class="list">
+    <li><strong>Cosa promette:</strong> "oltre 100 marcatori".</li>
+    <li><strong>Cosa dicono gli studi:</strong> una revisione Cochrane ha riunito 17 studi su circa 250.000 persone.<sup><a href="#EV-10">10</a></sup> I check-up generali non hanno ridotto la mortalità, né per cancro né per cuore.<sup><a href="#EV-10">10</a></sup> <span class="dot g"></span>solida (nessun beneficio dei check-up a tappeto).</li>
+    <li><strong>Sicurezza e giudizio:</strong> <span class="dot y"></span>con cautela: sì alla versione essenziale, con pochi esami scelti e letti da un medico.</li>
+  </ul>
+
+  <h4>Test multi-tumore dal sangue (Galleri e simili)</h4>
+  <ul class="list">
+    <li><strong>Cosa promette:</strong> un solo prelievo per scoprire decine di tumori.</li>
+    <li><strong>Cosa dicono gli studi:</strong> secondo una revisione inglese, Galleri trova tra il 21% e il 66% dei tumori, a seconda dello studio.<sup><a href="#EV-101">101</a></sup> Il grande trial inglese NHS-Galleri non ha raggiunto il suo obiettivo principale.<sup><a href="#EV-102">102</a>,<a href="#EV-103">103</a></sup> <span class="tag r">riferito</span> Non ci sono prove che riduca la mortalità. <span class="dot y"></span>preliminare.</li>
+    <li><strong>Sicurezza e giudizio:</strong> non sostituisce gli screening del Servizio sanitario. <span class="dot r"></span>no come prodotto del centro.</li>
+  </ul>
+</section>
+
+<section id="EV-estetica">
+<div class="num">Capitolo 06</div>
+  <h2>Macchine per l'estetica</h2>
+  <p class="lead">Alcune macchine danno risultati reali ma modesti, misurati in millimetri.</p>
+  <div class="key"><span class="label">In breve</span>
+    <ul class="list">
+      <li>Ultherapy ha la base più solida, per un sollevamento lieve. Sofwave segue, con meno studi.</li>
+      <li>XERF e Volnewmer hanno pochissimi studi: niente percentuali nella comunicazione.</li>
+      <li>La radiofrequenza con microaghi ha un avviso FDA di ottobre 2025: è un atto medico.</li>
+      <li>La criolipolisi può causare, raramente, un aumento del grasso trattato.</li>
+    </ul>
+  </div>
+  <p class="note">Gli studi su queste macchine sono quasi sempre piccoli, raramente hanno un trattamento finto di confronto e spesso li finanzia il produttore.</p>
+
+  <div class="alert"><span class="label">Attenzione</span>
+    <p>Il 15 ottobre 2025 la FDA ha pubblicato un avviso di sicurezza sulla radiofrequenza con microaghi.<sup><a href="#EV-104">104</a></sup> Riporta ustioni, cicatrici, perdita di grasso, deformazioni e danni ai nervi.<sup><a href="#EV-104">104</a></sup> Alcuni casi hanno richiesto un intervento chirurgico.<sup><a href="#EV-104">104</a></sup> La FDA chiede di considerarla "una procedura medica, non un trattamento cosmetico".<sup><a href="#EV-104">104</a></sup> Deve farla un professionista abilitato e formato, mai a casa.<sup><a href="#EV-104">104</a></sup></p>
+  </div>
+
+  <h4>Ultherapy (ultrasuoni microfocalizzati)</h4>
+  <ul class="list">
+    <li><strong>Cosa promette:</strong> lifting senza bisturi.</li>
+    <li><strong>Cosa dicono gli studi:</strong> il sopracciglio si alza di circa 0,5–1,7 mm.<sup><a href="#EV-105">105</a></sup> A tre mesi, 92 pazienti su 100 risultano migliorati secondo il medico.<sup><a href="#EV-105">105</a></sup> In una meta-analisi di 42 studi, l'84% dei pazienti si dice soddisfatto.<sup><a href="#EV-106">106</a></sup> Con l'opzione "neutrale" scendono al 62%.<sup><a href="#EV-106">106</a></sup> <span class="dot g"></span>solida (lifting lieve-moderato) · <span class="dot r"></span>debole (durata oltre un anno).</li>
+    <li><strong>Sicurezza e giudizio:</strong> dolore moderato, rossore, gonfiore e lividi passeggeri.<sup><a href="#EV-106">106</a></sup> <span class="dot g"></span>sì: pilastro estetico con medico, con aspettative realistiche.</li>
+  </ul>
+
+  <h4>Sofwave (ultrasuoni a fasci paralleli)</h4>
+  <ul class="list">
+    <li><strong>Cosa promette:</strong> meno rughe sottili.</li>
+    <li><strong>Cosa dicono gli studi:</strong> lo studio principale ha seguito 58 persone, senza gruppo di confronto.<sup><a href="#EV-107">107</a></sup> A tre mesi, l'86% aveva rughe migliorate di almeno un punto della scala.<sup><a href="#EV-107">107</a></sup> <span class="dot y"></span>preliminare-moderata (rughe sottili).</li>
+    <li><strong>Sicurezza e giudizio:</strong> nessun evento grave negli studi; dolore da moderato a forte.<sup><a href="#EV-108">108</a></sup> <span class="dot g"></span>sì: credibile, con medico.</li>
+  </ul>
+
+  <h4>Radiofrequenza monopolare: Thermage FLX, XERF, Volnewmer</h4>
+  <ul class="list">
+    <li><strong>Cosa promette:</strong> pelle più tesa, più collagene.</li>
+    <li><strong>Cosa dicono gli studi:</strong> Per Thermage le revisioni storiche parlano di un miglioramento del 5–20%, imprevedibile sul singolo.<sup><a href="#EV-109">109</a>,<a href="#EV-110">110</a></sup> Per XERF esiste un solo studio retrospettivo, su 16 donne.<sup><a href="#EV-111">111</a></sup> Per Volnewmer ci sono due studi coreani senza gruppo di confronto.<sup><a href="#EV-112">112</a>,<a href="#EV-113">113</a></sup> Il sollevamento misurato è di circa 1,5–2,7 mm.<sup><a href="#EV-112">112</a></sup> <span class="dot y"></span>preliminare (Thermage, effetto variabile) · <span class="dot r"></span>debole (XERF e Volnewmer).</li>
+    <li><strong>Sicurezza e giudizio:</strong> possibili ustioni e irregolarità se eseguita male. <span class="dot y"></span>con cautela: solo medico.</li>
+  </ul>
+
+  <h4>Radiofrequenza con microaghi (es. Morpheus8)</h4>
+  <ul class="list">
+    <li><strong>Cosa promette:</strong> pelle più tesa, meno cicatrici e pori.</li>
+    <li><strong>Cosa dicono gli studi:</strong> per le cicatrici da acne è tra le opzioni efficaci, in una meta-analisi di 56 RCT.<sup><a href="#EV-114">114</a>,<a href="#EV-115">115</a></sup> Per Morpheus8 in particolare esistono soprattutto revisioni descrittive.<sup><a href="#EV-116">116</a>,<a href="#EV-117">117</a></sup> <span class="dot g"></span>solida-moderata (cicatrici da acne) · <span class="dot y"></span>preliminare (pelle più tesa).</li>
+    <li><strong>Sicurezza e giudizio:</strong> c'è l'avviso FDA di ottobre 2025 descritto sopra.<sup><a href="#EV-104">104</a></sup> Il registro FDA degli incidenti contiene 114 segnalazioni.<sup><a href="#EV-118">118</a></sup> <span class="dot y"></span>con cautela: solo medico, con un consenso informato che cita l'avviso FDA.</li>
+  </ul>
+
+  <h4>Emsculpt NEO (campi magnetici che contraggono i muscoli, con radiofrequenza)</h4>
+  <ul class="list">
+    <li><strong>Cosa promette:</strong> "20.000 addominali in 30 minuti".</li>
+    <li><strong>Cosa dicono gli studi:</strong> una revisione di 15 studi trova in media 5,5 mm di grasso addominale in meno.<sup><a href="#EV-119">119</a></sup> Il muscolo aumenta di circa 2 mm.<sup><a href="#EV-119">119</a></sup> Due studi riportano un beneficio marginale o nullo.<sup><a href="#EV-119">119</a></sup> <span class="dot y"></span>preliminare (forma del corpo, in millimetri) · <span class="dot r"></span>assente (sostituto dell'esercizio).</li>
+    <li><strong>Sicurezza e giudizio:</strong> nessuna complicanza riportata negli studi.<sup><a href="#EV-119">119</a></sup> <span class="dot g"></span>sì: estetica onesta, parlando di millimetri e dicendo che non sostituisce l'allenamento.</li>
+  </ul>
+
+  <h4>EMFACE (radiofrequenza e stimolazione dei muscoli del viso)</h4>
+  <ul class="list">
+    <li><strong>Cosa promette:</strong> lifting senza aghi.</li>
+    <li><strong>Cosa dicono gli studi:</strong> uno studio su 21 persone, senza confronto, riporta un sollevamento medio del 23%.<sup><a href="#EV-120">120</a></sup> Un altro studio non randomizzato misura sopracciglia più alte di circa 2–3 mm.<sup><a href="#EV-121">121</a></sup> Non abbiamo trovato studi con trattamento finto. <span class="dot y"></span>preliminare o debole.</li>
+    <li><strong>Sicurezza e giudizio:</strong> <span class="dot y"></span>con cautela nei messaggi.</li>
+  </ul>
+
+  <h4>Criolipolisi (es. CoolSculpting)</h4>
+  <ul class="list">
+    <li><strong>Cosa promette:</strong> eliminare il grasso localizzato con il freddo.</li>
+    <li><strong>Cosa dicono gli studi:</strong> una meta-analisi di 30 studi trova circa 3,6 cm di girovita in meno.<sup><a href="#EV-122">122</a></sup> L'80% dei pazienti è soddisfatto.<sup><a href="#EV-122">122</a></sup> Non è un dimagrimento. <span class="dot g"></span>solida (riduzione modesta del grasso localizzato).</li>
+    <li><strong>Sicurezza e giudizio:</strong> intorpidimento, rossore, gonfiore e dolore sono frequenti ma passeggeri.<sup><a href="#EV-122">122</a></sup> Raramente il grasso trattato aumenta invece di diminuire: si chiama iperplasia adiposa paradossa.<sup><a href="#EV-123">123</a></sup> Succede a circa 1 persona su 455, più di quanto dichiarato dai produttori.<sup><a href="#EV-123">123</a></sup> <span class="dot y"></span>con cautela: estetica medica, con consenso scritto che cita questo rischio.</li>
+  </ul>
+
+  <h4>Endospheres (rullo a microvibrazione e compressione)</h4>
+  <ul class="list">
+    <li><strong>Cosa promette:</strong> meno cellulite.</li>
+    <li><strong>Cosa dicono gli studi:</strong> non abbiamo trovato studi pubblicati su riviste scientifiche indicizzate. Il distributore cita uno studio su 656 persone senza riferimenti verificabili.<sup><a href="#EV-124">124</a></sup> <span class="tag d">dichiarato</span> <span class="dot r"></span>assente.</li>
+    <li><strong>Sicurezza e giudizio:</strong> <span class="dot y"></span>con cautela: benessere onesto, come massaggio meccanico piacevole, senza promesse su cellulite o drenaggio.</li>
+  </ul>
+
+  <h4>HydraFacial (pulizia del viso con acqua e aspirazione)</h4>
+  <ul class="list">
+    <li><strong>Cosa promette:</strong> pelle luminosa.</li>
+    <li><strong>Cosa dicono gli studi:</strong> in 20 pazienti con acne lieve, la pelle "pulita o quasi" è passata dal 20% al 65%.<sup><a href="#EV-125">125</a></sup> <span class="dot y"></span>preliminare (aspetto immediato) · <span class="dot r"></span>assente (anti-aging duraturo).</li>
+    <li><strong>Sicurezza e giudizio:</strong> <span class="dot g"></span>sì: benessere onesto, "effetto luminoso temporaneo".</li>
+  </ul>
+
+  <h4>Maschere LED</h4>
+  <ul class="list">
+    <li><strong>Cosa promette:</strong> meno rughe, pelle più uniforme.</li>
+    <li><strong>Cosa dicono gli studi:</strong> una revisione del 2026 su 8 studi trova miglioramenti di rughe e texture.<sup><a href="#EV-126">126</a></sup> Gli effetti collaterali sono rari e lievi.<sup><a href="#EV-126">126</a></sup> <span class="dot y"></span>preliminare (effetto modesto).</li>
+    <li><strong>Sicurezza e giudizio:</strong> <span class="dot g"></span>sì: benessere onesto.</li>
+  </ul>
+</section>
+
+<section id="EV-comunicazione">
+<div class="num">Capitolo 07</div>
+  <h2>Come dirlo ai clienti senza promettere troppo</h2>
+  <p class="lead">La comunicazione credibile vende la misura e il percorso, non un risultato.</p>
+  <div class="key"><span class="label">In breve</span>
+    <ul class="list">
+      <li>Misurare prima, promettere mai.</li>
+      <li>Dire apertamente che movimento, sonno e alimentazione contano più delle macchine.</li>
+      <li>Tenere separati medicina, allenamento e benessere, ognuno con le sue parole.</li>
+    </ul>
+  </div>
+  <p class="note">Le frasi di esempio qui sotto sono nostre bozze, basate sugli studi citati. Non sono citazioni di cliniche reali.</p>
+
+  <h3>Principi</h3>
+  <ul class="list">
+    <li><strong>Misurare prima, promettere mai.</strong> "Misuriamo capacità aerobica, forza e composizione corporea. Ti alleniamo. Rimisuriamo tra sei mesi."</li>
+    <li><strong>Livello di prova dichiarato</strong> accanto a ogni servizio, ad esempio con un semaforo.</li>
+    <li><strong>Numeri realistici.</strong> "Sopracciglio più alto di circa un millimetro" è più credibile di "effetto lifting".</li>
+    <li><strong>Rischi veri nel consenso informato.</strong> Per esempio l'iperplasia paradossa nella criolipolisi e l'avviso FDA sui microaghi.</li>
+  </ul>
+
+  <h3>Esempi di frasi (nostre bozze)</h3>
+  <div class="tw"><table><thead><tr><th>Da evitare</th><th>Formulazione onesta</th></tr></thead><tbody>
+    <tr><td>"La criosauna accelera il metabolismo e ti ringiovanisce."</td><td>"Un'esposizione breve al freddo intenso. Molti sportivi la usano per sentirsi meno indolenziti dopo lo sforzo."</td></tr>
+    <tr><td>"La sauna allunga la vita."</td><td>"In grandi studi finlandesi chi fa spesso la sauna ha meno malattie di cuore. Per noi è prima di tutto un rituale di relax."</td></tr>
+    <tr><td>"Scopri la tua età biologica e ringiovanisci."</td><td>"Un indicatore sperimentale della ricerca sull'invecchiamento. Non è un esame diagnostico e può variare da una misura all'altra."</td></tr>
+    <tr><td>"NAD+ per ricaricare le cellule."</td><td>Nessuna formulazione: il servizio non ha prove sufficienti per essere offerto.</td></tr>
+    <tr><td>"Ultherapy: lifting senza bisturi."</td><td>"Ultrasuoni eseguiti dal medico. Negli studi danno un miglioramento lieve o moderato in 3–6 mesi, con risultati variabili."</td></tr>
+    <tr><td>"Il nostro programma aggiunge anni alla tua vita."</td><td>"Lavoriamo su ciò che la ricerca lega di più a una vita lunga e in salute: fiato, forza, sonno, alimentazione. Lo misuriamo e lo rendiamo sostenibile."</td></tr>
+  </tbody></table></div>
+
+  <h3>Cosa non siamo riusciti a verificare</h3>
+  <ul class="list">
+    <li>Le posizioni dei radiologi sulla risonanza total body e delle linee guida europee sul calcium score <span class="tag n">da verificare</span>.</li>
+    <li>Le posizioni di AIFA e Ministero della Salute su esosomi e ozonoterapia <span class="tag n">da verificare</span>.</li>
+    <li>La pagina originale FDA sulla criosauna, vista solo tramite la stampa <span class="tag r">riferito</span>.</li>
+    <li>L'inquadramento di ogni macchina e servizio (estetista, medico o struttura sanitaria), da chiedere ad AUSL e SUAP di Modena <span class="tag n">da verificare</span>.</li>
+    <li>Gli studi pubblicati su XERF e Volnewmer, da chiedere al distributore italiano.</li>
+    <li>Una meta-analisi recente sull'health coaching in adulti sani: non trovata.</li>
+    <li>Esempi reali di comunicazione di cliniche: non verificati.</li>
+  </ul>
+</section>
+
+<div class="src"><h3>Fonti di questa parte</h3><ol>
+  <li id="EV-1"><a href="https://pubmed.ncbi.nlm.nih.gov/29712712/">Li Y et al. Impact of healthy lifestyle factors on life expectancies in the US population. Circulation, 2018</a></li>
+  <li id="EV-2"><a href="https://pubmed.ncbi.nlm.nih.gov/35228201/">Momma H et al. Muscle-strengthening activities are associated with lower risk and mortality in major non-communicable diseases. Br J Sports Med, 2022</a></li>
+  <li id="EV-3"><a href="https://pubmed.ncbi.nlm.nih.gov/19454641/">Kodama S et al. Cardiorespiratory fitness as a quantitative predictor of all-cause mortality and cardiovascular events. JAMA, 2009</a></li>
+  <li id="EV-4"><a href="https://pubmed.ncbi.nlm.nih.gov/25982160/">Leong DP et al. Prognostic value of grip strength: findings from the PURE study. Lancet, 2015</a></li>
+  <li id="EV-5"><a href="https://pubmed.ncbi.nlm.nih.gov/24090645/">Kendler DL et al. The official positions of the International Society for Clinical Densitometry: DXA for body composition. J Clin Densitom, 2013</a></li>
+  <li id="EV-6"><a href="https://pubmed.ncbi.nlm.nih.gov/29897866/">Estruch R et al. Primary prevention of cardiovascular disease with a Mediterranean diet supplemented with extra-virgin olive oil or nuts (PREDIMED). N Engl J Med, 2018</a></li>
+  <li id="EV-7"><a href="https://pubmed.ncbi.nlm.nih.gov/26054060/">Trauer JM et al. Cognitive behavioral therapy for chronic insomnia: a systematic review and meta-analysis. Ann Intern Med, 2015</a></li>
+  <li id="EV-8"><a href="https://pubmed.ncbi.nlm.nih.gov/25818837/">Khoury B et al. Mindfulness-based stress reduction for healthy individuals: a meta-analysis. J Psychosom Res, 2015</a></li>
+  <li id="EV-9"><a href="https://pubmed.ncbi.nlm.nih.gov/29020908/">Hamilton-Craig C et al. Cardiac Society of Australia and New Zealand position statement executive summary: coronary artery calcium scoring. Med J Aust, 2017</a></li>
+  <li id="EV-10"><a href="https://pubmed.ncbi.nlm.nih.gov/30699470/">Krogsbøll LT et al. General health checks in adults for reducing morbidity and mortality from disease. Cochrane Database Syst Rev, 2019</a></li>
+  <li id="EV-11"><a href="https://pubmed.ncbi.nlm.nih.gov/31434697/">Ekelund U et al. Dose-response associations between accelerometry measured physical activity and sedentary time and all cause mortality. BMJ, 2019</a></li>
+  <li id="EV-12"><a href="https://pubmed.ncbi.nlm.nih.gov/35247352/">Paluch AE et al. Daily steps and all-cause mortality: a meta-analysis of 15 international cohorts. Lancet Public Health, 2022</a></li>
+  <li id="EV-13"><a href="https://pubmed.ncbi.nlm.nih.gov/20385254/">Peterson MD et al. Resistance exercise for muscular strength in older adults: a meta-analysis. Ageing Res Rev, 2010</a></li>
+  <li id="EV-14"><a href="https://pubmed.ncbi.nlm.nih.gov/33028588/">Stensvold D et al. Effect of exercise training for five years on all cause mortality in older adults — the Generation 100 study. BMJ, 2020</a></li>
+  <li id="EV-15"><a href="https://pubmed.ncbi.nlm.nih.gov/20469800/">Cappuccio FP et al. Sleep duration and all-cause mortality: a systematic review and meta-analysis. Sleep, 2010</a></li>
+  <li id="EV-16"><a href="https://pubmed.ncbi.nlm.nih.gov/30646252/">Mandsager K et al. Association of cardiorespiratory fitness with long-term mortality among adults undergoing exercise treadmill testing. JAMA Netw Open, 2018</a></li>
+  <li id="EV-17"><a href="https://pubmed.ncbi.nlm.nih.gov/36604970/">Westbury LD et al. Recent sarcopenia definitions — prevalence, agreement and mortality associations among men. J Cachexia Sarcopenia Muscle, 2023</a></li>
+  <li id="EV-18"><a href="https://pubmed.ncbi.nlm.nih.gov/31033121/">Long H et al. Does health coaching improve health-related quality of life and reduce hospital admissions in people with COPD?. Br J Health Psychol, 2019</a></li>
+  <li id="EV-19"><a href="https://pubmed.ncbi.nlm.nih.gov/37952131/">Lincoff AM et al. Semaglutide and cardiovascular outcomes in obesity without diabetes (SELECT). N Engl J Med, 2023</a></li>
+  <li id="EV-20"><a href="https://pubmed.ncbi.nlm.nih.gov/39645647/">Haykal D et al. The role of GLP-1 agonists in esthetic medicine. J Cosmet Dermatol, 2025</a></li>
+  <li id="EV-21"><a href="https://pubmed.ncbi.nlm.nih.gov/32333835/">Kulkarni AS et al. Benefits of metformin in attenuating the hallmarks of aging. Cell Metab, 2020</a></li>
+  <li id="EV-22"><a href="https://pubmed.ncbi.nlm.nih.gov/40188830/">Moel M et al. Influence of rapamycin on safety and healthspan metrics after one year: PEARL trial results. Aging (Albany NY), 2025</a></li>
+  <li id="EV-23"><a href="https://pubmed.ncbi.nlm.nih.gov/31542391/">Hickson LJ et al. Senolytics decrease senescent cells in humans: preliminary report from a clinical trial of dasatinib plus quercetin. EBioMedicine, 2019</a></li>
+  <li id="EV-24"><a href="https://pubmed.ncbi.nlm.nih.gov/35797481/">NAMS Advisory Panel et al. The 2022 hormone therapy position statement of The North American Menopause Society. Menopause, 2022</a></li>
+  <li id="EV-25"><a href="https://pubmed.ncbi.nlm.nih.gov/35956058/">Azevedo KP et al. Different cryotherapy modalities demonstrate similar effects on muscle performance, soreness, and damage. J Clin Med, 2022</a></li>
+  <li id="EV-26"><a href="https://pubmed.ncbi.nlm.nih.gov/42088589/">Wu et al. Impact of different cryotherapy interventions on post-exercise muscle soreness: network meta-analysis. Front Sports Act Living, 2026</a></li>
+  <li id="EV-27"><a href="https://www.minnpost.com/second-opinion/2016/07/fda-issues-consumer-warning-about-whole-body-cryotherapy">FDA, consumer update 'Whole Body Cryotherapy: a cool trend that lacks evidence, poses risks' (luglio 2016), riportato da MinnPost</a> <span class="tag r">riferito</span></li>
+  <li id="EV-28"><a href="https://pubmed.ncbi.nlm.nih.gov/37770960/">Legrand FD et al. Evaluating safety risks of whole-body cryotherapy/cryostimulation: a scoping review. Eur J Med Res, 2023</a></li>
+  <li id="EV-29"><a href="https://pubmed.ncbi.nlm.nih.gov/36527593/">Moore E et al. Effects of cold-water immersion compared with other recovery modalities on athletic performance. Sports Med, 2023</a></li>
+  <li id="EV-30"><a href="https://pubmed.ncbi.nlm.nih.gov/39879231/">Cain T et al. Effects of cold-water immersion on health and wellbeing: a systematic review and meta-analysis. PLoS One, 2025</a></li>
+  <li id="EV-31"><a href="https://pubmed.ncbi.nlm.nih.gov/26174323/">Roberts LA et al. Post-exercise cold water immersion attenuates acute anabolic signalling and long-term adaptations in muscle to strength training. J Physiol, 2015</a></li>
+  <li id="EV-32"><a href="https://pubmed.ncbi.nlm.nih.gov/25705824/">Laukkanen T et al. Association between sauna bathing and fatal cardiovascular and all-cause mortality events. JAMA Intern Med, 2015</a></li>
+  <li id="EV-33"><a href="https://pubmed.ncbi.nlm.nih.gov/35785965/">Lee E et al. Effects of regular sauna bathing in conjunction with exercise on cardiovascular function: a multi-arm RCT. Am J Physiol Regul Integr Comp Physiol, 2022</a></li>
+  <li id="EV-34"><a href="https://pubmed.ncbi.nlm.nih.gov/30239008/">Källström M et al. Effects of sauna bath on heart failure: a systematic review and meta-analysis. Clin Cardiol, 2018</a></li>
+  <li id="EV-35"><a href="https://pubmed.ncbi.nlm.nih.gov/27398915/">Higgins TR et al. Effects of cold water immersion and contrast water therapy for recovery from team sport. J Strength Cond Res, 2017</a></li>
+  <li id="EV-36"><a href="https://pubmed.ncbi.nlm.nih.gov/36780572/">Mota LR et al. Photobiomodulation reduces periocular wrinkle volume by 30%: a randomized controlled trial. Photobiomodul Photomed Laser Surg, 2023</a></li>
+  <li id="EV-37"><a href="https://pubmed.ncbi.nlm.nih.gov/40954632/">Canez et al. Effects of photobiomodulation, intermittent pneumatic compression and NMES on muscle recovery: meta-analysis. J Bodyw Mov Ther, 2025</a></li>
+  <li id="EV-38"><a href="https://pubmed.ncbi.nlm.nih.gov/34669081/">Ferlito JV et al. Comparison between cryotherapy and photobiomodulation in muscle recovery: meta-analysis. Lasers Med Sci, 2022</a></li>
+  <li id="EV-39"><a href="https://pubmed.ncbi.nlm.nih.gov/39883205/">Álvarez-Martínez et al. A systematic review on whole-body photobiomodulation for exercise performance and recovery. Lasers Med Sci, 2025</a></li>
+  <li id="EV-40"><a href="https://pubmed.ncbi.nlm.nih.gov/35639211/">Behrendt T et al. Effects of intermittent hypoxia-hyperoxia on performance- and health-related outcomes in humans: a systematic review. Sports Med Open, 2022</a></li>
+  <li id="EV-41"><a href="https://pubmed.ncbi.nlm.nih.gov/31589074/">Serebrovska TV et al. Intermittent hypoxia/hyperoxia versus intermittent hypoxia/normoxia: comparative study in prediabetes. High Alt Med Biol, 2019</a></li>
+  <li id="EV-42"><a href="https://pubmed.ncbi.nlm.nih.gov/30251879/">Dudnik E et al. Intermittent hypoxia-hyperoxia conditioning improves cardiorespiratory fitness in older comorbid cardiac outpatients: RCT. High Alt Med Biol, 2018</a></li>
+  <li id="EV-43"><a href="https://pubmed.ncbi.nlm.nih.gov/33206062/">Hachmo Y et al. Hyperbaric oxygen therapy increases telomere length and decreases immunosenescence in isolated blood cells. Aging (Albany NY), 2020</a></li>
+  <li id="EV-44"><a href="https://pubmed.ncbi.nlm.nih.gov/32589613/">Hadanny A et al. Cognitive enhancement of healthy older adults using hyperbaric oxygen: an RCT. Aging (Albany NY), 2020</a></li>
+  <li id="EV-45"><a href="https://pubmed.ncbi.nlm.nih.gov/10685584/">Plafki C et al. Complications and side effects of hyperbaric oxygen therapy. Aviat Space Environ Med, 2000</a></li>
+  <li id="EV-46"><a href="https://www.ausl.bologna.it/asl-bologna/staff/csa/trasparenza/strutture-sanitarie-private-accreditate/attivita-di-ossigenoterapia-iperbarica/files/contratto-iperbarico-anno-2026.pdf">AUSL Bologna, contratto attività di ossigenoterapia iperbarica 2026</a> <span class="tag r">riferito</span></li>
+  <li id="EV-47"><a href="https://pubmed.ncbi.nlm.nih.gov/38256045/">Dhillon G et al. Hydrogen water: extra healthy or a hoax? A systematic review. Int J Mol Sci, 2024</a></li>
+  <li id="EV-48"><a href="https://pubmed.ncbi.nlm.nih.gov/38067515/">Johnsen HM et al. Molecular hydrogen therapy — a review on clinical studies and outcomes. Molecules, 2023</a></li>
+  <li id="EV-49"><a href="https://pubmed.ncbi.nlm.nih.gov/27016217/">Jonsson K et al. Promising effects of flotation-REST for generalized anxiety disorder: a randomized controlled pilot trial. BMC Complement Altern Med, 2016</a></li>
+  <li id="EV-50"><a href="https://pubmed.ncbi.nlm.nih.gov/38873094/">Garland et al. Reduced environmental stimulation therapy (REST) in anxiety and depression: an experience sampling study. J Mood Anxiety Disord, 2023</a></li>
+  <li id="EV-51"><a href="https://pubmed.ncbi.nlm.nih.gov/39416507/">Maia et al. Effects of lower-limb intermittent pneumatic compression on sports recovery: meta-analysis. Biol Sport, 2024</a></li>
+  <li id="EV-52"><a href="https://pubmed.ncbi.nlm.nih.gov/31014310/">Pano-Rodriguez A et al. Effects of whole-body electromyostimulation on health and performance: a systematic review. BMC Complement Altern Med, 2019</a></li>
+  <li id="EV-53"><a href="https://pubmed.ncbi.nlm.nih.gov/39517685/">Guretzki et al. Effects of whole-body electromyostimulation on metabolic syndrome: systematic review and meta-analysis. Sensors (Basel), 2024</a></li>
+  <li id="EV-54"><a href="https://pubmed.ncbi.nlm.nih.gov/41281094/">Mallek et al. Electromyostimulation-induced rhabdomyolysis: a case report and literature review. Cureus, 2025</a></li>
+  <li id="EV-55"><a href="https://pubmed.ncbi.nlm.nih.gov/37873991/">Nordberg et al. Rabdomiolisi dopo una seduta di WB-EMS (caso clinico). Ugeskr Laeger, 2023</a></li>
+  <li id="EV-56"><a href="https://pubmed.ncbi.nlm.nih.gov/36361091/">Berger J et al. WB-EMS market development — perspectives and threats. Int J Environ Res Public Health, 2022</a></li>
+  <li id="EV-57"><a href="https://pubmed.ncbi.nlm.nih.gov/32508140/">Viganò M et al. Pain and functional scores in patients affected by knee OA after treatment with pulsed electromagnetic and magnetic fields: meta-analysis. Cartilage, 2021</a></li>
+  <li id="EV-58"><a href="https://pubmed.ncbi.nlm.nih.gov/32251502/">Yang X et al. Effects of pulsed electromagnetic field therapy on pain, stiffness, physical function, and quality of life in osteoarthritis. Phys Ther, 2020</a></li>
+  <li id="EV-59"><a href="https://pubmed.ncbi.nlm.nih.gov/41655607/">Gallagher et al. NAD+ supplementation for anti-aging and wellness: a PRISMA-guided systematic review. Ageing Res Rev, 2026</a></li>
+  <li id="EV-60"><a href="https://pubmed.ncbi.nlm.nih.gov/31572171/">Grant R et al. A pilot study investigating changes in the human plasma and urine NAD+ metabolome during a 6 hour intravenous infusion of NAD. Front Aging Neurosci, 2019</a></li>
+  <li id="EV-61"><a href="https://pubmed.ncbi.nlm.nih.gov/37994989/">Orr ME et al. A randomized placebo-controlled trial of nicotinamide riboside in older adults with mild cognitive impairment. Geroscience, 2024</a></li>
+  <li id="EV-62"><a href="https://pubmed.ncbi.nlm.nih.gov/39548320/">Norheim KL et al. Effect of nicotinamide riboside on airway inflammation in COPD: an RCT. Nat Aging, 2024</a></li>
+  <li id="EV-63"><a href="https://pubmed.ncbi.nlm.nih.gov/39116016/">Zhang et al. Efficacy of oral nicotinamide mononucleotide supplementation on glucose and lipid metabolism: meta-analysis. Crit Rev Food Sci Nutr, 2025</a></li>
+  <li id="EV-64"><a href="https://pubmed.ncbi.nlm.nih.gov/19250003/">Ali A et al. Intravenous micronutrient therapy (Myers' cocktail) for fibromyalgia: a placebo-controlled pilot study. J Altern Complement Med, 2009</a></li>
+  <li id="EV-65"><a href="https://pubmed.ncbi.nlm.nih.gov/40057759/">Johnson et al. Intravenous glutathione and vitamin supplementation causing Stevens-Johnson syndrome: a case report. J Burn Care Res, 2025</a></li>
+  <li id="EV-66"><a href="https://pubmed.ncbi.nlm.nih.gov/39444151/">Sarkar R et al. Glutathione as a skin-lightening agent and in melasma: a systematic review. Int J Dermatol, 2025</a></li>
+  <li id="EV-67"><a href="https://pubmed.ncbi.nlm.nih.gov/30895708/">Dilokthornsakul W et al. The clinical effect of glutathione on skin color and other related skin conditions: a systematic review. J Cosmet Dermatol, 2019</a></li>
+  <li id="EV-68"><a href="https://pubmed.ncbi.nlm.nih.gov/34612569/">Wen Q et al. A systematic review of ozone therapy for treating chronically refractory wounds and ulcers. Int Wound J, 2022</a></li>
+  <li id="EV-69"><a href="https://pubmed.ncbi.nlm.nih.gov/35642231/">Oliveira Modena DA et al. Ozone therapy for dermatological conditions: a systematic review. J Clin Aesthet Dermatol, 2022</a></li>
+  <li id="EV-70"><a href="https://www.regione.toscana.it/documents/10180/16111184/Allegato+-+Decisione+20_2018.pdf/4edd57e6-44e0-4092-9f5e-d093691f6c36">Regione Toscana, Consiglio sanitario regionale, Decisione 20/2018 (ossigeno-ozonoterapia)</a> <span class="tag r">riferito</span></li>
+  <li id="EV-71"><a href="https://pubmed.ncbi.nlm.nih.gov/39761139/">Haykal D et al. Exosomes in cosmetic dermatology: a review of benefits and challenges. J Drugs Dermatol, 2025</a></li>
+  <li id="EV-72"><a href="https://pubmed.ncbi.nlm.nih.gov/36597716/">Vyas KS et al. Exosomes: the latest in regenerative aesthetics. Regen Med, 2023</a></li>
+  <li id="EV-73"><a href="https://www.fda.gov/vaccines-blood-biologics/consumers-biologics/consumer-alert-regenerative-medicine-products-including-stem-cells-and-exosomes">FDA, Consumer Alert on Regenerative Medicine Products Including Stem Cells and Exosomes (22/07/2020, aggiornato 09/04/2024)</a></li>
+  <li id="EV-74"><a href="https://consultingroom.com/industry/magazine/article.php?id=39">Consultingroom, articolo di settore sullo stato regolatorio degli esosomi</a> <span class="tag r">riferito</span></li>
+  <li id="EV-75"><a href="https://www.saveface.co.uk/en/blog/post/exosome-therapy-uk-patient-safety-warning">Save Face (UK), Exosome therapy: patient safety warning</a> <span class="tag r">riferito</span></li>
+  <li id="EV-76"><a href="https://pubmed.ncbi.nlm.nih.gov/40005999/">Józwiak M et al. Multifunctionality and possible medical application of the BPC 157 peptide. Pharmaceuticals (Basel), 2025</a></li>
+  <li id="EV-77"><a href="https://pubmed.ncbi.nlm.nih.gov/40756949/">Vasireddi et al. Emerging use of BPC-157 in orthopaedic sports medicine: a systematic review. HSS J, 2025</a></li>
+  <li id="EV-78"><a href="https://www.fda.gov/drugs/human-drug-compounding/certain-bulk-drug-substances-use-compounding-may-present-significant-safety-risks">FDA, Certain bulk drug substances for use in compounding that may present significant safety risks (aggiornata 22/04/2026)</a></li>
+  <li id="EV-79"><a href="https://pubmed.ncbi.nlm.nih.gov/37533146/">Zhang et al. Platelet-rich plasma for androgenetic alopecia: a systematic review and meta-analysis of RCTs. J Cutan Med Surg, 2023</a></li>
+  <li id="EV-80"><a href="https://pubmed.ncbi.nlm.nih.gov/40944844/">Anitua E et al. Platelet-rich plasma in the management of alopecia: a systematic review and meta-analysis. Dermatol Ther (Heidelb), 2025</a></li>
+  <li id="EV-81"><a href="https://pubmed.ncbi.nlm.nih.gov/36728559/">Gentile P et al. Systematic review: platelet-rich plasma use in facial rejuvenation. Plast Reconstr Surg, 2023</a></li>
+  <li id="EV-82"><a href="https://pubmed.ncbi.nlm.nih.gov/40167104/">Qin et al. Systematic review of platelet-rich plasma and platelet-rich fibrin in facial rejuvenation. Ann Plast Surg, 2025</a></li>
+  <li id="EV-83"><a href="https://pubmed.ncbi.nlm.nih.gov/42572627/">Alhussain et al. Polynucleotides and polydeoxyribonucleotides for skin rejuvenation, scar prevention and wound healing: systematic review of RCTs. Cureus, 2026</a></li>
+  <li id="EV-84"><a href="https://pubmed.ncbi.nlm.nih.gov/32248707/">Lee KWA et al. Comparison of the effects of polynucleotide and hyaluronic acid fillers on periocular rejuvenation: split-face RCT. J Dermatolog Treat, 2022</a></li>
+  <li id="EV-85"><a href="https://pubmed.ncbi.nlm.nih.gov/36277076/">Higgins-Chen AT et al. A computational solution for bolstering reliability of epigenetic clocks. Nat Aging, 2022</a></li>
+  <li id="EV-86"><a href="https://pubmed.ncbi.nlm.nih.gov/33211845/">McCrory C et al. GrimAge outperforms other epigenetic clocks in the prediction of age-related clinical phenotypes and all-cause mortality. J Gerontol A, 2021</a></li>
+  <li id="EV-87"><a href="https://pubmed.ncbi.nlm.nih.gov/35029144/">Belsky DW et al. DunedinPACE, a DNA methylation biomarker of the pace of aging. eLife, 2022</a></li>
+  <li id="EV-88"><a href="https://pubmed.ncbi.nlm.nih.gov/39285015/">Biomarkers of Aging Consortium et al. Challenges and recommendations for the translation of biomarkers of aging. Nat Aging, 2024</a></li>
+  <li id="EV-89"><a href="https://pubmed.ncbi.nlm.nih.gov/37657418/">Moqri M et al. Biomarkers of aging for the identification and evaluation of longevity interventions. Cell, 2023</a></li>
+  <li id="EV-90"><a href="https://pubmed.ncbi.nlm.nih.gov/33844651/">Fitzgerald KN et al. Potential reversal of epigenetic age using a diet and lifestyle intervention: a pilot RCT. Aging (Albany NY), 2021</a></li>
+  <li id="EV-91"><a href="https://pubmed.ncbi.nlm.nih.gov/30254001/">Wang Q et al. Telomere length and all-cause mortality: a meta-analysis. Ageing Res Rev, 2018</a></li>
+  <li id="EV-92"><a href="https://pubmed.ncbi.nlm.nih.gov/40884613/">Martins da Fonseca et al. Whole-body MRI for opportunistic cancer detection in asymptomatic individuals: systematic review and meta-analysis. Eur Radiol, 2026</a></li>
+  <li id="EV-93"><a href="https://pubmed.ncbi.nlm.nih.gov/30932247/">Kwee RM et al. Whole-body MRI for preventive health screening: a systematic review of the literature. J Magn Reson Imaging, 2019</a></li>
+  <li id="EV-94"><a href="https://pubmed.ncbi.nlm.nih.gov/36027560/">Lindholt JS et al. Five-year outcomes of the Danish Cardiovascular Screening (DANCAVAS) trial. N Engl J Med, 2022</a></li>
+  <li id="EV-95"><a href="https://pubmed.ncbi.nlm.nih.gov/40884758/">Lindholt JS et al. Outcomes of cardiovascular screening in men aged 60-64 years: the DANCAVAS II trial. Eur Heart J, 2025</a></li>
+  <li id="EV-96"><a href="https://pubmed.ncbi.nlm.nih.gov/31127824/">Shah VN et al. Continuous glucose monitoring profiles in healthy nondiabetic participants. J Clin Endocrinol Metab, 2019</a></li>
+  <li id="EV-97"><a href="https://pubmed.ncbi.nlm.nih.gov/36790875/">Shah VN et al. Discordance between glucose management indicator and glycated hemoglobin in people without diabetes. Diabetes Technol Ther, 2023</a></li>
+  <li id="EV-98"><a href="https://pubmed.ncbi.nlm.nih.gov/39695869/">Rodriguez J et al. Microbiome testing in Europe: navigating analytical, ethical and regulatory challenges. Microbiome, 2024</a></li>
+  <li id="EV-99"><a href="https://pubmed.ncbi.nlm.nih.gov/29466592/">Gardner CD et al. Effect of low-fat vs low-carbohydrate diet on 12-month weight loss and association with genotype pattern (DIETFITS). JAMA, 2018</a></li>
+  <li id="EV-100"><a href="https://pubmed.ncbi.nlm.nih.gov/26979548/">Hollands GJ et al. The impact of communicating genetic risks of disease on risk-reducing health behaviour. BMJ, 2016</a></li>
+  <li id="EV-101"><a href="https://pubmed.ncbi.nlm.nih.gov/39898371/">Wade R et al. Multi-cancer early detection tests for general population screening: a systematic literature review. Health Technol Assess, 2025</a></li>
+  <li id="EV-102"><a href="https://www.biospace.com/press-releases/grail-reports-full-results-from-nhs-galleri-trial-demonstrating-substantial-reduction-in-stage-iv-cancer-diagnoses-at-2026-asco-annual-meeting">GRAIL, comunicato sui risultati completi del trial NHS-Galleri all'ASCO 2026 — BioSpace, giugno 2026</a> <span class="tag r">riferito</span></li>
+  <li id="EV-103"><a href="https://www.patientcareonline.com/view/nhs-galleri-data-show-fewer-stage-iv-cancers-but-primary-endpoint-missed">NHS-Galleri data show fewer stage IV cancers but primary endpoint missed — Patient Care Online, 20/02/2026</a> <span class="tag r">riferito</span></li>
+  <li id="EV-104"><a href="https://www.fda.gov/medical-devices/safety-communications/potential-risks-certain-uses-radiofrequency-rf-microneedling-fda-safety-communication">FDA, Potential Risks with Certain Uses of Radiofrequency (RF) Microneedling: Safety Communication (15/10/2025)</a></li>
+  <li id="EV-105"><a href="https://pubmed.ncbi.nlm.nih.gov/36674277/">Contini M et al. A systematic review of the efficacy of microfocused ultrasound for facial skin tightening. Int J Environ Res Public Health, 2023</a></li>
+  <li id="EV-106"><a href="https://pubmed.ncbi.nlm.nih.gov/39540440/">Amiri M et al. Microfocused ultrasound with visualization (MFU-V) effectiveness and safety: systematic review and meta-analysis. Aesthet Surg J, 2025</a></li>
+  <li id="EV-107"><a href="https://pubmed.ncbi.nlm.nih.gov/34417390/">Wang JV et al. Efficacy and safety of high-intensity, high-frequency, parallel ultrasound beams for fine lines and wrinkles. Dermatol Surg, 2021</a></li>
+  <li id="EV-108"><a href="https://pubmed.ncbi.nlm.nih.gov/36757157/">Hongcharu W et al. The efficacy and safety of the high-intensity parallel beam ultrasound device at the depth of 1.5 mm for skin tightening. J Cosmet Dermatol, 2023</a></li>
+  <li id="EV-109"><a href="https://pubmed.ncbi.nlm.nih.gov/19338872/">Burns JA et al. Thermage: monopolar radiofrequency. Aesthet Surg J, 2005</a></li>
+  <li id="EV-110"><a href="https://pubmed.ncbi.nlm.nih.gov/21763995/">Polder KD et al. Radiofrequency: Thermage. Facial Plast Surg Clin North Am, 2011</a></li>
+  <li id="EV-111"><a href="https://pubmed.ncbi.nlm.nih.gov/42611100/">Erlich et al. Objective and subjective retrospective evaluation of XERF, a novel single-shot dual-frequency monopolar radiofrequency. Lasers Med Sci, 2026</a></li>
+  <li id="EV-112"><a href="https://pubmed.ncbi.nlm.nih.gov/39247577/">Kim et al. Comparative three-dimensional analysis of facial lifting effects following 6.78-MHz monopolar radiofrequency (VolNewMer). Plast Reconstr Surg Glob Open, 2024</a></li>
+  <li id="EV-113"><a href="https://pubmed.ncbi.nlm.nih.gov/38410623/">Kim et al. Evaluating the efficacy of continuous water-cooling 6.78-MHz monopolar RF therapy for fine wrinkle reduction. Plast Reconstr Surg Glob Open, 2024</a></li>
+  <li id="EV-114"><a href="https://pubmed.ncbi.nlm.nih.gov/42429955/">Ou et al. Laser, microneedling, and combination therapies for moderate to severe acne atrophic scars: network meta-analysis. Aesthetic Plast Surg, 2026</a></li>
+  <li id="EV-115"><a href="https://pubmed.ncbi.nlm.nih.gov/42834161/">Cai et al. Microneedling radiofrequency versus fractional laser for the treatment of acne scars: a systematic review. Aesthetic Plast Surg, 2026</a></li>
+  <li id="EV-116"><a href="https://pubmed.ncbi.nlm.nih.gov/35916259/">Hendricks AJ et al. Dermatologic facial applications of Morpheus8 fractional radiofrequency microneedling. J Cosmet Dermatol, 2022</a></li>
+  <li id="EV-117"><a href="https://pubmed.ncbi.nlm.nih.gov/36103270/">Magro I et al. Transcutaneous radiofrequency microneedling in the facial plastic surgeon's practice: a review. Facial Plast Surg Aesthet Med, 2022</a></li>
+  <li id="EV-118"><a href="https://pubmed.ncbi.nlm.nih.gov/41886649/">Chou et al. Analysis of US FDA data on radiofrequency microneedling device complications. Dermatol Surg, 2026</a></li>
+  <li id="EV-119"><a href="https://pubmed.ncbi.nlm.nih.gov/37957393/">Kohan LS et al. High-intensity focused electromagnetic (HIFEM) energy with and without radiofrequency for noninvasive body contouring: a systematic review. Aesthetic Plast Surg, 2024</a></li>
+  <li id="EV-120"><a href="https://pubmed.ncbi.nlm.nih.gov/38235951/">Kinney BM et al. Remodeling of facial soft tissue induced by simultaneous application of HIFES and synchronized radiofrequency. J Cosmet Dermatol, 2024</a></li>
+  <li id="EV-121"><a href="https://pubmed.ncbi.nlm.nih.gov/39888339/">Frank K et al. Effect of synchronized radiofrequency and high-intensity facial electrical stimulation (HIFES) of the upper face. Aesthet Surg J, 2025</a></li>
+  <li id="EV-122"><a href="https://pubmed.ncbi.nlm.nih.gov/40211915/">Ravindran et al. Cryolipolysis and associated health outcomes, adverse events, and satisfaction: systematic review and meta-analysis. Obes Rev, 2025</a></li>
+  <li id="EV-123"><a href="https://pubmed.ncbi.nlm.nih.gov/41322038/">Mah et al. Incidence of paradoxical adipose hyperplasia after cryolipolysis: systematic review and meta-analysis. Aesthet Surg J Open Forum, 2025</a></li>
+  <li id="EV-124"><a href="https://artemis.co/media/endospheres-therapy-clinical-trial.pdf">Artemis Distribution, documento sullo studio clinico Endospheres (materiale del distributore)</a> <span class="tag r">riferito</span></li>
+  <li id="EV-125"><a href="https://pubmed.ncbi.nlm.nih.gov/36569524/">Storgard R et al. Efficacy and tolerability of HydraFacial clarifying treatment series in the treatment of active acne vulgaris. J Clin Aesthet Dermatol, 2022</a></li>
+  <li id="EV-126"><a href="https://pubmed.ncbi.nlm.nih.gov/42875609/">Das et al. Efficacy and safety of at-home LED photobiomodulation for facial rejuvenation: a systematic review. Aesthetic Plast Surg, 2026</a></li>
+</ol></div>
+<footer>Progetto LONGEVITY · documento di lavoro · novembre 2026 · ricerca esplorativa, nessuna decisione presa</footer>
+</div>
+<script>
+(function(){var L=[].slice.call(document.querySelectorAll('.side a'));if(!L.length||!('IntersectionObserver' in window))return;
+var m={};L.forEach(function(a){m[a.getAttribute('href').slice(1)]=a});
+var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){L.forEach(function(a){a.classList.remove('on')});var a=m[e.target.id];if(a)a.classList.add('on')}})},{rootMargin:'-10% 0px -80% 0px'});
+document.querySelectorAll('section[id]').forEach(function(s){o.observe(s)})})();
+</script>
+</body></html>

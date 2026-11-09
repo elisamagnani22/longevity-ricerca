@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="it">
+<head><meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Longevity · Analisi di mercato</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    color-scheme:dark;
+    --font-display:'Oswald',system-ui,sans-serif;
+    --font-body:'Quicksand',system-ui,sans-serif;
+    --bg:#0A0810; --bg-2:#12101C;
+    --bg-card:rgba(255,255,255,.055); --bg-card-2:rgba(255,255,255,.10);
+    --line:rgba(184,140,255,.26);
+    --lime:#C08CFF; --lime-fill:#9B5CFF; --magenta:#FF1E8E;
+    --violet:#9B5CFF; --violet-deep:#6D28D9; --ember:#FF7A45; --pink:#FF4FD8;
+    --text:#F7F2FF; --text-dim:rgba(247,242,255,.72); --text-faint:rgba(247,242,255,.42);
+    --gold:#FF9E5E;
+    --accent:linear-gradient(135deg,#6D28D9,#FF1E8E 55%,#FF7A45);
+    --glow-m:0 0 16px rgba(255,30,142,.55);
+    --glow-v:0 0 20px rgba(155,92,255,.45);
+    --shadow:0 1px 2px rgba(0,0,0,.55),0 10px 30px rgba(0,0,0,.5);
+    --shadow-lg:0 18px 60px rgba(109,40,217,.35),0 0 46px rgba(255,30,142,.16);
+  }
+  [data-theme="light"]{
+    color-scheme:light;
+    --bg:#F4F1FA; --bg-2:#EAE4F6;
+    --bg-card:rgba(255,255,255,.74); --bg-card-2:#E6DFF4;
+    --line:rgba(109,40,217,.22);
+    --lime:#6D28D9; --lime-fill:#9B5CFF; --magenta:#E0106D;
+    --violet:#7B2FF7; --violet-deep:#5B21B6; --ember:#E85A2A; --pink:#FF4FD8;
+    --text:#1B1226; --text-dim:#57496B; --text-faint:#9186A6;
+    --gold:#C25E28;
+    --accent:linear-gradient(135deg,#7B2FF7,#E0106D 55%,#FF7A45);
+    --glow-m:0 0 12px rgba(224,16,109,.22);
+    --glow-v:0 0 14px rgba(123,47,247,.18);
+    --shadow:0 1px 2px rgba(27,18,38,.06),0 8px 24px rgba(27,18,38,.10);
+    --shadow-lg:0 4px 12px rgba(27,18,38,.10),0 20px 50px rgba(109,40,217,.18);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.5;
+    -webkit-font-smoothing:antialiased;padding-bottom:120px;position:relative}
+  body::after{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background:
+      radial-gradient(60% 45% at 78% 4%,rgba(255,30,142,.20),transparent 62%),
+      radial-gradient(58% 44% at 6% 12%,rgba(109,40,217,.26),transparent 60%),
+      radial-gradient(70% 50% at 50% 108%,rgba(255,122,69,.14),transparent 60%)}
+  body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.035;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  ::selection{background:var(--magenta);color:#fff}
+  a{color:inherit}
+
+  .topbar{position:fixed;top:14px;right:14px;z-index:200;display:flex;gap:8px}
+  .tb{padding:8px 14px;border-radius:99px;background:var(--bg-card);backdrop-filter:blur(14px) saturate(1.4);
+    border:1px solid var(--line);box-shadow:var(--shadow);cursor:pointer;font-family:var(--font-display);
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-dim);
+    text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:.2s}
+  .tb:hover{color:#fff;border-color:var(--magenta);box-shadow:var(--glow-m)}
+
+  header{padding:70px 28px 38px;border-bottom:1px solid var(--line);position:relative;overflow:hidden;
+    background:radial-gradient(110% 100% at 100% 0%,rgba(255,30,142,.26),transparent 58%),
+      radial-gradient(110% 100% at 0% 0%,rgba(109,40,217,.34),transparent 56%),transparent}
+  header::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:2px;
+    background:var(--accent);box-shadow:var(--glow-m);opacity:.9}
+  .eyebrow{font-family:var(--font-display);font-weight:600;font-size:11px;letter-spacing:.35em;
+    text-transform:uppercase;color:var(--lime);margin-bottom:14px;display:inline-flex;align-items:center;gap:8px}
+  .eyebrow::before{content:'';width:22px;height:1px;background:var(--magenta);box-shadow:var(--glow-m)}
+  h1{font-family:var(--font-display);font-weight:400;font-size:clamp(40px,10vw,76px);line-height:.95;
+    letter-spacing:.01em;text-transform:uppercase;
+    background:linear-gradient(100deg,#FFFFFF 6%,#FF4FD8 42%,#FF1E8E 62%,#FF9E5E 96%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    filter:drop-shadow(0 0 22px rgba(255,30,142,.35))}
+  [data-theme="light"] h1{background:linear-gradient(100deg,#3B1F63 6%,#7B2FF7 40%,#E0106D 68%,#E85A2A 98%);
+    -webkit-background-clip:text;background-clip:text;filter:none}
+  h1 .sub{display:block;font-family:var(--font-body);font-style:italic;font-size:clamp(17px,4vw,23px);
+    letter-spacing:0;text-transform:none;color:var(--gold);margin-top:10px}
+  .header-meta{margin-top:24px;display:flex;flex-wrap:wrap;gap:10px 26px;font-size:13px;color:var(--text-dim)}
+  .header-meta span{display:inline-flex;align-items:center;gap:7px}
+  .header-meta span::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--text-faint)}
+  .header-meta strong{color:var(--text);font-weight:600}
+
+  .banner{margin:26px 28px 0;padding:22px 24px;border-radius:18px;
+    box-shadow:var(--shadow),inset 0 1px 0 rgba(255,255,255,.10),0 0 34px rgba(255,30,142,.16);
+    background:linear-gradient(120deg,rgba(255,30,142,.16),rgba(109,40,217,.14));
+    backdrop-filter:blur(14px);
+    border:1px solid rgba(255,79,216,.45);display:flex;gap:16px;align-items:flex-start}
+  .banner .pulse{flex:none;width:10px;height:10px;border-radius:50%;background:var(--magenta);margin-top:8px;
+    animation:pulse 2.2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,30,142,.6),0 0 12px rgba(255,30,142,.9)}70%{box-shadow:0 0 0 14px rgba(255,30,142,0),0 0 12px rgba(255,30,142,.9)}100%{box-shadow:0 0 0 0 rgba(255,30,142,0),0 0 12px rgba(255,30,142,.9)}}
+  .banner h3{font-family:var(--font-display);font-weight:400;font-size:22px;letter-spacing:.03em}
+  .banner p{font-size:14px;color:var(--text-dim);margin-top:5px}
+
+  section{padding:44px 28px 0;max-width:1240px}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:4px}
+  .sec-num{font-family:var(--font-display);font-size:17px;color:var(--text-faint);letter-spacing:.1em}
+  .sec-title{font-family:var(--font-display);font-weight:400;font-size:28px;letter-spacing:.04em;text-transform:uppercase}
+  .sec-head::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+  .sec-desc{font-family:var(--font-body);font-style:italic;font-size:16px;color:var(--text-dim);margin-bottom:20px}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+  .card{background:var(--bg-card);border:1px solid var(--line);border-radius:16px;padding:20px 20px 16px;
+    box-shadow:var(--shadow);backdrop-filter:blur(10px);display:flex;flex-direction:column;
+    transition:transform .25s cubic-bezier(.16,1,.3,1),box-shadow .25s,border-color .25s;position:relative;overflow:hidden}
+  .card::after{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--accent);
+    opacity:.9;box-shadow:0 0 14px rgba(255,30,142,.5)}
+  .card::before{content:'';position:absolute;inset:0;border-radius:16px;pointer-events:none;
+    background:linear-gradient(160deg,rgba(255,255,255,.10),transparent 42%)}
+  .card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:var(--pink)}
+  .card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+  .card-ico{font-size:24px;line-height:1}
+  .badge{font-size:9.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;padding:4px 9px;border-radius:99px;white-space:nowrap}
+  .b-live{background:rgba(155,92,255,.18);color:var(--violet);border:1px solid rgba(155,92,255,.45)}
+  .b-now{background:rgba(255,30,142,.18);color:var(--magenta);border:1px solid rgba(255,30,142,.5);
+    box-shadow:0 0 14px rgba(255,30,142,.25)}
+  .b-new{background:var(--bg-card-2);color:var(--text-dim);border:1px solid var(--line)}
+  .b-idea{background:rgba(255,122,69,.16);color:var(--gold);border:1px solid rgba(255,122,69,.42)}
+  .card h4{font-family:var(--font-display);font-weight:500;font-size:19px;letter-spacing:.03em;margin-top:12px}
+  .card .loc{font-family:var(--font-display);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-faint);margin-top:3px}
+  .card .goal{font-size:13.5px;color:var(--text-dim);margin-top:9px}
+  .card .price{margin-top:10px;padding-top:10px;border-top:1px solid var(--line);font-size:12.5px;color:var(--text)}
+  .card .price b{color:var(--gold);font-weight:700}
+
+  .need{background:var(--bg-card);border:1px solid var(--line);border-left:2px solid var(--gold);
+    border-radius:14px;padding:22px 24px;backdrop-filter:blur(10px);
+    box-shadow:var(--shadow),inset 0 1px 0 rgba(255,255,255,.07),-8px 0 24px -14px var(--gold);margin-bottom:14px}
+  .need h4{font-family:var(--font-display);font-weight:500;font-size:18px;letter-spacing:.04em;margin-bottom:8px}
+  .need p{font-size:14px;color:var(--text-dim);margin-bottom:8px}
+  .need ul{list-style:none;margin-top:8px}
+  .need li{font-size:13.5px;color:var(--text-dim);padding-left:20px;position:relative;margin-bottom:7px}
+  .need li::before{content:'→';position:absolute;left:0;color:var(--gold);font-weight:700}
+  .need strong{color:var(--text)}
+  .warn{border-left-color:var(--magenta);box-shadow:var(--shadow),inset 0 1px 0 rgba(255,255,255,.07),-10px 0 30px -14px var(--magenta)}
+  .warn li::before{color:var(--magenta)}
+
+  .stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px;margin-bottom:14px}
+  .stat{background:var(--bg-card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;
+    box-shadow:var(--shadow);backdrop-filter:blur(10px)}
+  .stat .n{font-family:var(--font-display);font-size:30px;color:var(--magenta);letter-spacing:.02em}
+  .stat .l{font-size:12.5px;color:var(--text-dim);margin-top:4px}
+
+  .src{font-size:12px;color:var(--text-faint);line-height:1.9}
+  .src a{color:var(--lime);text-decoration:none;border-bottom:1px dotted var(--lime)}
+  .src a:hover{color:var(--pink);border-color:var(--pink)}
+
+  footer{margin-top:56px;padding:28px;border-top:1px solid var(--line);font-size:12.5px;color:var(--text-faint);text-align:center}
+  @media(max-width:640px){section{padding:34px 18px 0}header{padding:66px 18px 28px}.banner{margin:20px 18px 0}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="tb" href="LONGEVITY - Control Room.html">↩ Longevity</a>
+  <button class="tb" id="themeBtn">◐ Tema</button>
+</div>
+
+<header>
+  <div class="eyebrow">Analisi di mercato · 26 agosto 2026</div>
+  <h1>Longevity
+    <span class="sub">Centro benessere per la longevity — chi c'è già in Italia e nel mondo, e cosa succede se apri a Bologna</span>
+  </h1>
+  <div class="header-meta">
+    <span><strong>7</strong> player globali mappati</span>
+    <span><strong>4</strong> player italiani mappati</span>
+    <span>Bologna: <strong>già presidiata</strong> da 2 competitor</span>
+  </div>
+</header>
+
+<div class="banner">
+  <div class="pulse"></div>
+  <div>
+    <h3>Bologna non è terreno vergine</h3>
+    <p><strong>The Longevity Suite</strong> ha già una sede in centro storico (Piazza Minghetti) e <strong>Cerba HealthCare</strong> offre già un "Percorso Longevity" in città. Il tema non è "il mercato esiste?" — esiste ed è in crescita reale — ma <strong>trovare un angolo che questi due non coprono</strong>. Dettagli in §3 e nella sintesi finale.</p>
+  </div>
+</div>
+
+<!-- ============ 01 · PLAYER GLOBALI ============ -->
+<section>
+  <div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title">Player globali di riferimento</h2></div>
+  <p class="sec-desc">Due famiglie di modelli: cliniche mediche diagnostiche (spesso a membership) e resort residenziali (pacchetto soggiorno one-off).</p>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-top"><span class="card-ico">🏔️</span><span class="badge b-live">Resort · storico</span></div>
+      <h4>Clinique La Prairie</h4>
+      <div class="loc">Montreux, Svizzera</div>
+      <p class="goal">Il capostipite del settore. Programmi residenziali 6-7 notti: Revitalisation, Life Reset, Master Detox, Health Diagnostics.</p>
+      <div class="price">Da <b>14.900 CHF</b> (Life Reset) a <b>50.250 CHF</b> (Premium)</div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-ico">⛲</span><span class="badge b-now">Membership · in crescita</span></div>
+      <h4>Fountain Life</h4>
+      <div class="loc">USA (Naples FL, Houston...)</div>
+      <p class="goal">Fondata da Peter Diamandis e Tony Robbins. Dal 2026 anche una fascia BASE per allargare il bacino oltre gli ultra-ricchi.</p>
+      <div class="price">Core <b>10.500 $/anno</b> · Apex <b>21.500 $/anno</b> · Epic <b>85.000 $/anno</b> · Base <b>595 $/anno</b></div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-ico">🧪</span><span class="badge b-now">Scaling aggressivo</span></div>
+      <h4>Next Health</h4>
+      <div class="loc">USA / Dubai / Vancouver</div>
+      <p class="goal">Modello "menu" più che membership. Da 5 sedi (fine 2024) a ~26 previste entro il 2026.</p>
+      <div class="price">Baseline Test <b>299 $</b> · Total Wellness <b>2.999 $</b> · Executive Physical <b>14.500 $</b></div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-ico">💎</span><span class="badge b-idea">Ultra-esclusivo</span></div>
+      <h4>Longevity Health</h4>
+      <div class="loc">Denver / Los Angeles, USA</div>
+      <p class="goal">Membership cap a 50 iscritti — scarsità come parte del posizionamento.</p>
+      <div class="price"><b>79.000 $/anno</b></div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-ico">🌊</span><span class="badge b-live">Resort</span></div>
+      <h4>SHA Wellness Clinic</h4>
+      <div class="loc">L'Albir, Spagna</div>
+      <p class="goal">Advanced Longevity in pacchetti da 7, 10 o 14 notti, all-inclusive.</p>
+      <div class="price">~700 €/giorno · da <b>7.500 €</b> (7 notti) a <b>12.000 €</b> (14 notti)</div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-ico">🌿</span><span class="badge b-live">Resort</span></div>
+      <h4>Lanserhof</h4>
+      <div class="loc">Austria / Germania</div>
+      <p class="goal">Focus salute intestinale/detox (LANS Med Concept), da 1.200 €/notte.</p>
+      <div class="price">7 notti: <b>5.000–9.000 €</b></div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-ico">⏳</span><span class="badge b-live">Gold standard storico</span></div>
+      <h4>Buchinger Wilhelmi</h4>
+      <div class="loc">Germania</div>
+      <p class="goal">Digiuno terapeutico dal 1920 — il riferimento clinico del settore.</p>
+      <div class="price">Settimana: <b>3.000–9.000 €</b></div>
+    </div>
+  </div>
+
+  <div class="need" style="margin-top:16px">
+    <h4>Il trend da notare</h4>
+    <p>Shift da pacchetto <strong>una tantum</strong> a <strong>membership ricorrente</strong> (Fountain Life, Next Health): ricavo prevedibile, cliente agganciato ai follow-up. I resort europei residenziali restano invece su soggiorni one-off ad alto scontrino.</p>
+  </div>
+</section>
+
+<!-- ============ 02 · ITALIA ============ -->
+<section>
+  <div class="sec-head"><span class="sec-num">02</span><h2 class="sec-title">Situazione in Italia</h2></div>
+  <p class="sec-desc">Più affollato di quanto ci si aspetterebbe: dal medical-spa di lusso al low-cost via analisi del sangue.</p>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-top"><span class="card-ico">👑</span><span class="badge b-live">Medical spa di lusso</span></div>
+      <h4>Palazzo Fiuggi</h4>
+      <div class="loc">Fiuggi, Lazio</div>
+      <p class="goal">Ex residenza reale, riaperta 2021. Programma Longevity con chef 3 stelle Michelin (Heinz Beck) + team medico, check-up genetici ed epigenetici.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-ico">🩺</span><span class="badge b-now">Network · 33+ sedi</span></div>
+      <h4>The Longevity Suite</h4>
+      <div class="loc">Milano, Roma, Torino, Bologna, Modena, Parma…</div>
+      <p class="goal">"Biohacking & Antiage City Clinic" — check-up longevity (età biologica/epigenetica, ormoni, DNA, microbiota), crioterapia, fotobiomodulazione. <strong>Presente anche a Bologna.</strong></p>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-ico">🧬</span><span class="badge b-new">Clinica boutique</span></div>
+      <h4>SoLongevity Clinic</h4>
+      <div class="loc">Milano</div>
+      <p class="goal">Si definisce "la prima clinica italiana dedicata alla medicina della longevità". Check-up scalari per livello di approfondimento.</p>
+      <div class="price">Clinico da <b>690 €</b> a Ultimate <b>4.690 €</b></div>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="card-ico">💉</span><span class="badge b-now">Mass-market · 400+ centri</span></div>
+      <h4>Cerba HealthCare</h4>
+      <div class="loc">Rete nazionale, inclusa Bologna</div>
+      <p class="goal">"Percorso Longevity" low-cost, accessibile via prelievo in oltre 400 centri — posizionato come "un decimo del prezzo" dei programmi europei.</p>
+      <div class="price"><b>300–800 €</b></div>
+    </div>
+  </div>
+
+  <p style="font-size:13px;color:var(--text-faint);margin-top:14px">Il termalismo storico (Fiuggi, Chianciano...) si sta riposizionando in chiave "longevity" più che "cura termale" classica.</p>
+</section>
+
+<!-- ============ 03 · BOLOGNA ============ -->
+<section>
+  <div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">Bologna & Emilia-Romagna</h2></div>
+  <p class="sec-desc">Il dato più importante per la validazione dell'idea.</p>
+
+  <div class="need warn">
+    <h4>⚠️ Competitor diretti già presenti</h4>
+    <ul>
+      <li><strong>The Longevity Suite Bologna</strong> — sede in pieno centro storico, Piazza Minghetti / Portico Zambeccari, attiva 6 giorni su 7. Rete che copre anche Modena e Parma.</li>
+      <li><strong>Cerba HealthCare</strong> — offre il suo "Percorso Longevity" anche nei centri prelievi bolognesi.</li>
+      <li>Un centro "longevity-branded" generico a Bologna rifarebbe quindi qualcosa che esiste già in due varianti: boutique clinica e mass-market low-cost.</li>
+    </ul>
+  </div>
+
+  <div class="need">
+    <h4>Asset sul territorio</h4>
+    <ul>
+      <li><strong>22 stabilimenti termali in 19 località</strong> in Emilia-Romagna (Salsomaggiore, Bagno di Romagna, Riccione Terme, Terme della Salvarola vicino Modena) — posizionati su prevenzione/benessere, non ancora ribrandizzati esplicitamente "longevity science".</li>
+      <li><strong>Motor Valley</strong> — Ferrari (Maranello), Lamborghini (Sant'Agata), Pagani: bacino di imprenditoria e management ad alto reddito tra Bologna-Modena-Reggio.</li>
+      <li>Distretto ceramico di Sassuolo — stesso tipo di bacino economico.</li>
+      <li>Università di Bologna — meno rilevante come target diretto, più utile come possibile partner scientifico/di ricerca.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 04 · MERCATO ============ -->
+<section>
+  <div class="sec-head"><span class="sec-num">04</span><h2 class="sec-title">Dimensione e trend del mercato</h2></div>
+  <p class="sec-desc">Crescita reale e sostenuta, non una moda passeggera.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="n">1.085 mld $</div><div class="l">Wellness tourism globale, 2026</div></div>
+    <div class="stat"><div class="n">2.400 mld $</div><div class="l">Proiezione wellness tourism, 2035 (CAGR ~9,3%)</div></div>
+    <div class="stat"><div class="n">6,8 trilioni $</div><div class="l">Wellness economy globale, 2025 (Global Wellness Institute)</div></div>
+    <div class="stat"><div class="n">9,8 trilioni $</div><div class="l">Proiezione wellness economy, 2029</div></div>
+  </div>
+  <p style="font-size:13px;color:var(--text-faint)">La longevity science / preventive healthcare è indicata dal Global Wellness Institute come uno dei driver principali di questa crescita, insieme a sauna culture e digital detox.</p>
+</section>
+
+<!-- ============ 05 · NORMATIVA ============ -->
+<section>
+  <div class="sec-head"><span class="sec-num">05</span><h2 class="sec-title">Barriere normative in Italia</h2></div>
+  <p class="sec-desc">La scelta di posizionamento va fatta a monte — cambia investimento e complessità.</p>
+
+  <div class="need">
+    <h4>Centro benessere/estetico vs clinica medica</h4>
+    <ul>
+      <li><strong>Centro benessere/estetico puro</strong> (massaggi, trattamenti non invasivi, crioterapia estetica) — <strong>nessuna autorizzazione sanitaria richiesta.</strong></li>
+      <li><strong>Attività cliniche ambulatoriali</strong> (prelievi, consulenza medica, terapie diagnostico-terapeutiche) — serve <strong>autorizzazione sanitaria specifica</strong>, rilasciata dal Sindaco/AUSL competente, con requisiti strutturali, tecnologici e organizzativi; personale sanitario iscritto all'ordine.</li>
+      <li>È il motivo per cui The Longevity Suite opera come "City Clinic" (struttura sanitaria autorizzata) mentre altri player restano più leggeri sul lato wellness/estetico.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 06 · GAP E OPPORTUNITÀ ============ -->
+<section>
+  <div class="sec-head"><span class="sec-num">06</span><h2 class="sec-title">Gap e opportunità</h2></div>
+  <p class="sec-desc">Non "aprire un centro longevity a Bologna" in astratto — trovare l'angolo che i due player locali non coprono.</p>
+
+  <div class="need">
+    <ul>
+      <li><strong>Format residenziale/retreat</strong> — tipo Palazzo Fiuggi ma in Emilia, magari legato al termalismo esistente invece che costruito da zero.</li>
+      <li><strong>Food-as-medicine</strong> — territorio a fortissima identità gastronomica: potenziale differenziante non replicabile altrove.</li>
+      <li><strong>Corporate/executive health legato a Motor Valley</strong> — check-up per manager e imprenditori, in stile "Executive Physical" ma targettizzato sul tessuto locale.</li>
+      <li><strong>Modello membership ricorrente</strong> — ancora poco visto in Italia, dove prevale il pacchetto one-off.</li>
+      <li><strong>Partnership con le terme regionali esistenti</strong> (Salvarola, Bagno di Romagna) — riposizionare uno stabilimento esistente può costare meno che costruire ex novo.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 07 · SINTESI ============ -->
+<section>
+  <div class="sec-head"><span class="sec-num">07</span><h2 class="sec-title">Sintesi e valutazione onesta</h2></div>
+
+  <div class="need warn">
+    <h4>Il rischio vero non è "il mercato non esiste"</h4>
+    <p>Il mercato globale della longevity è in crescita reale e sostenuta. Ma <strong>a Bologna non è terreno vergine</strong>: esiste già un competitor diretto di rete (The Longevity Suite) in centro storico, più un'offerta low-cost diffusa (Cerba). Il rischio principale è <strong>entrare in un segmento già presidiato senza un angolo distintivo chiaro</strong> — rifare "un altro Longevity Suite" avrebbe poco senso.</p>
+      <p>Il rischio secondario è normativo/di capitale: la componente medica è quella che genera davvero valore e prezzo (vedi i listini SoLongevity/SHA/La Prairie), ma richiede autorizzazione sanitaria, personale medico e un investimento molto più alto di un semplice centro estetico.</p>
+      <h4 style="margin-top:16px">Prima di procedere, verificare</h4>
+      <ul>
+        <li>Chi sono davvero i clienti di The Longevity Suite Bologna, e cosa manca nella loro offerta</li>
+        <li>Se ha senso un modello ibrido con le terme esistenti (Salvarola, Porretta) invece di una struttura nuova</li>
+        <li>Quale target locale (executive Motor Valley? turismo alto-spendente? residenti facoltosi?) è oggi meno servito</li>
+        <li>Consulenza per l'autorizzazione sanitaria in Emilia-Romagna, prima di stimare l'investimento</li>
+      </ul>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-num">·</span><h2 class="sec-title" style="font-size:18px">Fonti</h2></div>
+  <p class="src">
+    <a href="https://worldlongevityclinics.com/news/best-longevity-clinics-2026-comprehensive-guide/" target="_self">World Longevity Clinics — Best Longevity Clinics 2026</a><br>
+    <a href="https://www.serenityways.com/posts/clinique-la-prairie-prices-approach-success" target="_self">Clinique La Prairie — prezzi</a><br>
+    <a href="https://wellfr.com/understanding-the-price-tag-how-much-does-fountainlife-cost" target="_self">Fountain Life — membership</a><br>
+    <a href="https://www.next-health.com/" target="_self">Next Health</a><br>
+    <a href="https://www.palazzofiuggi.com/health-spa-resort-programs/medical-2/longevity/" target="_self">Palazzo Fiuggi</a><br>
+    <a href="https://www.serenityways.com/posts/sha-wellness-clinic-prices" target="_self">SHA Wellness Clinic — prezzi</a><br>
+    <a href="https://worldlongevityclinics.com/longevity-clinics-germany/" target="_self">Lanserhof / Buchinger Wilhelmi</a><br>
+    <a href="https://globalwellnessinstitute.org/press-room/press-releases/the-global-wellness-economy-hits-a-record-6-8-trillion-and-is-forecast-to-reach-9-8-trillion-by-2029/" target="_self">Global Wellness Institute — wellness economy 2025-2029</a><br>
+    <a href="https://www.grandviewresearch.com/industry-analysis/wellness-tourism-market" target="_self">Grand View Research — Wellness Tourism Market</a><br>
+    <a href="https://thelongevitysuite.com/en/centres/bologna/" target="_self">The Longevity Suite — sede Bologna</a><br>
+    <a href="https://solongevity.com/test-tabella-prezzi/" target="_self">SoLongevity Clinic Milano — prezzi</a><br>
+    <a href="https://www.cerbahealthcare.it/programma-longevity-a-bologna/" target="_self">Cerba HealthCare — Programma Longevity Bologna</a><br>
+    <a href="https://salute.regione.emilia-romagna.it/ssr/strumenti-e-informazioni/autorizzazione-e-accreditamento/sanitario/autorizzazione" target="_self">Regione Emilia-Romagna — Autorizzazione attività sanitaria</a><br>
+    <a href="https://emiliaromagnaturismo.it/en/spa-wellness" target="_self">Emilia Romagna Turismo — Spa & Wellness</a>
+  </p>
+</section>
+
+<footer>
+  Ricerca del 26 agosto 2026 — dati e prezzi possono cambiare, da verificare prima di decisioni d'investimento.<br>
+  Fa parte della control room di <a href="../AURA/Elisa Life - Control Room.html" style="color:var(--lime)">Elisa · Life</a>.
+</footer>
+
+<script>
+  const root=document.documentElement, tb=document.getElementById('themeBtn');
+  const saved=localStorage.getItem('elisalife-theme');
+  if(saved) root.setAttribute('data-theme',saved);
+  tb.onclick=()=>{const cur=root.getAttribute('data-theme')||'dark';const n=cur==='dark'?'light':'dark';
+    root.setAttribute('data-theme',n);localStorage.setItem('elisalife-theme',n);};
+</script>
+</body>
+</html>

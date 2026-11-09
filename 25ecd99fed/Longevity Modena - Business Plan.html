@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="it">
+<head><meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Longevity Modena · Business Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    color-scheme:dark;
+    --font-display:'Oswald',system-ui,sans-serif;
+    --font-body:'Quicksand',system-ui,sans-serif;
+    --bg:#0A0810; --bg-2:#12101C;
+    --bg-card:rgba(255,255,255,.055); --bg-card-2:rgba(255,255,255,.10);
+    --line:rgba(184,140,255,.26);
+    --lime:#C08CFF; --lime-fill:#9B5CFF; --magenta:#FF1E8E;
+    --violet:#9B5CFF; --violet-deep:#6D28D9; --ember:#FF7A45; --pink:#FF4FD8;
+    --text:#F7F2FF; --text-dim:rgba(247,242,255,.72); --text-faint:rgba(247,242,255,.42);
+    --gold:#FF9E5E;
+    --accent:linear-gradient(135deg,#6D28D9,#FF1E8E 55%,#FF7A45);
+    --glow-m:0 0 16px rgba(255,30,142,.55);
+    --glow-v:0 0 20px rgba(155,92,255,.45);
+    --shadow:0 1px 2px rgba(0,0,0,.55),0 10px 30px rgba(0,0,0,.5);
+    --shadow-lg:0 18px 60px rgba(109,40,217,.35),0 0 46px rgba(255,30,142,.16);
+  }
+  [data-theme="light"]{
+    color-scheme:light;
+    --bg:#F4F1FA; --bg-2:#EAE4F6;
+    --bg-card:rgba(255,255,255,.74); --bg-card-2:#E6DFF4;
+    --line:rgba(109,40,217,.22);
+    --lime:#6D28D9; --lime-fill:#9B5CFF; --magenta:#E0106D;
+    --violet:#7B2FF7; --violet-deep:#5B21B6; --ember:#E85A2A; --pink:#FF4FD8;
+    --text:#1B1226; --text-dim:#57496B; --text-faint:#9186A6;
+    --gold:#C25E28;
+    --accent:linear-gradient(135deg,#7B2FF7,#E0106D 55%,#FF7A45);
+    --glow-m:0 0 12px rgba(224,16,109,.22);
+    --glow-v:0 0 14px rgba(123,47,247,.18);
+    --shadow:0 1px 2px rgba(27,18,38,.06),0 8px 24px rgba(27,18,38,.10);
+    --shadow-lg:0 4px 12px rgba(27,18,38,.10),0 20px 50px rgba(109,40,217,.18);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.5;
+    -webkit-font-smoothing:antialiased;padding-bottom:120px;position:relative}
+  body::after{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background:
+      radial-gradient(60% 45% at 78% 4%,rgba(255,30,142,.20),transparent 62%),
+      radial-gradient(58% 44% at 6% 12%,rgba(109,40,217,.26),transparent 60%),
+      radial-gradient(70% 50% at 50% 108%,rgba(255,122,69,.14),transparent 60%)}
+  body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.035;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  ::selection{background:var(--magenta);color:#fff}
+  a{color:inherit}
+
+  .topbar{position:fixed;top:14px;right:14px;z-index:200;display:flex;gap:8px}
+  .tb{padding:8px 14px;border-radius:99px;background:var(--bg-card);backdrop-filter:blur(14px) saturate(1.4);
+    border:1px solid var(--line);box-shadow:var(--shadow);cursor:pointer;font-family:var(--font-display);
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-dim);
+    text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:.2s}
+  .tb:hover{color:#fff;border-color:var(--magenta);box-shadow:var(--glow-m)}
+
+  header{padding:70px 28px 38px;border-bottom:1px solid var(--line);position:relative;overflow:hidden;
+    background:radial-gradient(110% 100% at 100% 0%,rgba(255,30,142,.26),transparent 58%),
+      radial-gradient(110% 100% at 0% 0%,rgba(109,40,217,.34),transparent 56%),transparent}
+  header::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:2px;
+    background:var(--accent);box-shadow:var(--glow-m);opacity:.9}
+  .eyebrow{font-family:var(--font-display);font-weight:600;font-size:11px;letter-spacing:.35em;
+    text-transform:uppercase;color:var(--lime);margin-bottom:14px;display:inline-flex;align-items:center;gap:8px}
+  .eyebrow::before{content:'';width:22px;height:1px;background:var(--magenta);box-shadow:var(--glow-m)}
+  h1{font-family:var(--font-display);font-weight:400;font-size:clamp(36px,8.4vw,66px);line-height:.98;
+    letter-spacing:.01em;text-transform:uppercase;
+    background:linear-gradient(100deg,#FFFFFF 6%,#FF4FD8 42%,#FF1E8E 62%,#FF9E5E 96%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    filter:drop-shadow(0 0 22px rgba(255,30,142,.35))}
+  [data-theme="light"] h1{background:linear-gradient(100deg,#3B1F63 6%,#7B2FF7 40%,#E0106D 68%,#E85A2A 98%);
+    -webkit-background-clip:text;background-clip:text;filter:none}
+  h1 .sub{display:block;font-family:var(--font-body);font-style:italic;font-size:clamp(16px,3.4vw,20px);
+    letter-spacing:0;text-transform:none;color:var(--gold);margin-top:10px}
+  .header-meta{margin-top:24px;display:flex;flex-wrap:wrap;gap:10px 26px;font-size:13px;color:var(--text-dim)}
+  .header-meta span{display:inline-flex;align-items:center;gap:7px}
+  .header-meta span::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--text-faint)}
+  .header-meta strong{color:var(--text);font-weight:600}
+
+  .banner{margin:26px 28px 0;padding:22px 24px;border-radius:18px;
+    box-shadow:var(--shadow),inset 0 1px 0 rgba(255,255,255,.10),0 0 34px rgba(255,30,142,.16);
+    background:linear-gradient(120deg,rgba(255,30,142,.16),rgba(109,40,217,.14));
+    backdrop-filter:blur(14px);
+    border:1px solid rgba(255,79,216,.45);display:flex;gap:16px;align-items:flex-start}
+  .banner .pulse{flex:none;width:10px;height:10px;border-radius:50%;background:var(--magenta);margin-top:8px;
+    animation:pulse 2.2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,30,142,.6),0 0 12px rgba(255,30,142,.9)}70%{box-shadow:0 0 0 14px rgba(255,30,142,0),0 0 12px rgba(255,30,142,.9)}100%{box-shadow:0 0 0 0 rgba(255,30,142,0),0 0 12px rgba(255,30,142,.9)}}
+  .banner h3{font-family:var(--font-display);font-weight:400;font-size:21px;letter-spacing:.03em}
+  .banner p{font-size:14px;color:var(--text-dim);margin-top:5px}
+
+  section{padding:44px 28px 0;max-width:1240px}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:4px}
+  .sec-num{font-family:var(--font-display);font-size:17px;color:var(--text-faint);letter-spacing:.1em}
+  .sec-title{font-family:var(--font-display);font-weight:400;font-size:27px;letter-spacing:.04em;text-transform:uppercase}
+  .sec-head::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+  .sec-desc{font-family:var(--font-body);font-style:italic;font-size:16px;color:var(--text-dim);margin-bottom:20px}
+
+  .need{background:var(--bg-card);border:1px solid var(--line);border-left:2px solid var(--gold);
+    border-radius:14px;padding:22px 24px;backdrop-filter:blur(10px);
+    box-shadow:var(--shadow),inset 0 1px 0 rgba(255,255,255,.07),-8px 0 24px -14px var(--gold);margin-bottom:14px}
+  .need h4{font-family:var(--font-display);font-weight:500;font-size:18px;letter-spacing:.04em;margin-bottom:8px}
+  .need p{font-size:14px;color:var(--text-dim);margin-bottom:8px}
+  .need ul{list-style:none;margin-top:8px}
+  .need li{font-size:13.5px;color:var(--text-dim);padding-left:20px;position:relative;margin-bottom:7px}
+  .need li::before{content:'→';position:absolute;left:0;color:var(--gold);font-weight:700}
+  .need strong{color:var(--text)}
+  .warn{border-left-color:var(--magenta);box-shadow:var(--shadow),inset 0 1px 0 rgba(255,255,255,.07),-10px 0 30px -14px var(--magenta)}
+  .warn li::before{color:var(--magenta)}
+  .warn h4{color:var(--magenta)}
+
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px}
+  .card{background:var(--bg-card);border:1px solid var(--line);border-radius:16px;padding:20px 20px 16px;
+    box-shadow:var(--shadow);backdrop-filter:blur(10px);position:relative;overflow:hidden}
+  .card::after{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--accent);
+    opacity:.9;box-shadow:0 0 14px rgba(255,30,142,.5)}
+  .card h4{font-family:var(--font-display);font-weight:500;font-size:16px;letter-spacing:.03em;margin-bottom:8px}
+  .card p{font-size:13px;color:var(--text-dim)}
+  .card .n{font-family:var(--font-display);font-size:25px;color:var(--gold);margin-bottom:4px}
+
+  .tblwrap{overflow-x:auto;border-radius:14px;border:1px solid var(--line);background:var(--bg-card);backdrop-filter:blur(10px);margin-bottom:14px}
+  table{width:100%;border-collapse:collapse;font-size:13px;min-width:560px}
+  th{font-family:var(--font-display);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;
+    color:var(--text-faint);text-align:left;padding:11px 15px;border-bottom:1px solid var(--line)}
+  td{padding:11px 15px;border-bottom:1px solid var(--line);color:var(--text-dim)}
+  tr:last-child td{border-bottom:0}
+  td.hl{color:var(--gold);font-weight:700}
+  td.neg{color:var(--magenta)}
+  td.pos{color:#7CE38B}
+  tr.tot td{color:var(--text);font-weight:600;border-top:1px solid var(--line)}
+
+  .steps-num{list-style:none;counter-reset:step;margin-top:6px}
+  .steps-num li{counter-increment:step;position:relative;padding:14px 0 14px 44px;border-top:1px solid var(--line)}
+  .steps-num li:first-child{border-top:0}
+  .steps-num li::before{content:counter(step);position:absolute;left:0;top:14px;width:28px;height:28px;
+    border-radius:50%;background:var(--accent);color:#fff;font-family:var(--font-display);font-size:13px;
+    display:grid;place-items:center;box-shadow:var(--glow-m)}
+  .steps-num b{display:block;font-family:var(--font-display);font-size:15px;letter-spacing:.02em;margin-bottom:3px}
+  .steps-num span{font-size:13.5px;color:var(--text-dim)}
+
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+  .toc a{font-family:var(--font-display);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    padding:7px 13px;border-radius:99px;border:1px solid var(--line);color:var(--text-dim);
+    text-decoration:none;transition:.2s}
+  .toc a:hover{border-color:var(--magenta);color:#fff;box-shadow:var(--glow-m)}
+
+  footer{margin-top:56px;padding:28px;border-top:1px solid var(--line);font-size:12.5px;color:var(--text-faint);text-align:center}
+  @media(max-width:640px){section{padding:34px 18px 0}header{padding:66px 18px 28px}.banner{margin:20px 18px 0}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="tb" href="../AURA/Campofiorito - Control Room.html">↩ Campofiorito</a>
+  <a class="tb" href="LONGEVITY - Control Room.html">↩ Longevity</a>
+  <button class="tb" id="themeBtn">◐ Tema</button>
+</div>
+
+<header>
+  <div class="eyebrow">Business plan esplorativo · separato da Campofiorito · 27 agosto 2026</div>
+  <h1>Longevity Modena
+    <span class="sub">Una clinica boutique a membership, non un centro walk-in — il gap che né The Longevity Suite né Cerba né Med-Ex coprono oggi</span>
+  </h1>
+  <div class="header-meta">
+    <span>Capex: <strong>300–520 k€</strong></span>
+    <span>+ capitale circolante anni 1-2: <strong>~350–450 k€</strong></span>
+    <span>Fabbisogno totale: <strong>~650–970 k€</strong></span>
+    <span>Rientro realistico: <strong>~5-6 anni</strong></span>
+  </div>
+  <div class="toc">
+    <a href="#gap">Il gap</a>
+    <a href="#modello">Modello</a>
+    <a href="#investimento">Investimento</a>
+    <a href="#rampa">Rampa 3 anni</a>
+    <a href="#b2b">Canale B2B</a>
+    <a href="#normativa">Normativa</a>
+    <a href="#rischi">Rischi</a>
+  </div>
+</header>
+
+<div class="banner">
+  <div class="pulse"></div>
+  <div>
+    <h3>Correzione onesta rispetto a quanto detto a voce</h3>
+    <p>In chat avevo stimato "rientro 2-4 anni" a spanne. Modellando la rampa anno per anno (che include due anni in perdita prima di arrivare a regime) il numero vero è <strong>~5-6 anni</strong> — più lento di quanto avevo detto, ma comunque molto più veloce di Campofiorito (8-12 anni). Meglio il numero corretto ora che uno ottimistico che si rivela sbagliato dopo.</p>
+  </div>
+</div>
+
+<!-- ============ IL GAP ============ -->
+<section id="gap">
+  <div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title">Il gap a Modena</h2></div>
+  <p class="sec-desc">Tre player già presenti, nessuno copre lo stesso spazio.</p>
+
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>Chi</th><th>Modello</th><th>Il limite (rispetto a questa idea)</th></tr></thead>
+      <tbody>
+        <tr><td>The Longevity Suite Modena (Via Vignolese 70)</td><td>Transazionale — seduta o pacchetto singolo</td><td>Nessun ricavo ricorrente, stesso format delle altre 33 sedi in rete, nessuna specializzazione locale</td></tr>
+        <tr><td>Cerba HealthCare (Carpi)</td><td>Mass-market, low-cost (300-800€)</td><td>Volume alto/margine basso, non un servizio premium o relazionale</td></tr>
+        <tr><td>Med-Ex (sede Roma, serve Ferrari a Maranello)</td><td>Corporate wellness B2B — "Ferrari Formula Benessere"</td><td>Fornitore esterno legato a un cliente specifico, non un presidio locale aperto a tutto l'indotto</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="need">
+    <h4>Lo spazio libero</h4>
+    <p>Una clinica <strong>locale, radicata a Modena, a membership ricorrente</strong>, aperta a tutto l'indotto Motor Valley oltre Ferrari (Lamborghini a Sant'Agata, fornitori di componentistica, distretto ceramico di Sassuolo) — che nessuno dei tre copre oggi.</p>
+  </div>
+</section>
+
+<!-- ============ MODELLO ============ -->
+<section id="modello">
+  <div class="sec-head"><span class="sec-num">02</span><h2 class="sec-title">Il modello di business</h2></div>
+  <p class="sec-desc">Membership annuale, due canali di vendita.</p>
+
+  <div class="grid2">
+    <div class="card"><div class="n">2.500–4.000€</div><h4>Membership annuale</h4><p>Check-up completo iniziale + follow-up trimestrali inclusi. Sopra Cerba (300-800€), sotto SoLongevity Ultimate (4.690€).</p></div>
+    <div class="card"><div class="n">2</div><h4>Canali di vendita</h4><p>B2C diretto (imprenditori/famiglie) + B2B come benefit aziendale venduto agli HR delle aziende dell'indotto senza programma dedicato.</p></div>
+    <div class="card"><div class="n">150–300</div><h4>Membri a regime</h4><p>Base volutamente piccola e ad alto valore, non un centro ad alto traffico.</p></div>
+  </div>
+</section>
+
+<!-- ============ INVESTIMENTO ============ -->
+<section id="investimento">
+  <div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">Investimento</h2></div>
+  <p class="sec-desc">Molto più piccolo di Campofiorito — nessun acquisto immobiliare, un affitto e un fit-out.</p>
+
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>Voce</th><th>€</th></tr></thead>
+      <tbody>
+        <tr><td>Affitto + fit-out locali (attesa, 2 ambulatori, sala prelievi)</td><td>150 – 250 k</td></tr>
+        <tr><td>Attrezzature diagnostiche base (no RM/TC — esternalizzate)</td><td>80 – 150 k</td></tr>
+        <tr><td>Pre-apertura, autorizzazione sanitaria, brand, marketing iniziale</td><td>70 – 120 k</td></tr>
+        <tr class="tot"><td>Capex totale</td><td class="hl">300 – 520 k€</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="need warn">
+    <h4>Il pezzo che manca se ti fermi al capex</h4>
+    <p>Il capex copre solo l'apertura. Come per Campofiorito, i primi 1-2 anni sono in perdita mentre si costruisce la base membri — serve <strong>capitale circolante aggiuntivo di ~350-450k€</strong> per coprirli. Il fabbisogno totale reale è quindi <strong>~650-970k€</strong>, non 300-520k€.</p>
+  </div>
+</section>
+
+<!-- ============ RAMPA 3 ANNI ============ -->
+<section id="rampa">
+  <div class="sec-head"><span class="sec-num">04</span><h2 class="sec-title">Rampa a 3 anni e payback</h2></div>
+  <p class="sec-desc">Ipotesi costruita per questo esercizio — nessun dato di partenza esisteva, a differenza di Campofiorito.</p>
+
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>Anno</th><th>Membri medi</th><th>Ricavi</th><th>GOP</th><th>Cash cumulato (post-capex)</th></tr></thead>
+      <tbody>
+        <tr><td>Anno 1 — apertura, primi contratti B2B in chiusura</td><td>~20</td><td>~60 k€</td><td class="neg">-300 k€</td><td class="neg">-700 k€</td></tr>
+        <tr><td>Anno 2 — la base cresce coi contratti B2B</td><td>~120</td><td>~360 k€</td><td class="neg">-120 k€</td><td class="neg">-820 k€</td></tr>
+        <tr><td>Anno 3 — a regime</td><td>250</td><td class="hl">~750 k€</td><td class="pos">+260 k€</td><td class="neg">-560 k€</td></tr>
+        <tr><td>Anno 4</td><td>250</td><td>~750 k€</td><td class="pos">+260 k€</td><td class="neg">-300 k€</td></tr>
+        <tr class="tot"><td>Anno 5-6 — payback</td><td>250</td><td>~750 k€</td><td class="pos">+260 k€</td><td class="pos">Rientro tra anno 5 e 6</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:12.5px;color:var(--text-faint)">Cash cumulato = capex iniziale (~400k, punto medio) + perdite/utili operativi anno per anno. Il segno cambia tra anno 5 e anno 6 — è lì il vero payback, non l'anno 3 in cui si arriva "a regime" operativo.</p>
+</section>
+
+<!-- ============ CANALE B2B ============ -->
+<section id="b2b">
+  <div class="sec-head"><span class="sec-num">05</span><h2 class="sec-title">Il canale B2B — chi sono i target</h2></div>
+  <p class="sec-desc">La leva che rende questo modello più veloce di un centro longevity generico: non aspetti che i clienti ti trovino, li vendi come benefit aziendale.</p>
+
+  <div class="need">
+    <ul>
+      <li><strong>Fornitori Motor Valley</strong> — componentistica per Ferrari/Lamborghini/Pagani, aziende con management ad alto reddito e nessun programma wellness dedicato</li>
+      <li><strong>Distretto ceramico di Sassuolo</strong> — stesso profilo economico, stesso vuoto</li>
+      <li><strong>Studi professionali e PMI di fascia alta</strong> a Modena città — commercialisti, studi legali, aziende di famiglia</li>
+      <li>Precedente diretto da studiare: il caso Ferrari/Med-Ex dimostra che il corporate wellness in zona <strong>funziona ed è già stato validato</strong> — la domanda è se replicarlo su scala più piccola per le aziende che Ferrari-size non sono</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ NORMATIVA ============ -->
+<section id="normativa">
+  <div class="sec-head"><span class="sec-num">06</span><h2 class="sec-title">Normativa — richiamo da Campofiorito</h2></div>
+  <div class="need">
+    <p>Stessa regola verificata per il layer longevity di Campofiorito: serve <strong>autorizzazione sanitaria vera</strong> da Comune/Regione/ASL (non una SCIA leggera), locali a norma, personale iscritto agli albi, e un <strong>direttore sanitario</strong>. Qui però è il cuore del business, non un addendum — va messo in conto dal giorno uno del progetto, non aggiunto dopo.</p>
+  </div>
+</section>
+
+<!-- ============ RISCHI ============ -->
+<section>
+  <div class="sec-head"><span class="sec-num">07</span><h2 class="sec-title">Rischi principali</h2></div>
+  <ol class="steps-num">
+    <li><b>Il canale B2B è la parte non testata</b><span>I numeri assumono che i contratti aziendali arrivino — va validato con conversazioni reali con 5-10 HR/imprenditori della zona prima di contare su questo ricavo.</span></li>
+    <li><b>Trovare un direttore sanitario disponibile</b><span>È la persona chiave — senza, il progetto non parte. Va cercato in parallelo alla decisione di investire, non dopo.</span></li>
+    <li><b>250 membri a regime è una stima, non un dato</b><span>Non esiste un dato di mercato su quante persone a Modena pagherebbero una membership longevity — è un numero costruito per l'esercizio.</span></li>
+    <li><b>The Longevity Suite potrebbe copiare il modello membership</b><span>È già lì, ha già il brand e la sede — se vede che il segmento B2B funziona può aggiungerlo alla sua offerta esistente.</span></li>
+  </ol>
+</section>
+
+<footer>
+  Modello esplorativo del 27 agosto 2026 — piano separato da Campofiorito, su richiesta di Elisa. Ogni numero qui è un'ipotesi dichiarata, non una quotazione.<br>
+  Collegato a <a href="../AURA/Campofiorito - Control Room.html" style="color:var(--lime)">Campofiorito · Longevity Retreat</a> — potrebbe essere il partner medico locale per il suo layer longevity.
+</footer>
+
+<script>
+  const root=document.documentElement, tb=document.getElementById('themeBtn');
+  const saved=localStorage.getItem('elisalife-theme');
+  if(saved) root.setAttribute('data-theme',saved);
+  tb.onclick=()=>{const cur=root.getAttribute('data-theme')||'dark';const n=cur==='dark'?'light':'dark';
+    root.setAttribute('data-theme',n);localStorage.setItem('elisalife-theme',n);};
+</script>
+</body>
+</html>
